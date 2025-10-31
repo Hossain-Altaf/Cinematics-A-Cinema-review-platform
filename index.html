@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinetics</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="movie-detail.css">
+    <script src="js/api.js" defer></script>
 </head>
 <body>
     <header>
         <h1 class="app-title">Cinematics</h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="#movies">Movies</a></li>
-            <li><a href="#webseries">Web Series</a></li>
-            <li><a href="#actors">Actors</a></li>
-            <li><a href="#directors">Directors</a></li>
-            <li><a href="#imdbtop">IMDb Top</a></li>
-            <li><a href="#watchlist">Watchedlist</a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#webseries">Web Series</a></li>
+                <li><a href="#actors">Actors</a></li>
+                <li><a href="#directors">Directors</a></li>
+                <li><a href="#imdbtop">IMDb Top</a></li>
+                <li><a href="#watchlist">Watchedlist</a></li>
+            </ul>
+            <div class="auth-links" id="authSection">
+                <a href="login.html" id="loginLink">Login</a>
+                <a href="login.html" id="registerLink">Register</a>
+            </div>
+        </div>
     </nav>
     <!-- <div class="headline">
 
@@ -29,13 +37,13 @@
         <section id="movies">
             <h2>Movies</h2>
             <ul class="content-list">
-                <li><img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Inception"><span>Inception</span></li>
-                <li><img src="https://ew.com/thmb/B0w9qzmQqCZ1tumxv8cBx0aPTrQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mcddakn_ec005-2000-a3d30c1958fb442486fb1e10ba92dd17.jpg" alt="The Dark Knight"><span>The Dark Knight</span></li>
-                <li><img src="https://www.thequeenshall.net/sites/default/files/styles/qh_banner/public/images/interstellar_web.jpg?itok=AJbFps_U" alt="Interstellar"><span>Interstellar</span></li>
-                <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS58BazbrUOyYOl-mKlpr5LudwKvxurjZO-_A&s" alt="Parasite"><span>Parasite</span></li>
-                <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXi1Z7W5BJpe34nlRrnQ_ItCSGdUoy8s8aBQ&s" alt="Forrest Gump"><span>Forrest Gump</span></li>
-                <li><img src="https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SY679_.jpg" alt="Avengers: Endgame"><span>Avengers: Endgame</span></li>
-                <li><img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Joker_%282019_film%29_poster.jpg" alt="Joker"><span>Joker</span></li>
+                <li><a href="movie-detail.html?id=1" class="movie-link"><img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Inception"><span>Inception</span></a></li>
+                <li><a href="movie-detail.html?id=2" class="movie-link"><img src="https://ew.com/thmb/B0w9qzmQqCZ1tumxv8cBx0aPTrQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mcddakn_ec005-2000-a3d30c1958fb442486fb1e10ba92dd17.jpg" alt="The Dark Knight"><span>The Dark Knight</span></a></li>
+                <li><a href="movie-detail.html?id=3" class="movie-link"><img src="https://www.thequeenshall.net/sites/default/files/styles/qh_banner/public/images/interstellar_web.jpg?itok=AJbFps_U" alt="Interstellar"><span>Interstellar</span></a></li>
+                <li><a href="movie-detail.html?id=4" class="movie-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS58BazbrUOyYOl-mKlpr5LudwKvxurjZO-_A&s" alt="Parasite"><span>Parasite</span></a></li>
+                <li><a href="movie-detail.html?id=5" class="movie-link"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXi1Z7W5BJpe34nlRrnQ_ItCSGdUoy8s8aBQ&s" alt="Forrest Gump"><span>Forrest Gump</span></a></li>
+                <li><a href="movie-detail.html?id=6" class="movie-link"><img src="https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SY679_.jpg" alt="Avengers: Endgame"><span>Avengers: Endgame</span></a></li>
+                <li><a href="movie-detail.html?id=7" class="movie-link"><img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Joker_%282019_film%29_poster.jpg" alt="Joker"><span>Joker</span></a></li>
             </ul>
         </section>
         <section id="webseries">

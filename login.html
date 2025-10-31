@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cinematics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="app-title"><a href="index.html" style="text-decoration: none; color: inherit;">Cinematics</a></h1>
+    </header>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Welcome Back</h2>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

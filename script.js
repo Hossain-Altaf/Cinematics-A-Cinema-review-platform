@@ -87,3 +87,96 @@ addSeriesForm.addEventListener('submit', e => {
 // Initial render
 renderList('watched-movies', moviesList);
 renderList('watched-series', seriesList);
+
+// Auth related code
+let authChangeTimeout;
+
+function checkAuthStatus() {
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+    const authSection = document.getElementById('authSection');
+    
+    // Clear any pending updates
+    if (authChangeTimeout) {
+        clearTimeout(authChangeTimeout);
+    }
+    
+    if (token && user) {
+        // User is logged in
+        const userData = JSON.parse(user);
+        if (!document.getElementById('logoutLink')) {
+            const newContent = document.createElement('div');
+            newContent.className = 'auth-links';
+            newContent.innerHTML = `
+                <span class="user-name">Welcome, ${userData.username}</span>
+                <a href="#" id="logoutLink">Logout</a>
+            `;
+            
+            // Fade out current content
+            authSection.style.opacity = '0';
+            
+            // Update content after fade
+            authChangeTimeout = setTimeout(() => {
+                authSection.innerHTML = '';
+                authSection.appendChild(newContent);
+                authSection.style.opacity = '1';
+                
+                // Add logout handler
+                document.getElementById('logoutLink').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    handleLogout();
+                });
+            }, 200);
+        }
+    } else {
+        // User is not logged in
+        if (!document.getElementById('loginLink')) {
+            const newContent = document.createElement('div');
+            newContent.className = 'auth-links';
+            newContent.innerHTML = `
+                <a href="login.html" id="loginLink">Login</a>
+                <a href="login.html" id="registerLink">Register</a>
+            `;
+            
+            // Fade out current content
+            authSection.style.opacity = '0';
+            
+            // Update content after fade
+            authChangeTimeout = setTimeout(() => {
+                authSection.innerHTML = '';
+                authSection.appendChild(newContent);
+                authSection.style.opacity = '1';
+                
+                // Add register handler
+                const registerLink = document.getElementById('registerLink');
+                if (registerLink) {
+                    registerLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        handleRegisterClick();
+                    });
+                }
+            }, 200);
+        }
+    }
+}
+
+function handleLogout() {
+    // Fade out current content
+    const authSection = document.getElementById('authSection');
+    authSection.style.opacity = '0';
+    
+    // Clear auth data after fade
+    setTimeout(() => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        checkAuthStatus();
+    }, 200);
+}
+
+function handleRegisterClick() {
+    localStorage.setItem('showRegisterForm', 'true');
+    window.location.href = 'login.html';
+}
+
+// Check auth status when page loads
+document.addEventListener('DOMContentLoaded', checkAuthStatus);
