@@ -10,7 +10,13 @@
 </head>
 <body>
     <header>
-        <h1 class="app-title">Cinematics</h1>
+        <div class="header-container">
+            <h1 class="app-title">Cinematics</h1>
+            <div class="auth-links" id="authSection">
+                <a href="login.html" id="loginLink">Login</a>
+                <a href="login.html" id="registerLink">Register</a>
+            </div>
+        </div>
     </header>
     <nav>
         <div class="nav-container">
@@ -20,12 +26,11 @@
                 <li><a href="#actors">Actors</a></li>
                 <li><a href="#directors">Directors</a></li>
                 <li><a href="#imdbtop">IMDb Top</a></li>
+                <li><a href="#towatch">ToWatch</a></li>
+                <li><a href="#hotnews">Hot News</a></li>
                 <li><a href="#watchlist">Watchedlist</a></li>
+                <li><a href="#genres">Genres</a></li>
             </ul>
-            <div class="auth-links" id="authSection">
-                <a href="login.html" id="loginLink">Login</a>
-                <a href="login.html" id="registerLink">Register</a>
-            </div>
         </div>
     </nav>
     <!-- <div class="headline">
@@ -82,6 +87,7 @@
                 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVgo2Afs6djwZvZZK6IXXx77LOY-k7bAwwHw&s " alt="Greta Gerwig"><span>Greta Gerwig</span></li>
             </ul>
         </section>
+
         <section id="imdbtop">
             <h2>IMDb Top</h2>
             <ul class="content-list">
@@ -92,6 +98,27 @@
                 <li><img src="https://m.media-amazon.com/images/I/817R7RXH9PL._UF1000,1000_QL80_.jpg " alt="Schindler's List"><span>Schindler's List</span></li>
                 <li><img src="https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_SY679_.jpg" alt="The Lord of the Rings: The Return of the King"><span>The Lord of the Rings: The Return of the King</span></li>
                 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdX5gfR5CmXENJbuimiUvElI7YhLxOXPzmtA&s " alt="Pulp Fiction"><span>Pulp Fiction</span></li>
+            </ul>
+        </section>
+
+        <section id="genres">
+            <h2>Genres</h2>
+            <ul class="genres-list">
+                <li><a class="genre-tag" href="genres.html?genre=Action">Action</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Crime">Crime</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Thriller">Thriller</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Sci-fi">Sci-fi</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Suspense">Suspense</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Horror">Horror</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Detective">Detective</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Adventure">Adventure</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Mystery">Mystery</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Drama">Drama</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Comedy">Comedy</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=War">War</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Supernatural">Supernatural</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Fantasy">Fantasy</a></li>
+                <li><a class="genre-tag" href="genres.html?genre=Psychological">Psychological</a></li>
             </ul>
         </section>
 
@@ -116,7 +143,36 @@
                 <ul id="series-list"></ul>
             </div>
         </section>
-        
+
+        <section id="towatch">
+            <h2>To-Watch</h2>
+            <div class="watchlist-tabs">
+                <button class="towatch-tab active" data-tab="towatch-movies">Movies to watch soon</button>
+                <button class="towatch-tab" data-tab="towatch-series">Series to watch soon</button>
+            </div>
+            <div id="towatch-movies" class="watchlist-panel">
+                <form id="add-towatch-movie-form">
+                    <input type="text" id="towatch-movie-input" placeholder="Add a movie to watch..." required />
+                    <button type="submit">Add Movie</button>
+                </form>
+                <ul id="towatch-movies-list"></ul>
+            </div>
+            <div id="towatch-series" class="watchlist-panel" style="display:none;">
+                <form id="add-towatch-series-form">
+                    <input type="text" id="towatch-series-input" placeholder="Add a series to watch..." required />
+                    <button type="submit">Add Series</button>
+                </form>
+                <ul id="towatch-series-list"></ul>
+            </div>
+        </section>
+
+        <section id="hotnews">
+            <h2>🔥 Hot News of This Week</h2>
+            <div class="news-container" id="newsContainer">
+                <!-- News items will be populated by JavaScript -->
+            </div>
+        </section>
+
     </main>
     <footer>
         <div class="footer-content">

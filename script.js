@@ -206,3 +206,129 @@ function handleRegisterClick() {
 
 // Check auth status when page loads
 document.addEventListener('DOMContentLoaded', checkAuthStatus);
+
+// ======================================
+// To-Watch Section - Tab Switching Logic
+// ======================================
+const towatchTabs = document.querySelectorAll('.towatch-tab');
+
+towatchTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        towatchTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        if (tab.dataset.tab === 'towatch-movies') {
+            document.getElementById('towatch-movies').style.display = 'flex';
+            document.getElementById('towatch-series').style.display = 'none';
+        } else {
+            document.getElementById('towatch-movies').style.display = 'none';
+            document.getElementById('towatch-series').style.display = 'flex';
+        }
+    });
+});
+
+// To-Watch Movies add
+const addTowatchMovieForm = document.getElementById('add-towatch-movie-form');
+const towatchMovieInput = document.getElementById('towatch-movie-input');
+const towatchMoviesList = document.getElementById('towatch-movies-list');
+if (addTowatchMovieForm) {
+    addTowatchMovieForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const val = towatchMovieInput.value.trim();
+        if (val) {
+            const arr = getList('towatch-movies');
+            arr.push(val);
+            saveList('towatch-movies', arr);
+            renderList('towatch-movies', towatchMoviesList);
+            towatchMovieInput.value = '';
+        }
+    });
+}
+
+// To-Watch Series add
+const addTowatchSeriesForm = document.getElementById('add-towatch-series-form');
+const towatchSeriesInput = document.getElementById('towatch-series-input');
+const towatchSeriesList = document.getElementById('towatch-series-list');
+if (addTowatchSeriesForm) {
+    addTowatchSeriesForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const val = towatchSeriesInput.value.trim();
+        if (val) {
+            const arr = getList('towatch-series');
+            arr.push(val);
+            saveList('towatch-series', arr);
+            renderList('towatch-series', towatchSeriesList);
+            towatchSeriesInput.value = '';
+        }
+    });
+}
+
+// Initial render for To-Watch lists
+if (towatchMoviesList) renderList('towatch-movies', towatchMoviesList);
+if (towatchSeriesList) renderList('towatch-series', towatchSeriesList);
+
+// ======================================
+// Hot News Section
+// ======================================
+const newsData = [
+    {
+        id: 1,
+        title: "Deadpool 3 Release",
+        date: "November 10, 2025",
+        description: "The latest installment of Deadpool is breaking box office records with its hilarious action-packed sequences and Marvel universe integration.",
+        trailerUrl: "https://www.youtube.com/embed/https://youtu.be/otOjB0Ias8o?si=uOaTwa04RxG2mdlJ",
+        link: "#"
+    },
+    {
+        id: 2,
+        title: "Dune: Part Three Announcement",
+        date: "November 8, 2025",
+        description: "Denis Villeneuve confirms the third installment of Dune is in development. Epic scale cinematography awaits fans of the series.",
+        trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        link: "#"
+    },
+    {
+        id: 3,
+        title: "Avatar 4 Coming Soon",
+        date: "November 5, 2025",
+        description: "James Cameron teases new underwater scenes and groundbreaking visual effects for Avatar 4. Fan excitement reaches an all-time high.",
+        trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        link: "#"
+    },
+    {
+        id: 4,
+        title: "Spider-Man: New Horizons",
+        date: "November 1, 2025",
+        description: "Marvel Studios unveils the next Spider-Man adventure featuring new villains and a fresh take on the beloved superhero's story.",
+        trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        link: "#"
+    }
+];
+
+function renderNews() {
+    const newsContainer = document.getElementById('newsContainer');
+    if (!newsContainer) return;
+
+    newsContainer.innerHTML = '';
+    newsData.forEach(news => {
+        const newsCard = document.createElement('div');
+        newsCard.className = 'news-card';
+        newsCard.innerHTML = `
+            <div class="news-trailer">
+                <iframe src="${news.trailerUrl}?autoplay=0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="news-content">
+                <h3 class="news-title">${news.title}</h3>
+                <p class="news-date">${news.date}</p>
+                <p class="news-description">${news.description}</p>
+                <a href="${news.link}" class="news-link">Read More</a>
+            </div>
+        `;
+        newsContainer.appendChild(newsCard);
+    });
+}
+
+// Render news on page load
+document.addEventListener('DOMContentLoaded', () => {
+    renderNews();
+});
