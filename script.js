@@ -33,7 +33,13 @@ function saveList(key, arr) {
 function renderList(key, ul) {
     const items = getList(key);
     ul.innerHTML = '';
-    items.forEach((item, idx) => {
+
+    // How many items to show by default
+    const VISIBLE_COUNT = 5;
+    const showAll = ul.dataset.showAll === 'true';
+    const count = showAll ? items.length : Math.min(items.length, VISIBLE_COUNT);
+
+    items.slice(0, count).forEach((item, idx) => {
         const li = document.createElement('li');
         const span = document.createElement('span');
         span.textContent = item;
@@ -43,13 +49,33 @@ function renderList(key, ul) {
         delBtn.className = 'remove-btn';
         delBtn.title = 'Remove';
         delBtn.onclick = () => {
-            items.splice(idx, 1);
+            // Remove the correct item from storage (calculate real index)
+            const realIndex = ul.dataset.showAll === 'true' ? idx : idx;
+            items.splice(realIndex, 1);
             saveList(key, items);
             renderList(key, ul);
         };
         li.appendChild(delBtn);
         ul.appendChild(li);
     });
+
+    // Manage the View more / View less button
+    const container = ul.parentNode;
+    // Remove existing view-more button if present
+    const existingBtn = container.querySelector('.view-more-btn');
+    if (existingBtn) existingBtn.remove();
+
+    if (items.length > VISIBLE_COUNT) {
+        const btn = document.createElement('button');
+        btn.className = 'view-more-btn';
+        btn.type = 'button';
+        btn.textContent = showAll ? 'View less' : `View more (${items.length - VISIBLE_COUNT})`;
+        btn.addEventListener('click', () => {
+            ul.dataset.showAll = (!showAll).toString();
+            renderList(key, ul);
+        });
+        container.appendChild(btn);
+    }
 }
 
 // Movie add

@@ -8,6 +8,9 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    is_verified TINYINT(1) NOT NULL DEFAULT 0,
+    verification_token VARCHAR(255),
+    verification_expires DATETIME,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

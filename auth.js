@@ -46,14 +46,28 @@ loginForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('loginPassword').value;
 
     try {
-        // Here you would typically make an API call to your backend
-        const response = await mockLoginAPI(email, password);
-        if (response.success) {
-            localStorage.setItem('user', JSON.stringify(response.user));
-            window.location.href = 'index.html';
-        } else {
-            showError(loginForm, 'Invalid email or password');
+        // Call backend login endpoint
+        const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+        if (!res.ok) {
+            // If not verified, backend sends 403 with message
+            showError(loginForm, data.error || 'Login failed');
+            return;
         }
+
+        // Save token and fetch user info
+        localStorage.setItem('token', data.token);
+        const meRes = await fetch('/api/me', { headers: { 'Authorization': `Bearer ${data.token}` } });
+        if (meRes.ok) {
+            const user = await meRes.json();
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+        window.location.href = 'index.html';
     } catch (error) {
         showError(loginForm, 'An error occurred. Please try again.');
     }
@@ -73,14 +87,30 @@ registerForm.addEventListener('submit', async (e) => {
     }
 
     try {
-        // Here you would typically make an API call to your backend
-        const response = await mockRegisterAPI(username, email, password);
-        if (response.success) {
-            localStorage.setItem('user', JSON.stringify(response.user));
-            window.location.href = 'index.html';
-        } else {
-            showError(registerForm, 'Registration failed. Please try again.');
+        // Call backend register endpoint (which will send verification email)
+        const res = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            showError(registerForm, data.error || 'Registration failed');
+            return;
         }
+
+        // Show message asking user to check email for verification
+        const msg = document.createElement('div');
+        msg.className = 'form-success';
+        msg.textContent = 'Registration successful — please check your email to verify your account before logging in.';
+        registerForm.appendChild(msg);
+
+        // Switch to login tab after registration
+        authTabs.forEach(t => t.classList.remove('active'));
+        const loginTab = document.querySelector('[data-tab="login"]');
+        if (loginTab) loginTab.classList.add('active');
+        loginForm.style.display = 'flex';
+        registerForm.style.display = 'none';
     } catch (error) {
         showError(registerForm, 'An error occurred. Please try again.');
     }
@@ -133,8 +163,16 @@ async function mockRegisterAPI(username, email, password) {
     });
 }
 
-// Check if user is already logged in
-const user = JSON.parse(localStorage.getItem('user'));
-if (user) {
-    window.location.href = 'index.html';
+// Check if user is already logged in (require both user and token)
+const storedUser = localStorage.getItem('user');
+const storedToken = localStorage.getItem('token');
+try {
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+    if (parsedUser && storedToken) {
+        // If both user and token exist, consider the user logged in
+        window.location.href = 'index.html';
+    }
+} catch (err) {
+    // If parsing fails, clear corrupt user data
+    localStorage.removeItem('user');
 }

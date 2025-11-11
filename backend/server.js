@@ -4,6 +4,8 @@ const cors = require('cors');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
 
 const app = express();
 
@@ -25,7 +27,43 @@ db.connect((err) => {
         return;
     }
     console.log('Connected to database');
+    // Ensure verification columns exist
+    ensureVerificationColumns();
 });
+
+// Create Nodemailer transporter using env vars (Gmail SMTP recommended)
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 465,
+    secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === 'true' : true,
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS // App password for Gmail
+    }
+});
+
+function ensureVerificationColumns() {
+    const schemaQuery = `SELECT COUNT(*) AS cnt FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users' AND COLUMN_NAME = ?`;
+    const addIsVerified = `ALTER TABLE users ADD COLUMN is_verified TINYINT(1) NOT NULL DEFAULT 0`;
+    const addToken = `ALTER TABLE users ADD COLUMN verification_token VARCHAR(255)`;
+    const addExpires = `ALTER TABLE users ADD COLUMN verification_expires DATETIME`;
+
+    db.query(schemaQuery, ['is_verified'], (err, results) => {
+        if (!err && results[0].cnt === 0) {
+            db.query(addIsVerified, (e) => { if (e) console.error('Could not add is_verified column', e); else console.log('Added is_verified column'); });
+        }
+    });
+    db.query(schemaQuery, ['verification_token'], (err, results) => {
+        if (!err && results[0].cnt === 0) {
+            db.query(addToken, (e) => { if (e) console.error('Could not add verification_token column', e); else console.log('Added verification_token column'); });
+        }
+    });
+    db.query(schemaQuery, ['verification_expires'], (err, results) => {
+        if (!err && results[0].cnt === 0) {
+            db.query(addExpires, (e) => { if (e) console.error('Could not add verification_expires column', e); else console.log('Added verification_expires column'); });
+        }
+    });
+}
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
@@ -46,7 +84,6 @@ app.post('/api/register', async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
-
         const query = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
         db.query(query, [username, email, hashedPassword], (err, results) => {
             if (err) {
@@ -56,8 +93,31 @@ app.post('/api/register', async (req, res) => {
                 return res.status(500).json({ error: 'Error creating user' });
             }
 
-            const token = jwt.sign({ id: results.insertId, email }, process.env.JWT_SECRET || 'your-secret-key');
-            res.status(201).json({ token });
+            const verificationToken = crypto.randomBytes(32).toString('hex');
+            const expires = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
+            const updateQuery = 'UPDATE users SET verification_token = ?, verification_expires = ? WHERE id = ?';
+            db.query(updateQuery, [verificationToken, expires, results.insertId], (uErr) => {
+                if (uErr) {
+                    console.error('Error saving verification token', uErr);
+                }
+
+                // Send verification email
+                const verifyUrl = `${process.env.BASE_URL || ('http://localhost:' + (process.env.PORT || 3000))}/api/verify?token=${verificationToken}`;
+                const mailOptions = {
+                    from: process.env.SMTP_FROM || process.env.SMTP_USER,
+                    to: email,
+                    subject: 'Verify your Cinematics email',
+                    html: `<p>Hi ${username},</p><p>Thank you for registering. Please confirm your email by clicking the link below:</p><p><a href="${verifyUrl}">Verify email</a></p><p>This link expires in 24 hours.</p>`
+                };
+
+                transporter.sendMail(mailOptions, (mailErr, info) => {
+                    if (mailErr) {
+                        console.error('Error sending verification email', mailErr);
+                        return res.status(500).json({ error: 'User created but failed to send verification email' });
+                    }
+                    return res.status(201).json({ success: true, message: 'Verification email sent' });
+                });
+            });
         });
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
@@ -74,6 +134,7 @@ app.post('/api/login', async (req, res) => {
             if (results.length === 0) return res.status(401).json({ error: 'Invalid credentials' });
 
             const user = results[0];
+            if (!user.is_verified) return res.status(403).json({ error: 'Email not verified' });
             const validPassword = await bcrypt.compare(password, user.password);
             if (!validPassword) return res.status(401).json({ error: 'Invalid credentials' });
 
@@ -83,6 +144,75 @@ app.post('/api/login', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Server error' });
     }
+});
+
+// Verify endpoint - user clicks email link
+app.get('/api/verify', (req, res) => {
+    const token = req.query.token;
+    if (!token) return res.status(400).send('Invalid verification link');
+
+    const query = 'SELECT * FROM users WHERE verification_token = ? AND verification_expires > NOW()';
+    db.query(query, [token], (err, results) => {
+        if (err) return res.status(500).send('Server error');
+        if (results.length === 0) return res.status(400).send('Verification link is invalid or expired');
+
+        const user = results[0];
+        const update = 'UPDATE users SET is_verified = 1, verification_token = NULL, verification_expires = NULL WHERE id = ?';
+        db.query(update, [user.id], (uErr) => {
+            if (uErr) return res.status(500).send('Server error');
+            // Redirect to frontend login page with a success flag
+            const frontend = process.env.FRONTEND_BASE_URL || (process.env.BASE_URL || ('http://localhost:' + (process.env.PORT || 3000)));
+            return res.redirect(`${frontend}/login.html?verified=1`);
+        });
+    });
+});
+
+// Resend verification email
+app.post('/api/resend-verification', (req, res) => {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email required' });
+
+    const query = 'SELECT * FROM users WHERE email = ?';
+    db.query(query, [email], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Server error' });
+        if (results.length === 0) return res.status(404).json({ error: 'User not found' });
+
+        const user = results[0];
+        if (user.is_verified) return res.status(400).json({ error: 'User already verified' });
+
+        const verificationToken = crypto.randomBytes(32).toString('hex');
+        const expires = new Date(Date.now() + 24 * 60 * 60 * 1000);
+        const updateQuery = 'UPDATE users SET verification_token = ?, verification_expires = ? WHERE id = ?';
+        db.query(updateQuery, [verificationToken, expires, user.id], (uErr) => {
+            if (uErr) return res.status(500).json({ error: 'Server error' });
+
+            const verifyUrl = `${process.env.BASE_URL || ('http://localhost:' + (process.env.PORT || 3000))}/api/verify?token=${verificationToken}`;
+            const mailOptions = {
+                from: process.env.SMTP_FROM || process.env.SMTP_USER,
+                to: email,
+                subject: 'Verify your Cinematics email',
+                html: `<p>Hi ${user.username},</p><p>Please confirm your email by clicking the link below:</p><p><a href="${verifyUrl}">Verify email</a></p><p>This link expires in 24 hours.</p>`
+            };
+
+            transporter.sendMail(mailOptions, (mailErr, info) => {
+                if (mailErr) {
+                    console.error('Error sending verification email', mailErr);
+                    return res.status(500).json({ error: 'Failed to send verification email' });
+                }
+                return res.json({ success: true, message: 'Verification email resent' });
+            });
+        });
+    });
+});
+
+// Endpoint to get current user info
+app.get('/api/me', authenticateToken, (req, res) => {
+    const query = 'SELECT id, username, email FROM users WHERE id = ?';
+    db.query(query, [req.user.id], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Server error' });
+        if (results.length === 0) return res.status(404).json({ error: 'User not found' });
+        res.json(results[0]);
+    });
 });
 
 // Movie routes
