@@ -188,9 +188,10 @@ section h2 {
 }
 
 .content-list li {
-    background: #23272f;
+    /* poster/card background changed to a deep, desaturated red to fit the site */
+    background: #3a0f0f; /* deep maroon */
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 6px rgba(58,15,15,0.25);
     padding: 0.5rem 0.5rem 0.8rem 0.5rem;
     width: 180px;
     text-align: center;
