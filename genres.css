@@ -33,16 +33,16 @@
 
 .content-list li{
   width:180px; /* match main index sizing */
-  /* keep genre page cards in the same deep-maroon family as the main posters */
-  background:#3a0f0f;
+  /* use the global card background so the color can be adjusted via variables */
+  background: var(--card-bg);
   border-radius:8px;
   padding:0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  box-shadow: 0 2px 6px var(--card-shadow-color);
 }
 
 .content-list li img{
-  width:120px;
-  height:168px;
+  width: var(--card-image-width);
+  height: var(--card-image-height);
   display:block;
   margin:0 auto 0.5rem auto;
   object-fit:cover;

@@ -5,6 +5,14 @@ body {
     color: #f5f5f5;
 }
 
+/* Theme variables: tweak these to adjust poster/card appearance across the site */
+:root {
+    --card-bg: #3a0f0f; /* deep-maroon default */
+    --card-shadow-color: rgba(58,15,15,0.25);
+    --card-image-width: 130px;
+    --card-image-height: 182px;
+}
+
 header {
     background: #1a1d23;
     padding: 1.5rem 2rem 1rem 2rem;
@@ -188,10 +196,10 @@ section h2 {
 }
 
 .content-list li {
-    /* poster/card background changed to a deep, desaturated red to fit the site */
-    background: #3a0f0f; /* deep maroon */
+    /* poster/card background uses theme variable so it can be adjusted per env */
+    background: var(--card-bg);
     border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(58,15,15,0.25);
+    box-shadow: 0 1px 6px var(--card-shadow-color);
     padding: 0.5rem 0.5rem 0.8rem 0.5rem;
     width: 180px;
     text-align: center;
@@ -202,8 +210,8 @@ section h2 {
     justify-content: flex-start;
 }
 .content-list li img {
-    width: 120px;
-    height: 168px;
+    width: var(--card-image-width);
+    height: var(--card-image-height);
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 0.5rem;
