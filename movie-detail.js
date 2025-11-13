@@ -117,7 +117,7 @@ const movies = [
                 likes: 98
             }
         ]
-    }
+    },
 
     {
         id: 4,
