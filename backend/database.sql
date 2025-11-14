@@ -107,3 +107,5 @@ CREATE TABLE watchlist (
 INSERT INTO genres (name) VALUES 
 ('Action'), ('Adventure'), ('Comedy'), ('Drama'), ('Horror'),
 ('Sci-Fi'), ('Thriller'), ('Romance'), ('Fantasy'), ('Animation');
+
+

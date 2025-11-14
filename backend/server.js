@@ -110,13 +110,16 @@ app.post('/api/register', async (req, res) => {
                     html: `<p>Hi ${username},</p><p>Thank you for registering. Please confirm your email by clicking the link below:</p><p><a href="${verifyUrl}">Verify email</a></p><p>This link expires in 24 hours.</p>`
                 };
 
-                transporter.sendMail(mailOptions, (mailErr, info) => {
-                    if (mailErr) {
-                        console.error('Error sending verification email', mailErr);
-                        return res.status(500).json({ error: 'User created but failed to send verification email' });
-                    }
-                    return res.status(201).json({ success: true, message: 'Verification email sent' });
-                });
+                // transporter.sendMail(mailOptions, (mailErr, info) => {
+                //     if (mailErr) {
+                //         console.error('Error sending verification email', mailErr);
+                //         return res.status(500).json({ error: 'User created but failed to send verification email' });
+                //     }
+                //     return res.status(201).json({ success: true, message: 'Verification email sent' });
+                // });
+                // Skip email sending for testing
+             return res.status(201).json({ success: true, message: 'User registered (email skipped for testing)' });
+
             });
         });
     } catch (error) {

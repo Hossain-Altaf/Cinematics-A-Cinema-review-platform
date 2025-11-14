@@ -68,23 +68,23 @@ const seriesList = [
   {
   id: 3,
     title: "Money-Hiest",
-    year: "2008 – 2013",
+    year: "2017 – 2021",
     duration: "5 Seasons",
-    rating: "9.5/10",
-    poster: "https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png",
-    genres: ["Crime", "Drama", "Thriller"],
-    plot: "A chemistry teacher turned meth producer partners with a former student to secure his family's future.",
+    rating: "8.2/10",
+    poster: "",
+    genres: ["Crime", "Action", "Thriller"],
+    plot: "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
     cast: [
-      { name: "Bryan Cranston", role: "Walter White", image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Bryan_Cranston_2018.jpg" }
+      { name: "Alvaro Morte", role: "EL Professor", image: "https://www.https://m.media-amazon.com/images/I/51Jxq9bLSuL._SY741_.jpg" }
     ],
     crew: [
-      { name: "Vince Gilligan", role: "Creator", image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Vince_Gilligan_by_Gage_Skidmore.jpg" }
+      { name: "Alex Pina", role: "Director", image: "https://www.shutterstock.com/editorial/image-editorial/M6TfAax0N1DbUay6Nzk0NDY=/alex-pina-1500w-10067894a.jpg" }
     ],
     reviews: [
-      { id: 1, user: { name: "HeisenbergFan", avatar: "https://randomuser.me/api/portraits/men/12.jpg" }, rating: 5, date: "2023-08-15", content: "Flawless storytelling and character arcs!" }
+      { id: 1, user: { name: "ProfessorFan", avatar: "https://randomuser.me/api/portraits/men/12.jpg" }, rating: 5, date: "2023-08-15", content: "it just mind blowing thriller and twiested series!" }
     ],
     discussions: [
-      { id: 1, title: "Most shocking moment?", author: "MethKing", date: "2023-08-17", preview: "That Gus scene still haunts me!", replies: 42, likes: 150 }
+      { id: 1, title: "Most shocking moment?", author: "Professorfan", date: "2023-08-17", preview: "Professor has a lot of plans for  every situations", replies: 42, likes: 150 }
     ]
   },
 
