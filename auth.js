@@ -1,31 +1,52 @@
+// =======================
+// CONFIG
+// =======================
+
+// Change ONLY this if backend is hosted somewhere else
+const API_BASE = "http://localhost:3000";
+
+
+// =======================
 // DOM Elements
+// =======================
+
 const authTabs = document.querySelectorAll('.auth-tab');
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
 
-// Check if we should show register form
+
+// =======================
+// Show Register Form IF Coming From "Register" Button
+// =======================
+
 function checkAndShowRegisterForm() {
     const showRegister = localStorage.getItem('showRegisterForm');
+
     if (showRegister === 'true') {
-        // Clear the flag
         localStorage.removeItem('showRegisterForm');
-        // Show register form
+
         authTabs.forEach(t => t.classList.remove('active'));
+
         const registerTab = document.querySelector('[data-tab="register"]');
-        if (registerTab) {
-            registerTab.classList.add('active');
-            loginForm.style.display = 'none';
-            registerForm.style.display = 'flex';
-        }
+        registerTab.classList.add('active');
+
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'flex';
     }
 }
 
-// Tab switching logic
+document.addEventListener('DOMContentLoaded', checkAndShowRegisterForm);
+
+
+// =======================
+// Tab Switching
+// =======================
+
 authTabs.forEach(tab => {
     tab.addEventListener('click', () => {
         authTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        
+
         if (tab.dataset.tab === 'login') {
             loginForm.style.display = 'flex';
             registerForm.style.display = 'none';
@@ -36,143 +57,131 @@ authTabs.forEach(tab => {
     });
 });
 
-// Check for register form display when page loads
-document.addEventListener('DOMContentLoaded', checkAndShowRegisterForm);
 
-// Login form submission
+// =======================
+// LOGIN FUNCTIONALITY
+// =======================
+
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
 
     try {
-        // Call backend login endpoint
-        const res = await fetch('/api/login', {
+        const res = await fetch(`${API_BASE}/api/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         });
 
         const data = await res.json();
+
         if (!res.ok) {
-            // If not verified, backend sends 403 with message
-            showError(loginForm, data.error || 'Login failed');
+            showError(loginForm, data.error || "Login failed");
             return;
         }
 
-        // Save token and fetch user info
+        // Save token
         localStorage.setItem('token', data.token);
-        const meRes = await fetch('/api/me', { headers: { 'Authorization': `Bearer ${data.token}` } });
+
+        // Fetch user info
+        const meRes = await fetch(`${API_BASE}/api/me`, {
+            headers: { "Authorization": `Bearer ${data.token}` }
+        });
+
         if (meRes.ok) {
             const user = await meRes.json();
             localStorage.setItem('user', JSON.stringify(user));
         }
-        window.location.href = 'index.html';
+
+        // Redirect
+        window.location.href = "index.html";
+
     } catch (error) {
-        showError(loginForm, 'An error occurred. Please try again.');
+        showError(loginForm, "Network error. Please try again.");
     }
 });
 
-// Register form submission
+
+// =======================
+// REGISTER FUNCTIONALITY
+// =======================
+
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const username = document.getElementById('registerUsername').value;
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const confirmPass = document.getElementById('confirmPassword').value;
+
+    const username = document.getElementById('registerUsername').value.trim();
+    const email = document.getElementById('registerEmail').value.trim();
+    const password = document.getElementById('registerPassword').value.trim();
+    const confirmPass = document.getElementById('confirmPassword').value.trim();
 
     if (password !== confirmPass) {
-        showError(registerForm, 'Passwords do not match');
+        showError(registerForm, "Passwords do not match");
         return;
     }
 
     try {
-        // Call backend register endpoint (which will send verification email)
-        const res = await fetch('/api/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+        const res = await fetch(`${API_BASE}/api/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
         });
+
         const data = await res.json();
+
         if (!res.ok) {
-            showError(registerForm, data.error || 'Registration failed');
+            showError(registerForm, data.error || "Registration failed");
             return;
         }
 
-        // Show message asking user to check email for verification
+        // Success Message
         const msg = document.createElement('div');
         msg.className = 'form-success';
-        msg.textContent = 'Registration successful — please check your email to verify your account before logging in.';
+        msg.textContent = "Registration successful! Check your email for verification.";
         registerForm.appendChild(msg);
 
-        // Switch to login tab after registration
+        // Switch to login tab
         authTabs.forEach(t => t.classList.remove('active'));
         const loginTab = document.querySelector('[data-tab="login"]');
-        if (loginTab) loginTab.classList.add('active');
+        loginTab.classList.add('active');
+
         loginForm.style.display = 'flex';
         registerForm.style.display = 'none';
+
     } catch (error) {
-        showError(registerForm, 'An error occurred. Please try again.');
+        showError(registerForm, "Network error. Please try again.");
     }
 });
 
-// Helper functions
+
+// =======================
+// Helper: Show Error Messages
+// =======================
+
 function showError(form, message) {
-    const existingError = form.querySelector('.form-error');
-    if (existingError) {
-        existingError.remove();
-    }
-    
+    const oldError = form.querySelector('.form-error');
+    if (oldError) oldError.remove();
+
     const errorDiv = document.createElement('div');
     errorDiv.className = 'form-error';
     errorDiv.textContent = message;
     form.appendChild(errorDiv);
 }
 
-// Mock API functions (replace these with real API calls)
-async function mockLoginAPI(email, password) {
-    // Simulating API call
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            // For demo purposes, accept any email/password
-            resolve({
-                success: true,
-                user: {
-                    id: 1,
-                    username: email.split('@')[0],
-                    email: email
-                }
-            });
-        }, 1000);
-    });
-}
 
-async function mockRegisterAPI(username, email, password) {
-    // Simulating API call
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                success: true,
-                user: {
-                    id: 1,
-                    username: username,
-                    email: email
-                }
-            });
-        }, 1000);
-    });
-}
+// =======================
+// AUTO-REDIRECT IF ALREADY LOGGED IN
+// =======================
 
-// Check if user is already logged in (require both user and token)
-const storedUser = localStorage.getItem('user');
-const storedToken = localStorage.getItem('token');
 try {
-    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
-    if (parsedUser && storedToken) {
-        // If both user and token exist, consider the user logged in
-        window.location.href = 'index.html';
+    const storedUser = localStorage.getItem('user');
+    const storedToken = localStorage.getItem('token');
+
+    if (storedUser && storedToken) {
+        window.location.href = "index.html";
     }
 } catch (err) {
-    // If parsing fails, clear corrupt user data
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
 }

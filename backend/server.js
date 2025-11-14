@@ -306,3 +306,31 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+// Update username
+app.post('/api/update-username', authenticateToken, (req, res) => {
+    const { username } = req.body;
+    const q = "UPDATE users SET username = ? WHERE id = ?";
+    db.query(q, [username, req.user.id], (err) => {
+        if (err) return res.status(500).json({ error: "Server error" });
+        res.json({ success: true });
+    });
+});
+
+// Change password
+app.post('/api/update-password', authenticateToken, (req, res) => {
+    const { old_password, new_password } = req.body;
+
+    db.query("SELECT password FROM users WHERE id = ?", [req.user.id], async (err, rows) => {
+        if (err || rows.length === 0)
+            return res.status(500).json({ error: "Server error" });
+
+        const valid = await bcrypt.compare(old_password, rows[0].password);
+        if (!valid) return res.status(400).json({ error: "Incorrect old password" });
+
+        const newHash = await bcrypt.hash(new_password, 10);
+        db.query("UPDATE users SET password = ? WHERE id = ?", [newHash, req.user.id]);
+
+        res.json({ success: true });
+    });
+});
