@@ -130,19 +130,34 @@ function checkAuthStatus() {
     if (!authSection) return;
 
     if (token && userJson) {
-        const user = JSON.parse(userJson);
+        try {
+            const user = JSON.parse(userJson);
 
-        authSection.innerHTML = `
-            <a href="profile.html" id="profileLink">Profile</a>
-            <a href="#" id="logoutLink">Logout</a>
-        `;
+            authSection.innerHTML = `
+                <a href="profile.html" id="profileLink" style="color: #ffcb3b; font-weight: 600;">👤 ${user.username}</a>
+                <a href="#" id="logoutLink" style="color: #ff4444;">Logout</a>
+            `;
 
-        document.getElementById('logoutLink').addEventListener('click', (e) => {
-            e.preventDefault();
+            // Logout handler
+            const logoutLink = document.getElementById('logoutLink');
+            if (logoutLink) {
+                logoutLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (confirm('Are you sure you want to logout?')) {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('user');
+                        window.location.reload();
+                    }
+                });
+            }
+
+            console.log('✅ User logged in:', user.username);
+        } catch (error) {
+            console.error('Error parsing user data:', error);
             localStorage.removeItem('token');
             localStorage.removeItem('user');
             window.location.reload();
-        });
+        }
 
     } else {
         authSection.innerHTML = `
@@ -150,19 +165,22 @@ function checkAuthStatus() {
             <a href="login.html" id="registerLink">Register</a>
         `;
 
-        const reg = document.getElementById('registerLink');
-        if (reg) {
-            reg.addEventListener('click', (e) => {
+        // Register link handler - show register tab
+        const registerLink = document.getElementById('registerLink');
+        if (registerLink) {
+            registerLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 localStorage.setItem('showRegisterForm', 'true');
                 window.location.href = 'login.html';
             });
         }
+
+        console.log('ℹ️ User not logged in');
     }
 }
 
+// Run on page load
 document.addEventListener('DOMContentLoaded', checkAuthStatus);
-
 
 // =====================================
 // TO-WATCH SECTION

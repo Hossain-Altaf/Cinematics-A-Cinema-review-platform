@@ -108,4 +108,7 @@ INSERT INTO genres (name) VALUES
 ('Action'), ('Adventure'), ('Comedy'), ('Drama'), ('Horror'),
 ('Sci-Fi'), ('Thriller'), ('Romance'), ('Fantasy'), ('Animation');
 
+USE cinematics_db;
+UPDATE users SET is_verified = 1 WHERE email = 'films.altaf@gmail.com';
+
 
