@@ -383,6 +383,106 @@ function populateMovieDetails(data) {
         .join("");
 }
 
+
+// ---------------------------
+// REVIEW SYSTEM
+// ---------------------------
+
+// Get user
+function getLoggedUser() {
+    const userJson = localStorage.getItem("user");
+    return userJson ? JSON.parse(userJson) : null;
+}
+
+// Load reviews from localStorage
+function loadStoredReviews(movieId) {
+    const data = localStorage.getItem("reviews_" + movieId);
+    return data ? JSON.parse(data) : [];
+}
+
+// Save reviews
+function saveReviews(movieId, reviews) {
+    localStorage.setItem("reviews_" + movieId, JSON.stringify(reviews));
+}
+
+// Render reviews
+function renderReviews(movieId, builtInReviews) {
+    const reviewsList = document.getElementById("reviewsList");
+
+    const stored = loadStoredReviews(movieId);
+    const all = [...builtInReviews, ...stored];
+
+    reviewsList.innerHTML = all.map(review => `
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <img src="${review.user.avatar}" class="reviewer-avatar">
+                    <span class="reviewer-name">${review.user.name}</span>
+                </div>
+                <div class="review-date">${review.date}</div>
+            </div>
+            <div class="review-rating">${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</div>
+            <p class="review-content">${review.content}</p>
+        </div>
+    `).join("");
+}
+
+// Handle review button
+document.querySelector(".review-btn").addEventListener("click", () => {
+    const user = getLoggedUser();
+    if (!user) {
+        alert("You must be logged in to write a review.");
+        return;
+    }
+    document.getElementById("reviewModal").classList.remove("hidden");
+});
+
+// Close modal
+document.getElementById("closeReviewBtn").addEventListener("click", () => {
+    document.getElementById("reviewModal").classList.add("hidden");
+});
+
+// Submit review
+document.getElementById("submitReviewBtn").addEventListener("click", () => {
+    const user = getLoggedUser();
+    if (!user) {
+        alert("Login required.");
+        return;
+    }
+
+    const rating = parseInt(document.getElementById("reviewRating").value);
+    const content = document.getElementById("reviewText").value.trim();
+
+    if (content === "") {
+        alert("Review cannot be empty.");
+        return;
+    }
+
+    // Build new review
+    const newReview = {
+        id: Date.now(),
+        user: {
+            name: user.name,
+            avatar: user.avatar || "https://i.pravatar.cc/100?u=" + user.name
+        },
+        rating,
+        date: new Date().toISOString().split("T")[0],
+        content
+    };
+
+    const existing = loadStoredReviews(movieId);
+    existing.push(newReview);
+    saveReviews(movieId, existing);
+
+    // Refresh UI
+    renderReviews(movieId, movieData.reviews);
+
+    // Close modal
+    document.getElementById("reviewModal").classList.add("hidden");
+    document.getElementById("reviewText").value = "";
+});
+
+
 // ---------------------------
 // INITIALIZE PAGE
 // ---------------------------

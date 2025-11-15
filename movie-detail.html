@@ -106,6 +106,31 @@
         </div>
     </main>
 
+    <!-- REVIEW MODAL -->
+<div id="reviewModal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Write a Review</h3>
+
+        <label>Your Rating:</label>
+        <select id="reviewRating">
+            <option value="5">5 ★</option>
+            <option value="4">4 ★</option>
+            <option value="3">3 ★</option>
+            <option value="2">2 ★</option>
+            <option value="1">1 ★</option>
+        </select>
+
+        <label>Your Review:</label>
+        <textarea id="reviewText" placeholder="What did you think?"></textarea>
+
+        <div class="modal-actions">
+            <button id="submitReviewBtn">Submit</button>
+            <button id="closeReviewBtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
     <footer>
         <div class="footer-content">
             <span>Developed by Altaf Hossain</span>
@@ -116,7 +141,10 @@
         </div>
     </footer>
 
+    
+
+    <script src="script.js">   </script> 
     <script src="movie-detail.js"></script>
-    <!-- <script src="script.js">   </script> -->
+   
 </body>
 </html>
