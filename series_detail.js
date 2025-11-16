@@ -275,6 +275,22 @@ function populateSeriesDetails(data) {
       </div>`).join("");
 }
 
+//Discussion
+// At the end of the DOMContentLoaded event
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Movie Detail Page Loaded");
+    console.log("Movie ID:", movieId);
+    console.log("Movie Data:", movieData);
+    
+    populateMovieDetails(movieData);
+    initializeButtons();
+    
+    // Add these lines for discussions
+    renderDiscussions();
+    initializeDiscussionButton();
+});
+
+
 // ---------------------------
 // REVIEW MODAL HANDLERS
 // ---------------------------
