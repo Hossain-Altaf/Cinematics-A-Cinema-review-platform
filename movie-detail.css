@@ -520,3 +520,308 @@ nav {
 .review-modal .cancel-btn:hover {
     background: #ccc;
 }
+
+
+
+/* ========================================
+   REVIEW MODAL - Cinema Theme
+   ======================================== */
+
+/* Modal Overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal Content Container */
+.modal-content {
+    background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 520px;
+    width: 90%;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 203, 59, 0.1);
+    animation: slideUp 0.4s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Header */
+.modal-content h3 {
+    color: #ffcb3b;
+    font-size: 26px;
+    margin: 0 0 24px 0;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Labels */
+.modal-content label {
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.modal-content label:first-of-type {
+    margin-top: 0;
+}
+
+/* Rating Select */
+#reviewRating {
+    width: 100%;
+    padding: 12px 16px;
+    background: #2a2a2a;
+    color: #ffcb3b;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#reviewRating:hover {
+    border-color: #ffcb3b;
+    background: #333333;
+}
+
+#reviewRating:focus {
+    border-color: #ffcb3b;
+    box-shadow: 0 0 0 3px rgba(255, 203, 59, 0.1);
+}
+
+#reviewRating option {
+    background: #2a2a2a;
+    color: #ffcb3b;
+    padding: 10px;
+}
+
+/* Review Textarea */
+#reviewText {
+    width: 100%;
+    min-height: 140px;
+    padding: 14px 16px;
+    background: #2a2a2a;
+    color: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    resize: vertical;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#reviewText:hover {
+    border-color: #444444;
+}
+
+#reviewText:focus {
+    border-color: #ffcb3b;
+    background: #333333;
+    box-shadow: 0 0 0 3px rgba(255, 203, 59, 0.1);
+}
+
+#reviewText::placeholder {
+    color: #777777;
+    font-style: italic;
+}
+
+/* Character Counter (optional - add if needed) */
+#reviewText:focus::after {
+    content: attr(data-length) " / 500";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #888;
+    font-size: 12px;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+/* Submit Button */
+#submitReviewBtn {
+    flex: 1;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #ffcb3b 0%, #f0b429 100%);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 203, 59, 0.3);
+}
+
+#submitReviewBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 203, 59, 0.4);
+    background: linear-gradient(135deg, #ffd454 0%, #ffcb3b 100%);
+}
+
+#submitReviewBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 203, 59, 0.3);
+}
+
+/* Cancel Button */
+#closeReviewBtn {
+    flex: 1;
+    padding: 14px 24px;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #444444;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#closeReviewBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #666666;
+    transform: translateY(-2px);
+}
+
+#closeReviewBtn:active {
+    transform: translateY(0);
+}
+
+/* Close Icon (X) - Optional */
+.modal-content::before {
+    content: "×";
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 32px;
+    color: #666666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.modal-content::before:hover {
+    color: #ffcb3b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 24px;
+        max-width: 95%;
+    }
+
+    .modal-content h3 {
+        font-size: 22px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    #submitReviewBtn,
+    #closeReviewBtn {
+        width: 100%;
+    }
+}
+
+/* Loading State (optional) */
+#submitReviewBtn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#submitReviewBtn.loading::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    border: 2px solid #000;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success Animation */
+.modal-content.success {
+    animation: successPulse 0.5s ease;
+}
+
+@keyframes successPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Focus visible for accessibility */
+#reviewRating:focus-visible,
+#reviewText:focus-visible,
+#submitReviewBtn:focus-visible,
+#closeReviewBtn:focus-visible {
+    outline: 2px solid #ffcb3b;
+    outline-offset: 2px;
+}

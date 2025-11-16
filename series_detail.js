@@ -16,7 +16,6 @@ tabButtons.forEach(btn => {
   });
 });
 
-
 // ---------------------------
 // SERIES DATA (mock database)
 // ---------------------------
@@ -153,7 +152,7 @@ const seriesList = [
       { id: 1, user: { name: "ThronesFan", avatar: "https://randomuser.me/api/portraits/men/77.jpg" }, rating: 5, date: "2023-06-10", content: "Epic saga! Characters, politics, and dragons all in one." }
     ],
     discussions: [
-      { id: 1, title: "Most shocking death?", author: "ThronesFan", date: "2023-06-12", preview: "Ned Stark’s death still hits hard!", replies: 40, likes: 200 }
+      { id: 1, title: "Most shocking death?", author: "ThronesFan", date: "2023-06-12", preview: "Ned Stark's death still hits hard!", replies: 40, likes: 200 }
     ]
   }
 ];
@@ -166,14 +165,69 @@ const seriesId = parseInt(params.get("id"));
 const seriesData = seriesList.find(s => s.id === seriesId);
 
 // ---------------------------
+// HELPER FUNCTIONS
+// ---------------------------
+
+// Get logged-in user
+function getLoggedUser() {
+    const userJson = localStorage.getItem("user");
+    return userJson ? JSON.parse(userJson) : null;
+}
+
+// Load reviews from localStorage
+function loadStoredReviews(seriesId) {
+    const data = localStorage.getItem("series_reviews_" + seriesId);
+    return data ? JSON.parse(data) : [];
+}
+
+// Save reviews
+function saveReviews(seriesId, reviews) {
+    localStorage.setItem("series_reviews_" + seriesId, JSON.stringify(reviews));
+}
+
+// Render reviews
+function renderReviews() {
+    if (!seriesData) return;
+    
+    const reviewsList = document.getElementById("reviewsList");
+    const stored = loadStoredReviews(seriesId);
+    const allReviews = [...seriesData.reviews, ...stored];
+
+    if (allReviews.length === 0) {
+        reviewsList.innerHTML = '<p style="text-align: center; color: #888;">No reviews yet. Be the first to review!</p>';
+        return;
+    }
+
+    reviewsList.innerHTML = allReviews.map(review => `
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <img src="${review.user.avatar}" class="reviewer-avatar" alt="${review.user.name}">
+                    <span class="reviewer-name">${review.user.name}</span>
+                </div>
+                <div class="review-date">${review.date}</div>
+            </div>
+            <div class="review-rating">${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</div>
+            <p class="review-content">${review.content}</p>
+        </div>
+    `).join("");
+
+    // Update average rating
+    const avgRating = (allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length).toFixed(1);
+    document.getElementById("averageRating").textContent = avgRating;
+    document.getElementById("totalReviews").textContent = `Based on ${allReviews.length} reviews`;
+}
+
+// ---------------------------
 // POPULATE DETAILS
 // ---------------------------
 function populateSeriesDetails(data) {
   if (!data) {
-    document.querySelector(".movie-detail").innerHTML = "<h2>Series not found!</h2>";
+    document.querySelector(".movie-detail").innerHTML = "<h2 style='text-align: center; padding: 50px;'>Series not found!</h2>";
     return;
   }
 
+  document.title = `${data.title} - Cinematics`;
   document.getElementById("movieTitle").textContent = data.title;
   document.getElementById("movieYear").textContent = data.year;
   document.getElementById("movieDuration").textContent = data.duration;
@@ -202,20 +256,10 @@ function populateSeriesDetails(data) {
         </div>
       </div>`).join("");
 
-  document.getElementById("reviewsList").innerHTML =
-    data.reviews.map(r => `
-      <div class="review-card">
-        <div class="review-header">
-          <div class="reviewer-info">
-            <img src="${r.user.avatar}" class="reviewer-avatar" alt="${r.user.name}">
-            <span class="reviewer-name">${r.user.name}</span>
-          </div>
-          <div class="review-date">${r.date}</div>
-        </div>
-        <div class="review-rating">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
-        <p class="review-content">${r.content}</p>
-      </div>`).join("");
+  // Render reviews
+  renderReviews();
 
+  // Render discussions
   document.getElementById("discussionsList").innerHTML =
     data.discussions.map(d => `
       <div class="discussion-card">
@@ -225,26 +269,157 @@ function populateSeriesDetails(data) {
         </div>
         <p class="discussion-preview">${d.preview}</p>
         <div class="discussion-stats">
-          <span>${d.replies} replies</span>
-          <span>${d.likes} likes</span>
+          <span>💬 ${d.replies} replies</span>
+          <span>❤️ ${d.likes} likes</span>
         </div>
       </div>`).join("");
+}
+
+// ---------------------------
+// REVIEW MODAL HANDLERS
+// ---------------------------
+
+// Open review modal
+document.querySelector(".review-btn").addEventListener("click", () => {
+    const user = getLoggedUser();
+    if (!user) {
+        alert("You must be logged in to write a review. Please login or register.");
+        window.location.href = "login.html";
+        return;
+    }
+    document.getElementById("reviewModal").classList.remove("hidden");
+});
+
+// Close review modal
+document.getElementById("closeReviewBtn").addEventListener("click", () => {
+    document.getElementById("reviewModal").classList.add("hidden");
+    document.getElementById("reviewText").value = "";
+});
+
+// Submit review
+document.getElementById("submitReviewBtn").addEventListener("click", () => {
+    const user = getLoggedUser();
+    if (!user) {
+        alert("Login required.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const rating = parseInt(document.getElementById("reviewRating").value);
+    const content = document.getElementById("reviewText").value.trim();
+
+    if (content === "") {
+        alert("Review cannot be empty.");
+        return;
+    }
+
+    if (content.length < 10) {
+        alert("Review must be at least 10 characters long.");
+        return;
+    }
+
+    // Build new review
+    const newReview = {
+        id: Date.now(),
+        user: {
+            name: user.username || user.name || "Anonymous",
+            avatar: user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.username || 'User')}&background=667eea&color=fff`
+        },
+        rating,
+        date: new Date().toISOString().split("T")[0],
+        content
+    };
+
+    const existing = loadStoredReviews(seriesId);
+    existing.push(newReview);
+    saveReviews(seriesId, existing);
+
+    // Refresh UI
+    renderReviews();
+
+    // Close modal and reset
+    document.getElementById("reviewModal").classList.add("hidden");
+    document.getElementById("reviewText").value = "";
+    
+    // Show success message
+    alert("✓ Review submitted successfully!");
+});
+
+// ---------------------------
+// WATCHLIST & TRAILER BUTTONS
+// ---------------------------
+function initializeButtons() {
+    // Watchlist button
+    const watchlistBtn = document.querySelector(".watchlist-btn");
+    if (watchlistBtn) {
+        // Check if already in watchlist
+        const watchlist = JSON.parse(localStorage.getItem("series_watchlist") || "[]");
+        const isInWatchlist = watchlist.includes(seriesId);
+        
+        if (isInWatchlist) {
+            watchlistBtn.classList.add("in-watchlist");
+            watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
+        }
+
+        watchlistBtn.addEventListener("click", () => {
+            const user = getLoggedUser();
+            if (!user) {
+                alert("Please login to add to watchlist!");
+                return;
+            }
+
+            let watchlist = JSON.parse(localStorage.getItem("series_watchlist") || "[]");
+            const index = watchlist.indexOf(seriesId);
+            
+            if (index > -1) {
+                // Remove from watchlist
+                watchlist.splice(index, 1);
+                watchlistBtn.classList.remove("in-watchlist");
+                watchlistBtn.innerHTML = '<span class="icon">+</span> Add to Watchlist';
+            } else {
+                // Add to watchlist
+                watchlist.push(seriesId);
+                watchlistBtn.classList.add("in-watchlist");
+                watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
+            }
+            
+            localStorage.setItem("series_watchlist", JSON.stringify(watchlist));
+        });
+    }
+
+    // Trailer button
+    const trailerBtn = document.querySelector(".watch-btn");
+    if (trailerBtn) {
+        trailerBtn.addEventListener("click", () => {
+            alert(`Opening trailer for "${seriesData.title}"...\n\nTrailer feature coming soon!`);
+            // In a real app, you would open a YouTube embed or video player
+        });
+    }
+
+    // Discussion button
+    const discussionBtn = document.querySelector(".discussion-btn");
+    if (discussionBtn) {
+        discussionBtn.addEventListener("click", () => {
+            const user = getLoggedUser();
+            if (!user) {
+                alert("Please login to start a discussion!");
+                window.location.href = "login.html";
+                return;
+            }
+            alert("Discussion feature coming soon!");
+            // In a real app, open a modal or redirect to discussion creation page
+        });
+    }
 }
 
 // ---------------------------
 // INITIALIZE PAGE
 // ---------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  populateSeriesDetails(seriesData);
-
-  const watchlistBtn = document.querySelector(".watchlist-btn");
-  watchlistBtn.addEventListener("click", () => {
-    const isIn = watchlistBtn.classList.toggle("in-watchlist");
-    watchlistBtn.innerHTML = isIn
-      ? '<span class="icon">✓</span> In Watchlist'
-      : '<span class="icon">+</span> Add to Watchlist';
-  });
-
-  const trailerBtn = document.querySelector(".watch-btn");
-  trailerBtn.addEventListener("click", () => alert("Opening trailer..."));
+    console.log("Series Detail Page Loaded");
+    console.log("Series ID:", seriesId);
+    console.log("Series Data:", seriesData);
+    
+    populateSeriesDetails(seriesData);
+    initializeButtons();
 });

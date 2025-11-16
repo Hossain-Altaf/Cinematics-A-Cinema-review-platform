@@ -70,7 +70,7 @@ const movies = [
                 user: { name: "HeroFan", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
                 rating: 5,
                 date: "2023-09-20",
-                content: "Heath Ledger’s Joker is legendary!"
+                content: "Heath Ledger's Joker is legendary!"
             }
         ],
         discussions: [
@@ -79,13 +79,12 @@ const movies = [
                 title: "Was Joker right?",
                 author: "ComicNerd",
                 date: "2023-09-25",
-                preview: "Let's debate Joker’s moral chaos theory...",
+                preview: "Let's debate Joker's moral chaos theory...",
                 replies: 30,
                 likes: 210
             }
         ]
     },
-
     {
         id: 3,
         title: "Interstellar",
@@ -94,10 +93,11 @@ const movies = [
         rating: "8.6/10",
         poster: "https://www.thequeenshall.net/sites/default/files/styles/qh_banner/public/images/interstellar_web.jpg?itok=AJbFps_U",
         genres: ["Adventure", "Drama", "Sci-Fi"],
-        plot: "A team of explorers travels through a wormhole to ensure humanity’s survival.",
-        cast: [{ name: "Matthew McConaughey", role: "Cooper", image: "https://m.media-amazon.com/images/M/MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTcwMTk2NjY4Nw@@._V1_.jpg" },
+        plot: "A team of explorers travels through a wormhole to ensure humanity's survival.",
+        cast: [
+            { name: "Matthew McConaughey", role: "Cooper", image: "https://m.media-amazon.com/images/M/MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTcwMTk2NjY4Nw@@._V1_.jpg" },
             { name: "Anne Hathaway", role: "Brand", image: "https://upload.wikimedia.org/wikipedia/commons/0/03/Anne_Hathaway_at_The_Apprentice_in_NYC_03_%28cropped2%29.jpg" },
-            { name: "michael Caine", role: "Professor Brand", image: "https://image.tmdb.org/t/p/w500/bVZRMlpjTAO2pJK6v90buFgVbSW.jpg" }
+            { name: "Michael Caine", role: "Professor Brand", image: "https://image.tmdb.org/t/p/w500/bVZRMlpjTAO2pJK6v90buFgVbSW.jpg" }
         ],
         crew: [{ name: "Christopher Nolan", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BNjE3NDQyOTYyMV5BMl5BanBnXkFtZTcwODcyODU2Mw@@._V1_FMjpg_UX1000_.jpg" }],
         reviews: [
@@ -115,181 +115,104 @@ const movies = [
                 title: "The 5D library scene explained",
                 author: "AstroGeek",
                 date: "2023-10-05",
-                preview: "What’s really happening inside the tesseract?",
+                preview: "What's really happening inside the tesseract?",
                 replies: 18,
                 likes: 98
             }
         ]
     },
-
     {
-    id: 4,
-    title: "Parasite",
-    year: "2019",
-    duration: "2h 12min",
-    rating: "8.6/10",
-    poster: "https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
-    genres: ["Thriller", "Drama"],
-    plot: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
-    
-    cast: [
-        { 
-            name: "Kang-ho Song", role: "Kim Ki-taek", 
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyxv7LN_UsQsIAg-MMobQ3eBwBzpk8ufwUjw&s" 
-        },
-        { 
-            name: "Sun-kyun Lee",  role: "Park Dong-ik ", 
-            image: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2023-12/231226-Lee-Sun-kyun-obit-se-1156p-99d222.jpg" 
-        },
-        { 
-            name: "So-dam Park", 
-            role: "Kim Ki-jung ", 
-            image: "https://m.media-amazon.com/images/M/MV5BNzE2ZTM1ZGUtOWM5ZC00ZDU5LWExOTUtM2E5ZGVjNDI4OWQ2XkEyXkFqcGc@._V1_.jpg" 
-        }
-    ],
-    crew: [
-        {
-            name: "Bong Joon Ho",
-            role: "Director",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxDOChXKVHVk4T8QjsHkVAgDIl6Xa0c8GXQg&s"
-        },
-    ],
-
-    reviews: [
-        {
-            id: 1,
-            user: { 
-                name: "MovieFan99", 
-                avatar: "https://randomuser.me/api/portraits/men/32.jpg" 
-            },
-            rating: 5,
-            date: "2023-11-10",
-            content: "A masterpiece of tension, symbolism, and storytelling. A must-watch."
-        }
-    ],
-
-    discussions: [
-        {
-            id: 1,
-            title: "Basement symbolism explained",
-            author: "FilmTheoryNerd",
-            date: "2023-11-12",
-            preview: "What does the hidden basement really represent?",
-            replies: 42,
-            likes: 230
-        }
-    ]
-},
-{
-    id: 5,
-    title: "Forrest Gump",
-    year: "1994",
-    duration: "2h 22min",
-    rating: "8.8/10",
-    poster: "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
-    genres: ["Drama", "Romance"],
-    plot: "The presidencies of Kennedy and Johnson, the Vietnam War, and more through the eyes of an Alabama man with a low IQ.",
-    
-    cast: [
-        {
-            name: "Tom Hanks",
-            role: "Forrest Gump",
-            image: "https://m.media-amazon.com/images/M/MV5BOWYxMzA4YWMtYWIyYy00NTE5LTljMDAtNzM1NDYyMWYwYzkwXkEyXkFqcGc@._V1_.jpg"
-        },
-        {
-            name: "Robin Wright",
-            role: "Jenny Curran",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYxV7VzBZaipZ0RRzQgIjugdsUGAHjS0KdGA&s"
-        }
-    ],
-
-    crew: [
-        {
-            name: "Robert Zemeckis",
-            role: "Director",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Robert_Zemeckis_%22The_Walk%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2821835891403%29_%28cropped%29.jpg/250px-Robert_Zemeckis_%22The_Walk%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2821835891403%29_%28cropped%29.jpg"
-        }
-    ]
-},
-{
-    id: 6,
-    title: "Avengers: Endgame",
-    year: "2019",
-    duration: "3h 1min",
-    rating: "8.4/10",
-    poster: "https://heroichollywood.com/wp-content/uploads/2019/03/Avengers-Endgame-Marvel-Studios-MCU-Captain-Marvel.jpg",
-    genres: ["Action", "Adventure", "Sci-Fi"],
-    plot: "The surviving Avengers assemble once more to reverse Thanos' actions and restore balance to the universe.",
-    
-    cast: [
-        {
-            name: "Robert Downey Jr.",
-            role: "Tony Stark / Iron Man",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmOI_ynNOoaPc00GTVTy8HSk4JNxE3nQb2sA&s"
-        },
-        {
-            name: "Chris Evans",
-            role: "Steve Rogers / Captain America",
-            image: "https://m.media-amazon.com/images/M/MV5BNzQ0YWM1ODEtZDFkYy00MGJhLTkwZDUtMzVkZjljODU3ZTRmXkEyXkFqcGc@._V1_.jpg"
-        },
-        {
-            name: "Scarlett Johansson",
-            role: "Natasha Romanoff / Black Widow",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/960px-Scarlett_Johansson-8588.jpg"
-        },
-        {
-            name: "Chris Hemsworth", 
-            role: "Thor",
-            image: "https://media.vanityfair.com/photos/63765577474812eb37ec70bc/master/w_2560%2Cc_limit/Headshot%2520-%2520credit%2520%25E2%2580%259CNational%2520Geographic%2520for%2520Disney+%25E2%2580%259D.jpg"
-        }
-
-    ],
-
-    crew: [
-        {
-            name: "Anthony Russo",
-            role: "Director",
-            image: "https://m.media-amazon.com/images/M/MV5BMTc2NjM5MTM0Ml5BMl5BanBnXkFtZTgwMTY3ODczNjM@._V1_.jpg"
-        },
-        {
-            name: "Joe Russo",
-            role: "Director",
-            image: "https://m.media-amazon.com/images/M/MV5BMTc2NzY1NTY5OF5BMl5BanBnXkFtZTgwNjY3ODczNjM@._V1_.jpg"
-        }
-    ]
-},
-{
-    id: 7,
-    title: "Joker",
-    year: "2019",
-    duration: "2h 2min",
-    rating: "8.4/10",
-    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhpImhE0LQJh-LxF43KGMvfZ2CqKPWnO8rA&s",
-    genres: ["Crime", "Drama", "Thriller"],
-    plot: "A mentally troubled comedian embarks on a downward spiral that leads to the creation of the iconic villain, Joker.",
-    
-    cast: [
-        {
-            name: "Joaquin Phoenix",
-            role: "Arthur Fleck / Joker",
-            image: "https://m.media-amazon.com/images/M/MV5BYjFjNGYzYjEtNGE0Ny00M2IyLTk5ZmYtODE3ZGFkMzVjYmNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-        },
-        {
-            name: "Robert De Niro",
-            role: "Murray Franklin",
-            image: "https://m.media-amazon.com/images/M/MV5BMjAwNDU3MzcyOV5BMl5BanBnXkFtZTcwMjc0MTIxMw@@._V1_FMjpg_UX1000_.jpg"
-        }
-    ],
-
-    crew: [
-        {
-            name: "Todd Phillips",
-            role: "Director",
-            image: "https://goldenglobes.com/wp-content/uploads/2023/10/Todd_Phillips20190919_0.jpg"
-        }
-    ]
-}
-
+        id: 4,
+        title: "Parasite",
+        year: "2019",
+        duration: "2h 12min",
+        rating: "8.6/10",
+        poster: "https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+        genres: ["Thriller", "Drama"],
+        plot: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+        cast: [
+            { name: "Kang-ho Song", role: "Kim Ki-taek", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyxv7LN_UsQsIAg-MMobQ3eBwBzpk8ufwUjw&s" },
+            { name: "Sun-kyun Lee", role: "Park Dong-ik", image: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2023-12/231226-Lee-Sun-kyun-obit-se-1156p-99d222.jpg" },
+            { name: "So-dam Park", role: "Kim Ki-jung", image: "https://m.media-amazon.com/images/M/MV5BNzE2ZTM1ZGUtOWM5ZC00ZDU5LWExOTUtM2E5ZGVjNDI4OWQ2XkEyXkFqcGc@._V1_.jpg" }
+        ],
+        crew: [{ name: "Bong Joon Ho", role: "Director", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxDOChXKVHVk4T8QjsHkVAgDIl6Xa0c8GXQg&s" }],
+        reviews: [
+            {
+                id: 1,
+                user: { name: "MovieFan99", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+                rating: 5,
+                date: "2023-11-10",
+                content: "A masterpiece of tension, symbolism, and storytelling. A must-watch."
+            }
+        ],
+        discussions: [
+            {
+                id: 1,
+                title: "Basement symbolism explained",
+                author: "FilmTheoryNerd",
+                date: "2023-11-12",
+                preview: "What does the hidden basement really represent?",
+                replies: 42,
+                likes: 230
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "Forrest Gump",
+        year: "1994",
+        duration: "2h 22min",
+        rating: "8.8/10",
+        poster: "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+        genres: ["Drama", "Romance"],
+        plot: "The presidencies of Kennedy and Johnson, the Vietnam War, and more through the eyes of an Alabama man with a low IQ.",
+        cast: [
+            { name: "Tom Hanks", role: "Forrest Gump", image: "https://m.media-amazon.com/images/M/MV5BOWYxMzA4YWMtYWIyYy00NTE5LTljMDAtNzM1NDYyMWYwYzkwXkEyXkFqcGc@._V1_.jpg" },
+            { name: "Robin Wright", role: "Jenny Curran", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYxV7VzBZaipZ0RRzQgIjugdsUGAHjS0KdGA&s" }
+        ],
+        crew: [{ name: "Robert Zemeckis", role: "Director", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Robert_Zemeckis_%22The_Walk%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2821835891403%29_%28cropped%29.jpg/250px-Robert_Zemeckis_%22The_Walk%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2821835891403%29_%28cropped%29.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 6,
+        title: "Avengers: Endgame",
+        year: "2019",
+        duration: "3h 1min",
+        rating: "8.4/10",
+        poster: "https://heroichollywood.com/wp-content/uploads/2019/03/Avengers-Endgame-Marvel-Studios-MCU-Captain-Marvel.jpg",
+        genres: ["Action", "Adventure", "Sci-Fi"],
+        plot: "The surviving Avengers assemble once more to reverse Thanos' actions and restore balance to the universe.",
+        cast: [
+            { name: "Robert Downey Jr.", role: "Tony Stark / Iron Man", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmOI_ynNOoaPc00GTVTy8HSk4JNxE3nQb2sA&s" },
+            { name: "Chris Evans", role: "Steve Rogers / Captain America", image: "https://m.media-amazon.com/images/M/MV5BNzQ0YWM1ODEtZDFkYy00MGJhLTkwZDUtMzVkZjljODU3ZTRmXkEyXkFqcGc@._V1_.jpg" },
+            { name: "Scarlett Johansson", role: "Natasha Romanoff / Black Widow", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/960px-Scarlett_Johansson-8588.jpg" },
+            { name: "Chris Hemsworth", role: "Thor", image: "https://media.vanityfair.com/photos/63765577474812eb37ec70bc/master/w_2560%2Cc_limit/Headshot%2520-%2520credit%2520%25E2%2580%259CNational%2520Geographic%2520for%2520Disney+%25E2%2580%259D.jpg" }
+        ],
+        crew: [
+            { name: "Anthony Russo", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BMTc2NjM5MTM0Ml5BMl5BanBnXkFtZTgwMTY3ODczNjM@._V1_.jpg" },
+            { name: "Joe Russo", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BMTc2NzY1NTY5OF5BMl5BanBnXkFtZTgwNjY3ODczNjM@._V1_.jpg" }
+        ],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 7,
+        title: "Joker",
+        year: "2019",
+        duration: "2h 2min",
+        rating: "8.4/10",
+        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhpImhE0LQJh-LxF43KGMvfZ2CqKPWnO8rA&s",
+        genres: ["Crime", "Drama", "Thriller"],
+        plot: "A mentally troubled comedian embarks on a downward spiral that leads to the creation of the iconic villain, Joker.",
+        cast: [
+            { name: "Joaquin Phoenix", role: "Arthur Fleck / Joker", image: "https://m.media-amazon.com/images/M/MV5BYjFjNGYzYjEtNGE0Ny00M2IyLTk5ZmYtODE3ZGFkMzVjYmNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" },
+            { name: "Robert De Niro", role: "Murray Franklin", image: "https://m.media-amazon.com/images/M/MV5BMjAwNDU3MzcyOV5BMl5BanBnXkFtZTcwMjc0MTIxMw@@._V1_FMjpg_UX1000_.jpg" }
+        ],
+        crew: [{ name: "Todd Phillips", role: "Director", image: "https://goldenglobes.com/wp-content/uploads/2023/10/Todd_Phillips20190919_0.jpg" }],
+        reviews: [],
+        discussions: []
+    }
 ];
 
 // ---------------------------
@@ -300,95 +223,10 @@ const movieId = parseInt(params.get("id"));
 const movieData = movies.find(m => m.id === movieId);
 
 // ---------------------------
-// POPULATE MOVIE DETAILS
-// ---------------------------
-function populateMovieDetails(data) {
-    if (!data) {
-        document.querySelector(".movie-detail").innerHTML = `<h2>Movie not found!</h2>`;
-        return;
-    }
-
-    document.getElementById("movieTitle").textContent = data.title;
-    document.getElementById("movieYear").textContent = data.year;
-    document.getElementById("movieDuration").textContent = data.duration;
-    document.getElementById("movieRating").textContent = data.rating;
-    document.getElementById("moviePoster").src = data.poster;
-    document.getElementById("moviePlot").textContent = data.plot;
-
-    const genresContainer = document.getElementById("movieGenres");
-    genresContainer.innerHTML = data.genres.map(g => `<span class="genre-tag">${g}</span>`).join("");
-
-    const castList = document.getElementById("castList");
-    castList.innerHTML = data.cast
-        .map(
-            person => `
-        <div class="cast-card">
-            <img src="${person.image}" alt="${person.name}" class="person-image">
-            <div class="person-info">
-                <h4 class="person-name">${person.name}</h4>
-                <span class="person-role">${person.role}</span>
-            </div>
-        </div>`
-        )
-        .join("");
-
-    const crewList = document.getElementById("crewList");
-    crewList.innerHTML = data.crew
-        .map(
-            person => `
-        <div class="crew-card">
-            <img src="${person.image}" alt="${person.name}" class="person-image">
-            <div class="person-info">
-                <h4 class="person-name">${person.name}</h4>
-                <span class="person-role">${person.role}</span>
-            </div>
-        </div>`
-        )
-        .join("");
-
-    const reviewsList = document.getElementById("reviewsList");
-    reviewsList.innerHTML = data.reviews
-        .map(
-            review => `
-        <div class="review-card">
-            <div class="review-header">
-                <div class="reviewer-info">
-                    <img src="${review.user.avatar}" alt="${review.user.name}" class="reviewer-avatar">
-                    <span class="reviewer-name">${review.user.name}</span>
-                </div>
-                <div class="review-date">${review.date}</div>
-            </div>
-            <div class="review-rating">${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</div>
-            <p class="review-content">${review.content}</p>
-        </div>`
-        )
-        .join("");
-
-    const discussionsList = document.getElementById("discussionsList");
-    discussionsList.innerHTML = data.discussions
-        .map(
-            discussion => `
-        <div class="discussion-card">
-            <div class="discussion-header">
-                <h3 class="discussion-title">${discussion.title}</h3>
-                <div class="discussion-meta">Started by ${discussion.author} • ${discussion.date}</div>
-            </div>
-            <p class="discussion-preview">${discussion.preview}</p>
-            <div class="discussion-stats">
-                <span>${discussion.replies} replies</span>
-                <span>${discussion.likes} likes</span>
-            </div>
-        </div>`
-        )
-        .join("");
-}
-
-
-// ---------------------------
-// REVIEW SYSTEM
+// HELPER FUNCTIONS
 // ---------------------------
 
-// Get user
+// Get logged-in user
 function getLoggedUser() {
     const userJson = localStorage.getItem("user");
     return userJson ? JSON.parse(userJson) : null;
@@ -396,27 +234,35 @@ function getLoggedUser() {
 
 // Load reviews from localStorage
 function loadStoredReviews(movieId) {
-    const data = localStorage.getItem("reviews_" + movieId);
+    const data = localStorage.getItem("movie_reviews_" + movieId);
     return data ? JSON.parse(data) : [];
 }
 
-// Save reviews
+// Save reviews to localStorage
 function saveReviews(movieId, reviews) {
-    localStorage.setItem("reviews_" + movieId, JSON.stringify(reviews));
+    localStorage.setItem("movie_reviews_" + movieId, JSON.stringify(reviews));
 }
 
-// Render reviews
-function renderReviews(movieId, builtInReviews) {
+// Render all reviews (built-in + user-submitted)
+function renderReviews() {
+    if (!movieData) return;
+    
     const reviewsList = document.getElementById("reviewsList");
-
     const stored = loadStoredReviews(movieId);
-    const all = [...builtInReviews, ...stored];
+    const allReviews = [...movieData.reviews, ...stored];
 
-    reviewsList.innerHTML = all.map(review => `
+    if (allReviews.length === 0) {
+        reviewsList.innerHTML = '<p style="text-align: center; color: #888; padding: 20px;">No reviews yet. Be the first to review!</p>';
+        document.getElementById("averageRating").textContent = "N/A";
+        document.getElementById("totalReviews").textContent = "No reviews yet";
+        return;
+    }
+
+    reviewsList.innerHTML = allReviews.map(review => `
         <div class="review-card">
             <div class="review-header">
                 <div class="reviewer-info">
-                    <img src="${review.user.avatar}" class="reviewer-avatar">
+                    <img src="${review.user.avatar}" class="reviewer-avatar" alt="${review.user.name}">
                     <span class="reviewer-name">${review.user.name}</span>
                 </div>
                 <div class="review-date">${review.date}</div>
@@ -425,21 +271,106 @@ function renderReviews(movieId, builtInReviews) {
             <p class="review-content">${review.content}</p>
         </div>
     `).join("");
+
+    // Update average rating
+    const avgRating = (allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length).toFixed(1);
+    const fullStars = Math.floor(avgRating);
+    const hasHalfStar = (avgRating - fullStars) >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    
+    const starsHTML = "★".repeat(fullStars) + (hasHalfStar ? "½" : "") + "☆".repeat(emptyStars);
+    
+    document.getElementById("averageRating").textContent = avgRating;
+    document.querySelector(".stars").textContent = starsHTML;
+    document.getElementById("totalReviews").textContent = `Based on ${allReviews.length} ${allReviews.length === 1 ? 'review' : 'reviews'}`;
 }
 
-// Handle review button
+// ---------------------------
+// POPULATE MOVIE DETAILS
+// ---------------------------
+function populateMovieDetails(data) {
+    if (!data) {
+        document.querySelector(".movie-detail").innerHTML = `<h2 style="text-align: center; padding: 50px;">Movie not found!</h2>`;
+        return;
+    }
+
+    document.title = `${data.title} - Cinematics`;
+    document.getElementById("movieTitle").textContent = data.title;
+    document.getElementById("movieYear").textContent = data.year;
+    document.getElementById("movieDuration").textContent = data.duration;
+    document.getElementById("movieRating").textContent = data.rating;
+    document.getElementById("moviePoster").src = data.poster;
+    document.getElementById("moviePlot").textContent = data.plot;
+
+    document.getElementById("movieGenres").innerHTML = 
+        data.genres.map(g => `<span class="genre-tag">${g}</span>`).join("");
+
+    document.getElementById("castList").innerHTML = data.cast
+        .map(person => `
+            <div class="cast-card">
+                <img src="${person.image}" alt="${person.name}" class="person-image">
+                <div class="person-info">
+                    <h4 class="person-name">${person.name}</h4>
+                    <span class="person-role">${person.role}</span>
+                </div>
+            </div>
+        `).join("");
+
+    document.getElementById("crewList").innerHTML = data.crew
+        .map(person => `
+            <div class="crew-card">
+                <img src="${person.image}" alt="${person.name}" class="person-image">
+                <div class="person-info">
+                    <h4 class="person-name">${person.name}</h4>
+                    <span class="person-role">${person.role}</span>
+                </div>
+            </div>
+        `).join("");
+
+    // Render reviews
+    renderReviews();
+
+    // Render discussions
+    const discussionsList = document.getElementById("discussionsList");
+    if (data.discussions && data.discussions.length > 0) {
+        discussionsList.innerHTML = data.discussions
+            .map(discussion => `
+                <div class="discussion-card">
+                    <div class="discussion-header">
+                        <h3 class="discussion-title">${discussion.title}</h3>
+                        <div class="discussion-meta">Started by ${discussion.author} • ${discussion.date}</div>
+                    </div>
+                    <p class="discussion-preview">${discussion.preview}</p>
+                    <div class="discussion-stats">
+                        <span>💬 ${discussion.replies} replies</span>
+                        <span>❤️ ${discussion.likes} likes</span>
+                    </div>
+                </div>
+            `).join("");
+    } else {
+        discussionsList.innerHTML = '<p style="text-align: center; color: #888; padding: 20px;">No discussions yet.</p>';
+    }
+}
+
+// ---------------------------
+// REVIEW MODAL HANDLERS
+// ---------------------------
+
+// Open review modal
 document.querySelector(".review-btn").addEventListener("click", () => {
     const user = getLoggedUser();
     if (!user) {
-        alert("You must be logged in to write a review.");
+        alert("You must be logged in to write a review. Please login or register.");
+        window.location.href = "login.html";
         return;
     }
     document.getElementById("reviewModal").classList.remove("hidden");
 });
 
-// Close modal
+// Close review modal
 document.getElementById("closeReviewBtn").addEventListener("click", () => {
     document.getElementById("reviewModal").classList.add("hidden");
+    document.getElementById("reviewText").value = "";
 });
 
 // Submit review
@@ -447,6 +378,7 @@ document.getElementById("submitReviewBtn").addEventListener("click", () => {
     const user = getLoggedUser();
     if (!user) {
         alert("Login required.");
+        window.location.href = "login.html";
         return;
     }
 
@@ -458,53 +390,114 @@ document.getElementById("submitReviewBtn").addEventListener("click", () => {
         return;
     }
 
+    if (content.length < 10) {
+        alert("Review must be at least 10 characters long.");
+        return;
+    }
+
     // Build new review
     const newReview = {
         id: Date.now(),
         user: {
-            name: user.name,
-            avatar: user.avatar || "https://i.pravatar.cc/100?u=" + user.name
+            name: user.username || user.name || "Anonymous",
+            avatar: user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.username || 'User')}&background=667eea&color=fff`
         },
         rating,
         date: new Date().toISOString().split("T")[0],
         content
     };
 
+    // Save to localStorage
     const existing = loadStoredReviews(movieId);
     existing.push(newReview);
     saveReviews(movieId, existing);
 
     // Refresh UI
-    renderReviews(movieId, movieData.reviews);
+    renderReviews();
 
-    // Close modal
+    // Close modal and reset
     document.getElementById("reviewModal").classList.add("hidden");
     document.getElementById("reviewText").value = "";
+    
+    // Show success message
+    alert("✓ Review submitted successfully!");
 });
 
+// ---------------------------
+// WATCHLIST & TRAILER BUTTONS
+// ---------------------------
+function initializeButtons() {
+    // Watchlist button
+    const watchlistBtn = document.querySelector(".watchlist-btn");
+    if (watchlistBtn) {
+        // Check if already in watchlist
+        const watchlist = JSON.parse(localStorage.getItem("movie_watchlist") || "[]");
+        const isInWatchlist = watchlist.includes(movieId);
+        
+        if (isInWatchlist) {
+            watchlistBtn.classList.add("in-watchlist");
+            watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
+        }
+
+        watchlistBtn.addEventListener("click", () => {
+            const user = getLoggedUser();
+            if (!user) {
+                alert("Please login to add to watchlist!");
+                window.location.href = "login.html";
+                return;
+            }
+
+            let watchlist = JSON.parse(localStorage.getItem("movie_watchlist") || "[]");
+            const index = watchlist.indexOf(movieId);
+            
+            if (index > -1) {
+                // Remove from watchlist
+                watchlist.splice(index, 1);
+                watchlistBtn.classList.remove("in-watchlist");
+                watchlistBtn.innerHTML = '<span class="icon">+</span> Add to Watchlist';
+            } else {
+                // Add to watchlist
+                watchlist.push(movieId);
+                watchlistBtn.classList.add("in-watchlist");
+                watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
+            }
+            
+            localStorage.setItem("movie_watchlist", JSON.stringify(watchlist));
+        });
+    }
+
+    // Trailer button
+    const watchBtn = document.querySelector(".watch-btn");
+    if (watchBtn) {
+        watchBtn.addEventListener("click", () => {
+            alert(`Opening trailer for "${movieData.title}"...\n\nTrailer feature coming soon!`);
+            // In a real app, you would open a YouTube embed or video player
+        });
+    }
+
+    // Discussion button
+    const discussionBtn = document.querySelector(".discussion-btn");
+    if (discussionBtn) {
+        discussionBtn.addEventListener("click", () => {
+            const user = getLoggedUser();
+            if (!user) {
+                alert("Please login to start a discussion!");
+                window.location.href = "login.html";
+                return;
+            }
+            alert("Discussion feature coming soon!");
+        });
+    }
+}
 
 // ---------------------------
 // INITIALIZE PAGE
 // ---------------------------
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Movie Detail Page Loaded");
+    console.log("Movie ID:", movieId);
+    console.log("Movie Data:", movieData);
+    
     populateMovieDetails(movieData);
-
-    // Watchlist toggle
-    const watchlistBtn = document.querySelector(".watchlist-btn");
-    watchlistBtn.addEventListener("click", () => {
-        const isInWatchlist = watchlistBtn.classList.contains("in-watchlist");
-        if (isInWatchlist) {
-            watchlistBtn.innerHTML = '<span class="icon">+</span> Add to Watchlist';
-            watchlistBtn.classList.remove("in-watchlist");
-        } else {
-            watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
-            watchlistBtn.classList.add("in-watchlist");
-        }
-    });
-
-    // Trailer button
-    const watchBtn = document.querySelector(".watch-btn");
-    watchBtn.addEventListener("click", () => {
-        alert("Opening trailer...");
-    });
+    initializeButtons();
 });
