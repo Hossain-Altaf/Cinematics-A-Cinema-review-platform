@@ -2,22 +2,34 @@
 // DISCUSSION SECTION LOGIC
 // ---------------------------
 
-// Get all discussions for current movie
+// Get all discussions for current movie/series
 function loadDiscussions(movieId) {
-    const data = localStorage.getItem(`movie_discussions_${movieId}`);
+    // Check if it's a series or movie by checking the page URL or movieData type
+    const isSeries = window.location.href.includes('series-detail') || (typeof movieData !== 'undefined' && movieData.type === 'Series');
+    const storageKey = isSeries ? `series_discussions_${movieId}` : `movie_discussions_${movieId}`;
+    const data = localStorage.getItem(storageKey);
     return data ? JSON.parse(data) : [];
 }
 
 // Save discussions
 function saveDiscussions(movieId, discussions) {
-    localStorage.setItem(`movie_discussions_${movieId}`, JSON.stringify(discussions));
+    // Check if it's a series or movie by checking the page URL or movieData type
+    const isSeries = window.location.href.includes('series-detail') || (typeof movieData !== 'undefined' && movieData.type === 'Series');
+    const storageKey = isSeries ? `series_discussions_${movieId}` : `movie_discussions_${movieId}`;
+    localStorage.setItem(storageKey, JSON.stringify(discussions));
 }
 
 // Render discussions list
 function renderDiscussions() {
-    if (!movieData) return;
+    // Get movieId and movieData from the global scope (defined in movie-detail.js or series-detail.js)
+    if (typeof movieId === 'undefined' || typeof movieData === 'undefined') {
+        console.error('Movie data not loaded yet');
+        return;
+    }
     
     const discussionsList = document.getElementById("discussionsList");
+    if (!discussionsList) return;
+    
     const discussions = loadDiscussions(movieId);
     
     if (discussions.length === 0) {
@@ -36,6 +48,8 @@ function renderDiscussions() {
     discussionsList.innerHTML = discussions.map(discussion => {
         const totalReplies = discussion.replies ? discussion.replies.length : 0;
         const totalLikes = discussion.likes || 0;
+        const user = getLoggedUser();
+        const isLiked = discussion.likedBy && user && discussion.likedBy.includes(user.username);
         
         return `
             <div class="discussion-card" data-discussion-id="${discussion.id}">
@@ -52,7 +66,7 @@ function renderDiscussions() {
                 </div>
                 <p class="discussion-preview">${discussion.content}</p>
                 <div class="discussion-actions">
-                    <button class="discussion-action-btn like-btn ${discussion.likedBy && discussion.likedBy.includes(getLoggedUser()?.username) ? 'liked' : ''}" 
+                    <button class="discussion-action-btn like-btn ${isLiked ? 'liked' : ''}" 
                             onclick="toggleLike(${discussion.id})">
                         <span class="icon">👍</span> ${totalLikes}
                     </button>
@@ -123,6 +137,9 @@ function openDiscussionDetail(discussionId) {
     
     if (!discussion) return;
     
+    const user = getLoggedUser();
+    const isLiked = discussion.likedBy && user && discussion.likedBy.includes(user.username);
+    
     // Create modal HTML
     const modalHTML = `
         <div id="discussionModal" class="modal">
@@ -146,7 +163,7 @@ function openDiscussionDetail(discussionId) {
                             <p>${discussion.content}</p>
                         </div>
                         <div class="discussion-actions">
-                            <button class="discussion-action-btn like-btn ${discussion.likedBy && discussion.likedBy.includes(getLoggedUser()?.username) ? 'liked' : ''}" 
+                            <button class="discussion-action-btn like-btn ${isLiked ? 'liked' : ''}" 
                                     onclick="toggleLike(${discussion.id})">
                                 <span class="icon">👍</span> ${discussion.likes || 0}
                             </button>
@@ -188,26 +205,32 @@ function renderReplies(replies) {
         return '<p style="text-align: center; color: #888; padding: 20px;">No replies yet. Be the first to reply!</p>';
     }
     
-    return replies.map(reply => `
-        <div class="reply-card">
-            <div class="reply-header">
-                <img src="${reply.author.avatar}" class="reply-avatar" alt="${reply.author.name}">
-                <div class="reply-info">
-                    <strong>${reply.author.name}</strong>
-                    <span class="reply-date">${formatDate(reply.date)}</span>
+    const user = getLoggedUser();
+    
+    return replies.map(reply => {
+        const isLiked = reply.likedBy && user && reply.likedBy.includes(user.username);
+        
+        return `
+            <div class="reply-card">
+                <div class="reply-header">
+                    <img src="${reply.author.avatar}" class="reply-avatar" alt="${reply.author.name}">
+                    <div class="reply-info">
+                        <strong>${reply.author.name}</strong>
+                        <span class="reply-date">${formatDate(reply.date)}</span>
+                    </div>
+                </div>
+                <div class="reply-content">
+                    <p>${reply.content}</p>
+                </div>
+                <div class="reply-actions">
+                    <button class="reply-action-btn ${isLiked ? 'liked' : ''}" 
+                            onclick="toggleReplyLike(${reply.discussionId}, ${reply.id})">
+                        <span class="icon">👍</span> ${reply.likes || 0}
+                    </button>
                 </div>
             </div>
-            <div class="reply-content">
-                <p>${reply.content}</p>
-            </div>
-            <div class="reply-actions">
-                <button class="reply-action-btn ${reply.likedBy && reply.likedBy.includes(getLoggedUser()?.username) ? 'liked' : ''}" 
-                        onclick="toggleReplyLike(${reply.discussionId}, ${reply.id})">
-                    <span class="icon">👍</span> ${reply.likes || 0}
-                </button>
-            </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Submit reply
@@ -414,15 +437,22 @@ function submitNewDiscussion() {
 function initializeDiscussionButton() {
     const discussionBtn = document.querySelector(".discussion-btn");
     if (discussionBtn) {
-        discussionBtn.addEventListener("click", openNewDiscussionModal);
+        // Remove any existing event listeners by cloning the button
+        const newBtn = discussionBtn.cloneNode(true);
+        discussionBtn.parentNode.replaceChild(newBtn, discussionBtn);
+        
+        // Add the click event
+        newBtn.addEventListener("click", openNewDiscussionModal);
+        console.log("Discussion button initialized");
     }
 }
 
-// Update the DOMContentLoaded to include discussion initialization
-const originalDOMContentLoaded = document.querySelector('script[src="movie-detail.js"]');
-if (originalDOMContentLoaded) {
-    document.addEventListener("DOMContentLoaded", () => {
+// Auto-initialize when the script loads
+// Wait a bit to ensure movieId and movieData are defined
+setTimeout(() => {
+    if (typeof movieId !== 'undefined' && typeof movieData !== 'undefined') {
         renderDiscussions();
         initializeDiscussionButton();
-    });
-}
+        console.log("Discussion system initialized");
+    }
+}, 100)
