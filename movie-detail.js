@@ -14,6 +14,13 @@ tabButtons.forEach(button => {
             content.classList.add('hidden');
             if (content.id === `${tabId}Tab`) content.classList.remove('hidden');
         });
+        
+        // If discussions tab is clicked, ensure discussions are rendered
+        if (tabId === 'discussions') {
+            setTimeout(() => {
+                renderDiscussions();
+            }, 50);
+        }
     });
 });
 
@@ -28,6 +35,7 @@ const movies = [
         duration: "2h 28min",
         rating: "8.8/10",
         poster: "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg",
+        trailerUrl: "https://www.youtube.com/watch?v=YoHD9XEInc0",
         genres: ["Action", "Adventure", "Sci-Fi"],
         plot: "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea.",
         cast: [{ name: "Leonardo DiCaprio", role: "Cobb", image: "https://cdn.britannica.com/65/227665-050-D74A477E/American-actor-Leonardo-DiCaprio-2016.jpg" }],
@@ -41,17 +49,7 @@ const movies = [
                 content: "A masterpiece of modern cinema — every detail is brilliant!"
             }
         ],
-        discussions: [
-            {
-                id: 1,
-                title: "The ending — what really happened?",
-                author: "CinemaFan",
-                date: "2023-10-20",
-                preview: "Let's discuss that ambiguous spinning top...",
-                replies: 45,
-                likes: 123
-            }
-        ]
+        discussions: []
     },
     {
         id: 2,
@@ -60,6 +58,7 @@ const movies = [
         duration: "2h 32min",
         rating: "9.0/10",
         poster: "https://static.wikia.nocookie.net/batman/images/3/38/The_Dark_Knight_poster6.jpg/revision/latest?cb=20160504033320",
+        trailerUrl: "https://www.youtube.com/watch?v=EXeTwQWrcwY",
         genres: ["Action", "Crime", "Drama"],
         plot: "Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into anarchy.",
         cast: [{ name: "Christian Bale", role: "Bruce Wayne", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Q0zpeUW2Az4czxe9fycMRv5Zf7Nhd5JZRg&s" }],
@@ -73,17 +72,7 @@ const movies = [
                 content: "Heath Ledger's Joker is legendary!"
             }
         ],
-        discussions: [
-            {
-                id: 1,
-                title: "Was Joker right?",
-                author: "ComicNerd",
-                date: "2023-09-25",
-                preview: "Let's debate Joker's moral chaos theory...",
-                replies: 30,
-                likes: 210
-            }
-        ]
+        discussions: []
     },
     {
         id: 3,
@@ -92,6 +81,7 @@ const movies = [
         duration: "2h 49min",
         rating: "8.6/10",
         poster: "https://www.thequeenshall.net/sites/default/files/styles/qh_banner/public/images/interstellar_web.jpg?itok=AJbFps_U",
+        trailerUrl: "https://www.youtube.com/watch?v=zSWdZVtXT7E",
         genres: ["Adventure", "Drama", "Sci-Fi"],
         plot: "A team of explorers travels through a wormhole to ensure humanity's survival.",
         cast: [
@@ -109,17 +99,7 @@ const movies = [
                 content: "Mind-blowing visuals and emotional storytelling!"
             }
         ],
-        discussions: [
-            {
-                id: 1,
-                title: "The 5D library scene explained",
-                author: "AstroGeek",
-                date: "2023-10-05",
-                preview: "What's really happening inside the tesseract?",
-                replies: 18,
-                likes: 98
-            }
-        ]
+        discussions: []
     },
     {
         id: 4,
@@ -128,6 +108,7 @@ const movies = [
         duration: "2h 12min",
         rating: "8.6/10",
         poster: "https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+        trailerUrl: "https://www.youtube.com/watch?v=5xH0HfJHsaY",
         genres: ["Thriller", "Drama"],
         plot: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
         cast: [
@@ -145,17 +126,7 @@ const movies = [
                 content: "A masterpiece of tension, symbolism, and storytelling. A must-watch."
             }
         ],
-        discussions: [
-            {
-                id: 1,
-                title: "Basement symbolism explained",
-                author: "FilmTheoryNerd",
-                date: "2023-11-12",
-                preview: "What does the hidden basement really represent?",
-                replies: 42,
-                likes: 230
-            }
-        ]
+        discussions: []
     },
     {
         id: 5,
@@ -164,6 +135,7 @@ const movies = [
         duration: "2h 22min",
         rating: "8.8/10",
         poster: "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+        trailerUrl: "https://www.youtube.com/watch?v=bLvqoHBptjg",
         genres: ["Drama", "Romance"],
         plot: "The presidencies of Kennedy and Johnson, the Vietnam War, and more through the eyes of an Alabama man with a low IQ.",
         cast: [
@@ -181,6 +153,7 @@ const movies = [
         duration: "3h 1min",
         rating: "8.4/10",
         poster: "https://heroichollywood.com/wp-content/uploads/2019/03/Avengers-Endgame-Marvel-Studios-MCU-Captain-Marvel.jpg",
+        trailerUrl: "https://www.youtube.com/watch?v=TcMBFSGVi1c",
         genres: ["Action", "Adventure", "Sci-Fi"],
         plot: "The surviving Avengers assemble once more to reverse Thanos' actions and restore balance to the universe.",
         cast: [
@@ -203,6 +176,7 @@ const movies = [
         duration: "2h 2min",
         rating: "8.4/10",
         poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhpImhE0LQJh-LxF43KGMvfZ2CqKPWnO8rA&s",
+        trailerUrl: "https://www.youtube.com/watch?v=zAGVQLHvwOY",
         genres: ["Crime", "Drama", "Thriller"],
         plot: "A mentally troubled comedian embarks on a downward spiral that leads to the creation of the iconic villain, Joker.",
         cast: [
@@ -329,43 +303,7 @@ function populateMovieDetails(data) {
 
     // Render reviews
     renderReviews();
-
-    // Render discussions
-    const discussionsList = document.getElementById("discussionsList");
-    if (data.discussions && data.discussions.length > 0) {
-        discussionsList.innerHTML = data.discussions
-            .map(discussion => `
-                <div class="discussion-card">
-                    <div class="discussion-header">
-                        <h3 class="discussion-title">${discussion.title}</h3>
-                        <div class="discussion-meta">Started by ${discussion.author} • ${discussion.date}</div>
-                    </div>
-                    <p class="discussion-preview">${discussion.preview}</p>
-                    <div class="discussion-stats">
-                        <span>💬 ${discussion.replies} replies</span>
-                        <span>❤️ ${discussion.likes} likes</span>
-                    </div>
-                </div>
-            `).join("");
-    } else {
-        discussionsList.innerHTML = '<p style="text-align: center; color: #888; padding: 20px;">No discussions yet.</p>';
-    }
 }
-
-//Dicussion
-// At the end of the DOMContentLoaded event
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Movie Detail Page Loaded");
-    console.log("Movie ID:", movieId);
-    console.log("Movie Data:", movieData);
-    
-    populateMovieDetails(movieData);
-    initializeButtons();
-    
-    // Add these lines for discussions
-    renderDiscussions();
-    initializeDiscussionButton();
-});
 
 // ---------------------------
 // REVIEW MODAL HANDLERS
@@ -442,16 +380,24 @@ document.getElementById("submitReviewBtn").addEventListener("click", () => {
 // WATCHLIST & TRAILER BUTTONS
 // ---------------------------
 function initializeButtons() {
-    // Watchlist button
+    // Trailer button - Open YouTube trailer
+    const watchBtn = document.querySelector(".watch-btn");
+    if (watchBtn && movieData && movieData.trailerUrl) {
+        watchBtn.addEventListener("click", () => {
+            window.open(movieData.trailerUrl, '_blank');
+        });
+    }
+
+    // Add to To-Watch button
     const watchlistBtn = document.querySelector(".watchlist-btn");
     if (watchlistBtn) {
-        // Check if already in watchlist
-        const watchlist = JSON.parse(localStorage.getItem("movie_watchlist") || "[]");
-        const isInWatchlist = watchlist.includes(movieId);
+        // Check if already in to-watch list
+        const toWatchMovies = JSON.parse(localStorage.getItem("towatch_movies") || "[]");
+        const isInToWatch = toWatchMovies.some(movie => movie.id === movieId);
         
-        if (isInWatchlist) {
+        if (isInToWatch) {
             watchlistBtn.classList.add("in-watchlist");
-            watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
+            watchlistBtn.innerHTML = '<span class="icon">✓</span> In To-Watch';
         }
 
         watchlistBtn.addEventListener("click", () => {
@@ -462,45 +408,73 @@ function initializeButtons() {
                 return;
             }
 
-            let watchlist = JSON.parse(localStorage.getItem("movie_watchlist") || "[]");
-            const index = watchlist.indexOf(movieId);
+            let toWatchMovies = JSON.parse(localStorage.getItem("towatch_movies") || "[]");
+            const index = toWatchMovies.findIndex(movie => movie.id === movieId);
             
             if (index > -1) {
-                // Remove from watchlist
-                watchlist.splice(index, 1);
+                // Remove from to-watch
+                toWatchMovies.splice(index, 1);
                 watchlistBtn.classList.remove("in-watchlist");
                 watchlistBtn.innerHTML = '<span class="icon">+</span> Add to Watchlist';
+                alert("✓ Removed from To-Watch list!");
             } else {
-                // Add to watchlist
-                watchlist.push(movieId);
+                // Add to to-watch
+                toWatchMovies.push({
+                    id: movieId,
+                    title: movieData.title,
+                    addedDate: new Date().toISOString()
+                });
                 watchlistBtn.classList.add("in-watchlist");
-                watchlistBtn.innerHTML = '<span class="icon">✓</span> In Watchlist';
+                watchlistBtn.innerHTML = '<span class="icon">✓</span> In To-Watch';
+                alert("✓ Added to To-Watch list!");
             }
             
-            localStorage.setItem("movie_watchlist", JSON.stringify(watchlist));
+            localStorage.setItem("towatch_movies", JSON.stringify(toWatchMovies));
         });
     }
 
-    // Trailer button
-    const watchBtn = document.querySelector(".watch-btn");
-    if (watchBtn) {
-        watchBtn.addEventListener("click", () => {
-            alert(`Opening trailer for "${movieData.title}"...\n\nTrailer feature coming soon!`);
-            // In a real app, you would open a YouTube embed or video player
-        });
-    }
+    // Mark as Watched button
+    const watchedBtn = document.querySelector(".watched-btn");
+    if (watchedBtn) {
+        // Check if already marked as watched
+        const watchedMovies = JSON.parse(localStorage.getItem("watched_movies") || "[]");
+        const isWatched = watchedMovies.some(movie => movie.id === movieId);
+        
+        if (isWatched) {
+            watchedBtn.classList.add("watched");
+            watchedBtn.innerHTML = '<span class="icon">✓</span> Watched';
+        }
 
-    // Discussion button
-    const discussionBtn = document.querySelector(".discussion-btn");
-    if (discussionBtn) {
-        discussionBtn.addEventListener("click", () => {
+        watchedBtn.addEventListener("click", () => {
             const user = getLoggedUser();
             if (!user) {
-                alert("Please login to start a discussion!");
+                alert("Please login to mark as watched!");
                 window.location.href = "login.html";
                 return;
             }
-            alert("Discussion feature coming soon!");
+
+            let watchedMovies = JSON.parse(localStorage.getItem("watched_movies") || "[]");
+            const index = watchedMovies.findIndex(movie => movie.id === movieId);
+            
+            if (index > -1) {
+                // Unmark as watched
+                watchedMovies.splice(index, 1);
+                watchedBtn.classList.remove("watched");
+                watchedBtn.innerHTML = '<span class="icon">✓</span> Mark as Watched';
+                alert("✓ Removed from Watched list!");
+            } else {
+                // Mark as watched
+                watchedMovies.push({
+                    id: movieId,
+                    title: movieData.title,
+                    watchedDate: new Date().toISOString()
+                });
+                watchedBtn.classList.add("watched");
+                watchedBtn.innerHTML = '<span class="icon">✓</span> Watched';
+                alert("✓ Marked as Watched!");
+            }
+            
+            localStorage.setItem("watched_movies", JSON.stringify(watchedMovies));
         });
     }
 }
@@ -515,4 +489,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     populateMovieDetails(movieData);
     initializeButtons();
+    
+    // Initialize discussions after a short delay to ensure everything is loaded
+    setTimeout(() => {
+        if (typeof renderDiscussions === 'function') {
+            renderDiscussions();
+        }
+        if (typeof initializeDiscussionButton === 'function') {
+            initializeDiscussionButton();
+        }
+    }, 100);
 });
