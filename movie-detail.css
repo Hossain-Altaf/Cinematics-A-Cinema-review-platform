@@ -825,3 +825,101 @@ nav {
     outline: 2px solid #ffcb3b;
     outline-offset: 2px;
 }
+
+/* Add these styles to your movie-detail.css file */
+
+/* Watched Button Styles */
+.watched-btn {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: 2px solid transparent;
+}
+
+.watched-btn:hover {
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+}
+
+.watched-btn.watched {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    border: 2px solid #ffc107;
+}
+
+.watched-btn.watched:hover {
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.5);
+}
+
+.watched-btn .icon {
+    font-size: 1.2rem;
+}
+
+
+
+/* Update movie actions to handle 3 buttons */
+.movie-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #e50914 0%, #ff3838 100%);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
+}
+
+.action-btn .icon {
+    font-size: 1.2rem;
+}
+
+/* Watchlist button states */
+.watchlist-btn {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+}
+
+.watchlist-btn:hover {
+    background: linear-gradient(135deg, #0099cc 0%, #00d4ff 100%);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+}
+
+.watchlist-btn.in-watchlist {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 2px solid #667eea;
+}
+
+.watchlist-btn.in-watchlist:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .movie-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
