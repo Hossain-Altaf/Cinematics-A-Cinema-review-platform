@@ -37,7 +37,7 @@ const movies = [
         duration: "5 Seasons",
         rating: "9.5/10",
         type: "Series",
-        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx6Y7XVWvl0QWz5N6c-Z5p5z0bGFjvj3JvQQ&s",
+        poster: "https://share.google/images/mmZ0fZVh9bwF41pmX",
         genres: ["Crime", "Drama", "Thriller"],
         plot: "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family's future.",
         cast: [
@@ -117,6 +117,222 @@ const movies = [
         type: "Series",
         poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
         genres: ["Action", "Adventure", "Sci-Fi"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 6,
+        title: "Money Heist",
+        year: "2019-2023",
+        duration: "5 Seasons",
+        rating: "8.1/10",
+        type: "Series",
+        poster: "",
+        genres: ["Action", "Crime", "Thriller"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 7,
+        title: "The Witcher",
+        year: "2020-Present",
+        duration: "3 Seasons",
+        rating: "7.5/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "Warcraft"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 9,
+        title: "Dark",
+        year: "2016-2019",
+        duration: "3 Seasons",
+        rating: "8.9/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Thriller", "Adventure", "Sci-Fi","Drama","Mystery"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 10,
+        title: "Fallout",
+        year: "2024-Present",
+        duration: "1 Season",
+        rating: "8.3/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "Thriller","Sci-Fi"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 11,
+        title: "Attack on Titan",
+        year: "2015-2024",
+        duration: "5 Seasons",
+        rating: "8.9/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "Sci-Fi","Drama","Fantasy","Anime"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 12,
+        title: "Better Call Saul",
+        year: "2015-2022",
+        duration: "5 Seasons",
+        rating: "9.0/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "Crime","Drama","Thriller"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 13,
+        title: "Dexter",
+        year: "2005-2011",
+        duration: "7 Seasons",
+        rating: "8.7/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Drama", "Crime", "Mystery","Thriller"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 14,
+        title: "Death Note",
+        year: "2006-2007",
+        duration: "1 Season(37 Episodes)",
+        rating: "8.8/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "mistery","Crime","Anime"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 15,
+        title: "Panchayet",
+        year: "2020-Present",
+        duration: "3 Seasons",
+        rating: "9.0/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "Sci-Fi"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 16,
+        title: "Narcos",
+        year: "2015-2017",
+        duration: "3 Seasons",
+        rating: "8.8/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Crime", "Drama","Biography","Thriller"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 17,
+        title: "Kota factory",
+        year: "2019-Present",
+        duration: "2 Seasons",
+        rating: "9/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Drama"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 18,
+        title: "Balck Mirror",
+        year: "2011-Present",
+        duration: "6 Seasons",
+        rating: "8.7/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Adventure", "Sci-Fi","Drama","Mystery"],
         plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
         cast: [
             { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
