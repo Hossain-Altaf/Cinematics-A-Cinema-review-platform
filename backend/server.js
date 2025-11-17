@@ -15,10 +15,11 @@ app.use(express.json());
 
 // Database connection
 const db = mysql.createConnection({
-    host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'cinematics_db'
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 3306,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: 'cinematics_db'
 });
 
 db.connect((err) => {
@@ -398,20 +399,30 @@ app.get('/api/me', authenticateToken, (req, res) => {
 });
 
 // Movie routes
-app.get('/api/movies', (req, res) => {
-    const query = 'SELECT * FROM movies';
-    db.query(query, (err, results) => {
-        if (err) return res.status(500).json({ error: 'Error fetching movies' });
-        res.json(results);
-    });
-});
-
 app.get('/api/movies/:id', (req, res) => {
-    const query = 'SELECT * FROM movies WHERE id = ?';
-    db.query(query, [req.params.id], (err, results) => {
+    const movieId = req.params.id;
+
+    // Fetch movie
+    const movieQuery = 'SELECT * FROM movies WHERE id = ?';
+    db.query(movieQuery, [movieId], (err, movieResults) => {
         if (err) return res.status(500).json({ error: 'Error fetching movie' });
-        if (results.length === 0) return res.status(404).json({ error: 'Movie not found' });
-        res.json(results[0]);
+        if (movieResults.length === 0) return res.status(404).json({ error: 'Movie not found' });
+
+        const movie = movieResults[0];
+
+        // Fetch actors for this movie
+        const actorsQuery = `
+            SELECT a.* 
+            FROM actors a
+            JOIN movie_actors ma ON a.id = ma.actor_id
+            WHERE ma.movie_id = ?
+        `;
+        db.query(actorsQuery, [movieId], (err2, actors) => {
+            if (err2) return res.status(500).json({ error: 'Error fetching actors' });
+
+            movie.actors = actors; // attach actors array to movie
+            res.json(movie);
+        });
     });
 });
 

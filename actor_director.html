@@ -1,121 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Title - Cinematics</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="movie-detail.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Person Details - Cinematics</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="actor_director.css">
+<link rel="stylesheet" href="discussion.css">
 </head>
 <body>
-    <header>
-        <h1 class="app-title">Cinematics</h1>
-    </header>
-    <nav>
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#movies">Movies</a></li>
-                <li><a href="#webseries">Web Series</a></li>
-                <li><a href="#actors">Actors</a></li>
-                <li><a href="#directors">Directors</a></li>
-                <li><a href="#imdbtop">IMDb Top</a></li>
-                <li><a href="#towatch">ToWatch</a></li>
-                <li><a href="#hotnews">Hot News</a></li>
-                <li><a href="#watchlist">Watchedlist</a></li>
-                <li><a href="#genres">Genres</a></li>
-            </ul>
-        </div>
-    </nav>
+<header>
+    <h1 class="app-title">Cinematics</h1>
+</header>
 
-    <main class="movie-detail">
-        <div class="movie-hero">
-            <div class="movie-poster">
-                <img src="" alt="Movie Poster" id="moviePoster">
-            </div>
-            <div class="movie-info">
-                <h1 id="movieTitle">Actor/Director</h1>
-                <div class="movie-meta">
-                    <span id="movieYear">Year</span>
-                    <span id="movieDuration">Duration</span>
-                    <span id="movieRating">Rating</span>
-                </div>
-                <div class="movie-genres" id="movieGenres">
-                    <!-- Genres will be added here -->
-                </div>
-                <div class="movie-actions">
-                    <button class="action-btn watch-btn">
-                        <span class="icon">▶</span> Watch Trailer
-                    </button>
-                    <button class="action-btn watchlist-btn">
-                        <span class="icon">+</span> Add to Watchlist
-                    </button>
-                </div>
-                <div class="movie-plot">
-                    <h3>Plot</h3>
-                    <p id="moviePlot">Movie plot description goes here...</p>
-                </div>
-            </div>
-        </div>
+<!-- Navbar -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#webseries">Web Series</a></li>
+            <li><a href="#actors">Actors</a></li>
+            <li><a href="#directors">Directors</a></li>
+            <li><a href="#imdbtop">IMDb Top</a></li>
+            <li><a href="#towatch">ToWatch</a></li>
+            <li><a href="#hotnews">Hot News</a></li>
+            <li><a href="#watchlist">Watchedlist</a></li>
+            <li><a href="#genres">Genres</a></li>
+        </ul>
+    </div>
+</nav>
 
-        <div class="movie-tabs">
-            <button class="tab-btn active" data-tab="cast">Cast & Crew</button>
-            <button class="tab-btn" data-tab="reviews">Reviews</button>
-            <button class="tab-btn" data-tab="discussions">Discussions</button>
+<!-- Main Content -->
+<main class="person-detail">
+    <div class="person-hero">
+        <div class="person-image">
+            <img src="" alt="Person Image" id="personImage">
         </div>
-
-        <div class="tab-content" id="castTab">
-            <div class="cast-section">
-                <h3>Cast</h3>
-                <div class="cast-list" id="castList">
-                    <!-- Cast members will be added here -->
-                </div>
-            </div>
-            <div class="crew-section">
-                <h3>Crew</h3>
-                <div class="crew-list" id="crewList">
-                    <!-- Crew members will be added here -->
-                </div>
-            </div>
+        <div class="person-info">
+            <h1 id="personName">Name</h1>
+            <h3 id="personRole">Role</h3>
+            <p id="personBio">Bio goes here...</p>
         </div>
+    </div>
 
-        <div class="tab-content hidden" id="reviewsTab">
-            <div class="reviews-section">
-                <div class="review-stats">
-                    <div class="rating-big">
-                        <span id="averageRating">4.5</span>
-                        <div class="stars">★★★★½</div>
-                        <span id="totalReviews">Based on 234 reviews</span>
-                    </div>
-                </div>
-                <div class="write-review">
-                    <button class="review-btn">Write a Review</button>
-                </div>
-                <div class="reviews-list" id="reviewsList">
-                    <!-- Reviews will be added here -->
-                </div>
-            </div>
-        </div>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="worksTab">Top Works</button>
+        <button class="tab-btn" data-tab="discussionsTab">Discussions</button>
+    </div>
 
-        <div class="tab-content hidden" id="discussionsTab">
-            <div class="discussions-section">
-                <button class="discussion-btn">Start a Discussion</button>
-                <div class="discussions-list" id="discussionsList">
-                    <!-- Discussions will be added here -->
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- Works Tab -->
+    <div class="tab-content" id="worksTab">
+        <ul id="worksList"></ul>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <span>Developed by Altaf Hossain</span>
-            <a href="https://www.instagram.com/aal_taaf/" target="_blank" class="insta-link" title="Instagram">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="insta-logo" />
-                @aal_taaf
-            </a>
-        </div>
-    </footer>
+    <!-- Discussions Tab -->
+    <div class="tab-content hidden" id="discussionsTab">
+        <div id="discussionsList"></div>
+    </div>
+</main>
 
-    <script src="movie-detail.js"></script>
+<footer>
+    <div class="footer-content">
+        <span>Developed by Altaf Hossain</span>
+        <a href="https://www.instagram.com/aal_taaf/" target="_blank" class="insta-link" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="insta-logo" />
+            @aal_taaf
+        </a>
+    </div>
+</footer>
+
+<script src="actor_director.js"></script>
 </body>
 </html>

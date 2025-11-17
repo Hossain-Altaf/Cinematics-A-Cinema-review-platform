@@ -212,8 +212,238 @@ const movies = [
         crew: [{ name: "Todd Phillips", role: "Director", image: "https://goldenglobes.com/wp-content/uploads/2023/10/Todd_Phillips20190919_0.jpg" }],
         reviews: [],
         discussions: []
-    }
+    },
+  {
+    id: 8,
+    title: "Spider‑Man",
+    year: "2002",
+    duration: "2h 1min",
+    rating: "7.4/10",
+    poster: "https://m.media-amazon.com/images/M/MV5BZWM0OWVmNTEtNWVkOS00MzgyLTkyMzgtMmE2ZTZiNjY4MmFiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    genres: ["Action", "Adventure", "Sci-Fi"],
+    plot: "A shy teen bitten by a genetically-modified spider becomes Spider‑Man and battles crime in New York.",
+    cast: [
+      { name: "Tobey Maguire", role: "Peter Parker / Spider‑Man", image: "https://m.media-amazon.com/images/M/MV5BMTYwMTI5NTM2OF5BMl5BanBnXkFtZTcwODk3MDQ2Mg@@._V1_FMjpg_UX1000_.jpg" },
+      { name: "Willem Dafoe", role: "Norman Osborn / Green Goblin", image: "https://image.tmdb.org/t/p/w500/ui8e4sgZAwMPi3hzEO53jyBJF9B.jpg" }
+    ],
+    crew: [
+      { name: "Sam Raimi", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BODQ0NjI0NzkzMV5BMl5BanBnXkFtZTYwMDc0ODk1._V1_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 9,
+    title: "Iron Man",
+    year: "2008",
+    duration: "2h 6min",
+    rating: "7.9/10",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_FMjpg_UX1000_.jpg",
+    genres: ["Action", "Adventure", "Sci-Fi"],
+    plot: "Billionaire engineer Tony Stark builds a powerful suit of armor and becomes Iron Man.",
+    cast: [
+      { name: "Robert Downey Jr.", role: "Tony Stark / Iron Man", image: "https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg" },
+      { name: "Gwyneth Paltrow", role: "Pepper Potts", image: "https://m.media-amazon.com/images/M/MV5BNzIxOTQ1NTU1OV5BMl5BanBnXkFtZTcwMTQ4MDY0Nw@@._V1_FMjpg_UX1000_.jpg" }
+    ],
+    crew: [
+      { name: "Jon Favreau", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BNzBiZGI5MmMtOWEzYi00ZDgwLTg4MGEtOTBjMmE1Y2ZiNDg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  
+  {
+    id: 10,
+    title: "Nobody",
+    year: "2021",
+    duration: "1h 32min",
+    rating: "7.4/10",
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaBUJOHmiD5YjxuvXd-zJfO3Rd7ke0EUl2dQ&s",
+    genres: ["Action", "Thriller", "Crime"],
+    plot: "A quiet man’s hidden past and lethal skills emerge when his family is threatened after a home invasion.",
+    cast: [
+      { name: "Bob Odenkirk", role: "Hutch Mansell / Nobody", image: "https://m.media-amazon.com/images/M/MV5BNjc1MDBkMWEtMzNmYy00NjFjLWFmZDktMzRlYThhMGQxZDYwXkEyXkFqcGc@._V1_.jpg" },
+      { name: "Christopher Lloyd", role: "Hutch's Father", image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/ChristopherLloyd2022.jpg" }
+    ],
+    crew: [
+      { name: "Ilya Naishuller", role: "Director", image: "https://image.tmdb.org/t/p/w500/gvBwViahAMgKrrXi5RX69JZ60dY.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 11,
+    title: "Thor",
+    year: "2011",
+    duration: "1h 55min",
+    rating: "7.0/10",
+    poster: "https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_.jpg",
+    genres: ["Action", "Adventure", "Fantasy"],
+    plot: "Thor, the god of thunder, is cast out of Asgard and must prove himself worthy on Earth to reclaim his powers.",
+    cast: [
+      { name: "Chris Hemsworth", role: "Thor", image: "https://cdn.britannica.com/92/215392-050-96A4BC1D/Australian-actor-Chris-Hemsworth-2019.jpg" },
+      { name: "Natalie Portman", role: "Jane Foster", image: "https://cdn.britannica.com/86/255786-050-5A8D7B3A/actress-natalie-portman-attends-christian-dior-haute-couture-paris-fashion-week.jpg" }
+    ],
+    crew: [
+      { name: "Kenneth Branagh", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BMjI0NTQ4Mjk5Ml5BMl5BanBnXkFtZTcwMDc1NjkzNw@@._V1_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 12,
+    title: "Captain America: The First Avenger",
+    year: "2011",
+    duration: "2h 4min",
+    rating: "6.9/10",
+    poster: "https://m.media-amazon.com/images/M/MV5BNzUyM2YyY2MtNzNlMS00MWU5LTgxNjAtNzZlNmI2NjU2NDZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    genres: ["Action", "Adventure", "Sci-Fi"],
+    plot: "Steve Rogers, a rejected soldier, becomes the super-soldier Captain America during World War II.",
+    cast: [
+      { name: "Chris Evans", role: "Steve Rogers / Captain America", image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Chris_Evans_SDCC_2014.jpg" },
+      { name: "Hayley Atwell", role: "Peggy Carter", image: "https://m.media-amazon.com/images/M/MV5BYjc1YmI2N2MtYTFkYS00NzcxLTlmN2QtOWQ1OWY0MTkxNTQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" }
+    ],
+    crew: [
+      { name: "Joe Johnston", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BNzcxNDQwNzgxNV5BMl5BanBnXkFtZTYwNTQ1MTA0._V1_FMjpg_UX1000_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 13,
+    title: "The Shawshank Redemption",
+    year: "1994",
+    duration: "2h 22min",
+    rating: "9.3/10",
+    poster: "https://m.media-amazon.com/images/I/51NiGlapXlL._AC_SY679_.jpg",
+    genres: ["Drama"],
+    plot: "Two imprisoned men bond over several years, finding solace and eventual redemption through acts of common decency.",
+    cast: [
+      { name: "Tim Robbins", role: "Andy Dufresne", image: "https://m.media-amazon.com/images/M/MV5BZTY1NWZmMDQtZWU0NC00YTBjLTkzN2MtMzVlMzQyMjQ1YTQzXkEyXkFqcGc@._V1_.jpg" },
+      { name: "Morgan Freeman", role: "Ellis Boyd 'Red' Redding", image: "https://www.shutterstock.com/editorial/image-editorial/Mez5k2z7N4D4If04OTgy/440nw-390916jh.jpg" }
+    ],
+    crew: [
+      { name: "Frank Darabont", role: "Director", image: "https://resizing.flixster.com/-GSgCoF43Wz12X98K8UAbIwuW0A=/fit-in/705x460/v2/http://media.baselineresearch.com/images/280516/280516_full.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 14,
+    title: "The Godfather",
+    year: "1972",
+    duration: "2h 55min",
+    rating: "9.2/10",
+    poster: "https://www.lab111.nl/wp-content/uploads/2024/04/s-l1600.png",
+    genres: ["Crime", "Drama"],
+    plot: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    cast: [
+      { name: "Marlon Brando", role: "Don Vito Corleone", image: "https://images8.alphacoders.com/370/thumb-1920-370883.png" },
+      { name: "Al Pacino", role: "Michael Corleone", image: "https://assets-prd.ignimgs.com/2025/04/14/al-pacino-godfather-favorite-1280x720-1744647098867.jpg" }
+    ],
+    crew: [
+      { name: "Francis Ford Coppola", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BMTM5NDU3OTgyNV5BMl5BanBnXkFtZTcwMzQxODA0NA@@._V1_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 15,
+    title: "The Dark Knight",
+    year: "2008",
+    duration: "2h 32min",
+    rating: "9.0/10",
+    poster: "https://ew.com/thmb/B0w9qzmQqCZ1tumxv8cBx0aPTrQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mcddakn_ec005-2000-a3d30c1958fb442486fb1e10ba92dd17.jpg",
+    genres: ["Action", "Crime", "Drama"],
+    plot: "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+    cast: [
+      { name: "Christian Bale", role: "Bruce Wayne / Batman", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Q0zpeUW2Az4czxe9fycMRv5Zf7Nhd5JZRg&s" },
+      { name: "Heath Ledger", role: "Joker", image: "https://m.media-amazon.com/images/M/MV5BMTI2NTY0NzA4MF5BMl5BanBnXkFtZTYwMjE1MDE0._V1_FMjpg_UX1000_.jpg" }
+    ],
+    crew: [
+      { name: "Christopher Nolan", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BNjE3NDQyOTYyMV5BMl5BanBnXkFtZTcwODcyODU2Mw@@._V1_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 16,
+    title: "12 Angry Men",
+    year: "1957",
+    duration: "1h 36min",
+    rating: "9.0/10",
+    poster: "https://storage.googleapis.com/pod_public/750/262454.jpg",
+    genres: ["Crime", "Drama"],
+    plot: "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
+    cast: [
+      { name: "Henry Fonda", role: "Juror #8", image: "https://m.media-amazon.com/images/M/MV5BMTMyODAxMDE2MF5BMl5BanBnXkFtZTcwNzg4NDc3Mw@@._V1_.jpg" }
+    ],
+    crew: [
+      { name: "Sidney Lumet", role: "Director", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4iOWEZK8Bu4MD0c9oXDDsDjVlceJZl0CEg&s" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 17,
+    title: "Schindler's List",
+    year: "1993",
+    duration: "3h 15min",
+    rating: "9.0/10",
+    poster: "https://m.media-amazon.com/images/I/817R7RXH9PL._UF1000,1000_QL80_.jpg",
+    genres: ["Biography", "Drama", "History"],
+    plot: "In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce.",
+    cast: [
+      { name: "Liam Neeson", role: "Oskar Schindler", image: "https://m.media-amazon.com/images/M/MV5BMjE0Njg0MzQ0MF5BMl5BanBnXkFtZTYwNTk3OTE3._V1_.jpg" },
+      { name: "Ralph Fiennes", role: "Amon Goeth", image: "https://imgix.ranker.com/list_img_v2/2661/102661/original/ralph-fiennes-movies-and-films-and-filmography-u5?w=1200&h=630&fm=pjpg&q=80&fit=crop&dpr=1" }
+    ],
+    crew: [
+      { name: "Steven Spielberg", role: "Director", image: "https://cdn.britannica.com/56/190156-050-88A44C86/Steven-Spielberg-filming-Jurassic-Park.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 18,
+    title: "The Lord of the Rings: The Return of the King",
+    year: "2003",
+    duration: "3h 21min",
+    rating: "8.9/10",
+    poster: "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_SY679_.jpg",
+    genres: ["Action", "Adventure", "Drama"],
+    plot: "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    cast: [
+      { name: "Elijah Wood", role: "Frodo Baggins", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Elijah_Wood-D.jpg/250px-Elijah_Wood-D.jpg" },
+      { name: "Ian McKellen", role: "Gandalf", image: "https://m.media-amazon.com/images/M/MV5BMTQ2MjgyNjk3MV5BMl5BanBnXkFtZTcwNTA3NTY5Mg@@._V1_FMjpg_UX1000_.jpg" }
+    ],
+    crew: [
+      { name: "Peter Jackson", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BNTk2MzA0ZDAtMTI0Yy00NzU2LTgyYmUtMDRlOGFmYjM3NzJhXkEyXkFqcGc@._V1_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  {
+    id: 19,
+    title: "Pulp Fiction",
+    year: "1994",
+    duration: "2h 34min",
+    rating: "8.9/10",
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdX5gfR5CmXENJbuimiUvElI7YhLxOXPzmtA&s",
+    genres: ["Crime", "Drama"],
+    plot: "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    cast: [
+      { name: "John Travolta", role: "Vincent Vega", image: "https://m.media-amazon.com/images/M/MV5BNWUyNDZiMjItMjQzMy00YmQyLTliOTYtOGRkYzNhZTk5NDBiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" },
+      { name: "Samuel L. Jackson", role: "Jules Winnfield", image: "https://m.media-amazon.com/images/M/MV5BMTQ1NTQwMTYxNl5BMl5BanBnXkFtZTYwMjA1MzY1._V1_FMjpg_UX1000_.jpg" }
+    ],
+    crew: [
+      { name: "Quentin Tarantino", role: "Director", image: "https://cdn.britannica.com/81/220481-050-55413025/Quentin-Tarantino-2020.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+  }
 ];
+
+
 
 // ---------------------------
 // READ MOVIE ID FROM URL
