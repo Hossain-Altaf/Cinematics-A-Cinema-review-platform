@@ -76,6 +76,7 @@ const movies = [
         duration: "4 Seasons",
         rating: "8.7/10",
         type: "Series",
+        trailerUrl: "https://www.youtube.com/watch?v=PssKpzB0Ah0",
         poster: "https://m.media-amazon.com/images/M/MV5BN2ZmYjg1YmItNWQ4OC00YWM0LWE0ZDktYThjOTZiZjhhN2Q2XkEyXkFqcGdeQXVyNjgxNTQ3Mjk@._V1_.jpg",
         genres: ["Drama", "Fantasy", "Horror", "Mystery"],
         plot: "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces.",
@@ -358,10 +359,57 @@ function initializeButtons() {
     }
 
     // Trailer button
+   // Trailer button - Open YouTube trailer
     const watchBtn = document.querySelector(".watch-btn");
-    if (watchBtn) {
+    if (watchBtn && movieData && movieData.trailerUrl) {
         watchBtn.addEventListener("click", () => {
-            alert(`Opening trailer for "${movieData.title}"...\n\nTrailer feature coming soon!`);
+            window.open(movieData.trailerUrl, '_blank');
+        });
+    }
+
+
+     // Mark as Watched button
+    const watchedBtn = document.querySelector(".watched-btn");
+    if (watchedBtn) {
+        // Check if already marked as watched
+        const watchedMovies = JSON.parse(localStorage.getItem("watched_movies") || "[]");
+        const isWatched = watchedMovies.some(movie => movie.id === movieId);
+        
+        if (isWatched) {
+            watchedBtn.classList.add("watched");
+            watchedBtn.innerHTML = '<span class="icon">✓</span> Watched';
+        }
+
+        watchedBtn.addEventListener("click", () => {
+            const user = getLoggedUser();
+            if (!user) {
+                alert("Please login to mark as watched!");
+                window.location.href = "login.html";
+                return;
+            }
+
+            let watchedMovies = JSON.parse(localStorage.getItem("watched_movies") || "[]");
+            const index = watchedMovies.findIndex(movie => movie.id === movieId);
+            
+            if (index > -1) {
+                // Unmark as watched
+                watchedMovies.splice(index, 1);
+                watchedBtn.classList.remove("watched");
+                watchedBtn.innerHTML = '<span class="icon">✓</span> Mark as Watched';
+                alert("✓ Removed from Watched list!");
+            } else {
+                // Mark as watched
+                watchedMovies.push({
+                    id: movieId,
+                    title: movieData.title,
+                    watchedDate: new Date().toISOString()
+                });
+                watchedBtn.classList.add("watched");
+                watchedBtn.innerHTML = '<span class="icon">✓</span> Watched';
+                alert("✓ Marked as Watched!");
+            }
+            
+            localStorage.setItem("watched_movies", JSON.stringify(watchedMovies));
         });
     }
 }

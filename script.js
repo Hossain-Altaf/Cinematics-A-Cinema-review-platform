@@ -255,16 +255,69 @@ const newsData = [
         title: "Deadpool 3 Release",
         date: "November 10, 2025",
         description: "Deadpool is breaking records again...",
-        trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        trailerUrl: "https://www.youtube.com/watch?v=otOjB0Ias8o"
     },
     {
         id: 2,
         title: "Dune: Part Three",
         date: "November 08, 2025",
         description: "Villeneuve confirms part three...",
-        trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        trailerUrl: "https://variety.com/2025/film/news/dune-3-title-imax-cameras-1236448953/"
+    },
+    {
+        id: 3,
+        title: "Stranger Things: Season 5",
+        date: "November 27, 2025",
+        description: "Netfilx's most awaited series now finally...",
+        trailerUrl: "https://www.youtube.com/watch?v=vhFPHYgILN0"
+    },
+    {
+        id: 4,
+        title: "Avatar:Fire and Ash",
+        date: " December 19, 2025",
+        description: "James Cameron's Avatar sequel is set to release...",
+        trailerUrl: "https://www.youtube.com/watch?v=nb_fFj_0rq8"
+    },
+    {
+        id: 5,
+        title: "Fallout:Season 2",
+        date: "December 17, 2025",
+        description: "Amazon prime's post-apocyptic series is now...",
+        trailerUrl: "https://www.youtube.com/watch?v=ECI3eCAxRGw"
+    },
+    {
+        id: 6,
+        title: "Family Man:Season 3",
+        date: "November 21, 2025",
+        description: "Amazon prime's one of the most awaited series is upto finally release...",
+        trailerUrl: "https://www.youtube.com/watch?v=jsauQx_Fwrg"
+    },
+    {
+        id: 7,
+        title: "Tom Cruise finally won OSCAR",
+        date: "November 17, 2025",
+        description: "After 40 years of career, Tom Cruise finally won his first ever honorary Oscar...",
+        trailerUrl: "https://variety.com/2025/awards/news/tom-cruise-honorary-oscar-speech-1236583348/"
+    },
+    {
+        id: 8,
+        title: "Cristopher Nolan's upcoming movie",
+        date: "November 18, 2025",
+        description: "The maestro Cristopher Nolan is set to release his new movie ",
+        trailerUrl: "https://www.theguardian.com/film/2025/nov/14/christopher-nolan-the-odyssey-2-million-ft-imax-matt-damon"
     }
 ];
+
+function convertToEmbed(url) {
+    if (url.includes("watch?v=")) {
+        return url.replace("watch?v=", "embed/");
+    }
+    return url;
+}
+
+function isYouTube(url) {
+    return url.includes("youtube.com") || url.includes("youtu.be");
+}
 
 function renderNews() {
     const newsContainer = document.getElementById('newsContainer');
@@ -276,10 +329,32 @@ function renderNews() {
         const card = document.createElement('div');
         card.className = 'news-card';
 
+        let media;
+
+        if (isYouTube(news.trailerUrl)) {
+            // Convert to correct embed URL
+            const embedUrl = convertToEmbed(news.trailerUrl);
+
+            media = `
+                <div class="news-trailer">
+                    <iframe 
+                        src="${embedUrl}" 
+                        allowfullscreen 
+                        loading="lazy">
+                    </iframe>
+                </div>`;
+        } else {
+            // External news link
+            media = `
+                <div class="news-trailer">
+                    <a href="${news.trailerUrl}" target="_blank" class="news-link">
+                        🔗 Open Full Article
+                    </a>
+                </div>`;
+        }
+
         card.innerHTML = `
-            <div class="news-trailer">
-                <iframe src="${news.trailerUrl}" allowfullscreen loading="lazy"></iframe>
-            </div>
+            ${media}
             <div class="news-content">
                 <h3>${news.title}</h3>
                 <p>${news.date}</p>
@@ -292,3 +367,32 @@ function renderNews() {
 }
 
 document.addEventListener('DOMContentLoaded', renderNews);
+
+
+
+// function renderNews() {
+//     const newsContainer = document.getElementById('newsContainer');
+//     if (!newsContainer) return;
+
+//     newsContainer.innerHTML = '';
+
+//     newsData.forEach(news => {
+//         const card = document.createElement('div');
+//         card.className = 'news-card';
+
+//         card.innerHTML = `
+//             <div class="news-trailer">
+//                 <iframe src="${news.trailerUrl}" allowfullscreen loading="lazy"></iframe>
+//             </div>
+//             <div class="news-content">
+//                 <h3>${news.title}</h3>
+//                 <p>${news.date}</p>
+//                 <p>${news.description}</p>
+//             </div>
+//         `;
+
+//         newsContainer.appendChild(card);
+//     });
+// }
+
+// document.addEventListener('DOMContentLoaded', renderNews);
