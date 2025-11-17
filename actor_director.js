@@ -11,7 +11,7 @@ const data = {
       id: 1,
       name: "Leonardo DiCaprio",
       bio: "American actor and film producer known for intense performances in dramas and thrillers.",
-      image: "https://cdn.britannica.com/68/154868-050-7589A071/Titanic-Leonardo-DiCaprio.jpg",
+      image: "",//https://cdn.britannica.com/68/154868-050-7589A071/Titanic-Leonardo-DiCaprio.jpg
       works: [
         { title: "Inception", year: 2010, role: "Cobb" },
         { title: "The Revenant", year: 2015, role: "Hugh Glass" },
@@ -27,7 +27,7 @@ const data = {
       id: 2,
       name: "Robert Downey Jr.",
       bio: "Iconic American actor and producer, best known as Tony Stark from the Marvel Cinematic Universe.",
-      image: "https://californiamuseum.org/wp-content/uploads/robertdowneyjr_cahalloffameinductee.png",
+      image: "",//https://californiamuseum.org/wp-content/uploads/robertdowneyjr_cahalloffameinductee.png
       works: [
         { title: "Iron Man", year: 2008, role: "Tony Stark" },
         { title: "Avengers: Endgame", year: 2019, role: "Tony Stark" },
@@ -139,7 +139,7 @@ const data = {
       id: 9,
       name: "Chris Hemsworth",
       bio: "Australian actor best known for his role as Thor in the MCU.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/6/65/Chris_Hemsworth_by_Gage_Skidmore_2.jpg",
+      image: "https://share.google/TJnrqqUNcgnF9q2AE",
       works: [
         { title: "Thor", year: 2011, role: "Thor" },
         { title: "Avengers: Infinity War", year: 2018, role: "Thor" },
@@ -158,7 +158,7 @@ const data = {
       id: 1,
       name: "Christopher Nolan",
       bio: "British-American filmmaker known for complex storytelling and large-scale productions.",
-      image: "https://static01.nyt.com/images/2014/11/02/magazine/02nolan1/mag-02Nolan-t_CA1-articleLarge.jpg",
+      image: "",//https://static01.nyt.com/images/2014/11/02/magazine/02nolan1/mag-02Nolan-t_CA1-articleLarge.jpg
       works: [
         { title: "Inception", year: 2010, role: "Director" },
         { title: "The Dark Knight", year: 2008, role: "Director" },
@@ -205,16 +205,18 @@ function populateDetails(person) {
     .map(w => `<li>${w.title} (${w.year}) — ${w.role}</li>`)
     .join("");
 
+
+
   // Discussions tab
-  const discussionsList = document.getElementById("discussionsList");
-  discussionsList.innerHTML = person.discussions
-    .map(d => `
-      <div class="discussion-card">
-        <h4>${d.title}</h4>
-        <p>Started by ${d.author} • ${d.replies} replies</p>
-      </div>
-    `)
-    .join("");
+  // const discussionsList = document.getElementById("discussionsList");
+  // discussionsList.innerHTML = person.discussions
+  //   .map(d => `
+  //     <div class="discussion-card">
+  //       <h4>${d.title}</h4>
+  //       <p>Started by ${d.author} • ${d.replies} replies</p>
+  //     </div>
+  //   `)
+  //   .join("");
 }
 
 // ----------------------
