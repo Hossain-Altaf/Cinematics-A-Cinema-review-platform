@@ -341,6 +341,42 @@ const movies = [
         crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
         reviews: [],
         discussions: []
+    },
+    {
+        id: 19,
+        title: "Invincible",
+        year: "2021-Present",
+        duration: "3 Seasons",
+        rating: "8.6/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Adventure", "Sci-Fi","Drama","Superhero","Anime"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 20,
+        title: "The Boys",
+        year: "2019-Present",
+        duration: "4 Seasons",
+        rating: "8.4/10",
+        type: "Series",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        genres: ["Action", "Superhero", "Sci-Fi","Adult","Drama"],
+        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        cast: [
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
+            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+        ],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        reviews: [],
+        discussions: []
     }
 ];
 
