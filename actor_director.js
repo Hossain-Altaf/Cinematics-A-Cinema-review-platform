@@ -158,7 +158,7 @@ const data = {
       id: 1,
       name: "Christopher Nolan",
       bio: "British-American filmmaker known for complex storytelling and large-scale productions.",
-      image: "",//https://static01.nyt.com/images/2014/11/02/magazine/02nolan1/mag-02Nolan-t_CA1-articleLarge.jpg
+      image: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/xuAIuYSmsUzKlUMBFGVZaWsY3DZ.jpg",//https://static01.nyt.com/images/2014/11/02/magazine/02nolan1/mag-02Nolan-t_CA1-articleLarge.jpg
       works: [
         { title: "Inception", year: 2010, role: "Director" },
         { title: "The Dark Knight", year: 2008, role: "Director" },
