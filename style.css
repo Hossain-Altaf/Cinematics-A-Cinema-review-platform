@@ -60,6 +60,14 @@ header {
     animation: slideDown 0.5s ease-out;
 }
 
+.nav-links a.active {
+    
+    color: #58d7ed; 
+    font-weight: bold;
+    border-bottom: 2px solid #58d7ed;
+}
+
+
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
