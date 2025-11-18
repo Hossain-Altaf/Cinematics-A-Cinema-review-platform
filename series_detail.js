@@ -31,15 +31,33 @@ tabButtons.forEach(button => {
 // ---------------------------
 const movies = [
     {
+        // id: 1,
+        // title: "Breaking Bad",
+        // year: "2008-2013",
+        // duration: "5 Seasons",
+        // rating: "9.5/10",
+        // type: "Series",
+        // poster: "https://share.google/images/mmZ0fZVh9bwF41pmX",
+        // genres: ["Crime", "Drama", "Thriller"],
+        // plot: "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family's future.",
+        // cast: [
+        //     { name: "Bryan Cranston", role: "Walter White", image: "https://m.media-amazon.com/images/M/MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ1NTg1Njg@._V1_.jpg" },
+        //     { name: "Aaron Paul", role: "Jesse Pinkman", image: "https://m.media-amazon.com/images/M/MV5BMTY1OTY5NjI5NV5BMl5BanBnXkFtZTcwODA5NTk2OQ@@._V1_.jpg" }
+        // ],
+        // crew: [{ name: "Vince Gilligan", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNzY1NzY0MjAyMl5BMl5BanBnXkFtZTgwNjYyNzQ3NjE@._V1_.jpg" }],
+        // reviews: [],
+        // discussions: []
+
         id: 1,
         title: "Breaking Bad",
         year: "2008-2013",
         duration: "5 Seasons",
         rating: "9.5/10",
         type: "Series",
-        poster: "https://share.google/images/mmZ0fZVh9bwF41pmX",
+        trailerUrl: "https://www.youtube.com/watch?v=HhesaQXLuRY",
+        poster: "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
         genres: ["Crime", "Drama", "Thriller"],
-        plot: "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family's future.",
+        plot: "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine to secure his family's future.",
         cast: [
             { name: "Bryan Cranston", role: "Walter White", image: "https://m.media-amazon.com/images/M/MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ1NTg1Njg@._V1_.jpg" },
             { name: "Aaron Paul", role: "Jesse Pinkman", image: "https://m.media-amazon.com/images/M/MV5BMTY1OTY5NjI5NV5BMl5BanBnXkFtZTcwODA5NTk2OQ@@._V1_.jpg" }
@@ -55,7 +73,7 @@ const movies = [
         duration: "8 Seasons",
         rating: "9.2/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/I/91DOs0wrArL._AC_UF894,1000_QL80_.jpg",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2IzYzBiOTQtNGZmMi00NDI5LTgxMzMtN2EzZjA1NjhlOGMxXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
         genres: ["Action", "Adventure", "Drama", "Fantasy"],
         plot: "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns.",
         cast: [
@@ -133,7 +151,7 @@ const movies = [
         duration: "5 Seasons",
         rating: "8.1/10",
         type: "Series",
-        poster: "",
+        poster: "https://m.media-amazon.com/images/M/MV5BODI0ZTljYTMtODQ1NC00NmI0LTk1YWUtN2FlNDM1MDExMDlhXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_.jpg",
         genres: ["Action", "Crime", "Thriller"],
         plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
         cast: [
@@ -169,7 +187,7 @@ const movies = [
         duration: "3 Seasons",
         rating: "8.9/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://www.themoviedb.org/t/p/w1280/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
         genres: ["Thriller", "Adventure", "Sci-Fi","Drama","Mystery"],
         plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
         cast: [
@@ -377,7 +395,269 @@ const movies = [
         crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
         reviews: [],
         discussions: []
-    }
+    },
+    { 
+    id: 21,
+    title: "The Last Kingdom",
+    year: "2015–2022",
+    duration: "5 Seasons",
+    rating: "8.5/10",  // approx from IMDB :contentReference[oaicite:0]{index=0}
+    type: "Series",
+    poster: "https://www.themoviedb.org/t/p/w1280/8eJf0hxgIhE6QSxbtuNCekTddy1.jpg", // example poster
+    genres: ["History", "Action", "Drama", "War"],
+    plot: "After his parents are killed by Viking invaders, young Uhtred is raised by Danes and struggles to reclaim his birthright.",
+    cast: [
+      { name: "Alexander Dreymon", role: "Uhtred of Bebbanburg", image: "" },
+      { name: "Emily Cox", role: "Brida", image: "" }
+    ],
+    crew: [
+      { name: "Stephen Butchard", role: "Creator", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 22,
+    title: "Watchmen",
+    year: "2019",
+    duration: "1 Season",
+    rating: "8.1/10", // approximate
+    type: "Series",
+    poster: "https://www.themoviedb.org/t/p/w1280/aVURelN3pM56lFM7Dgfs5TixcIf.jpg",
+    genres: ["Drama", "Dystopia", "Superhero"],
+    plot: "In an alternate history, superheroes are outlawed and a masked vigilante investigates a conspiracy tied to the past.",
+    cast: [
+      { name: "Regina King", role: "Angela Abar / Sister Night", image: "" },
+      { name: "Jeremy Irons", role: "Adrian Veidt / Ozymandias", image: "" }
+    ],
+    crew: [
+      { name: "Damon Lindelof", role: "Creator", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 23,
+    title: "Sacred Games",
+    year: "2018–2019",
+    duration: "2 Seasons",
+    rating: "8.5/10", // rough
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/e/ef/Sacred_Games_2018.jpg",
+    genres: ["Crime", "Thriller", "Mystery"],
+    plot: "A Mumbai cop receives a tip about a crime lord which sets off a chain of events revealing corruption, power, and secrets.",
+    cast: [
+      { name: "Saif Ali Khan", role: "Sartaj Singh", image: "" },
+      { name: "Nawazuddin Siddiqui", role: "Ganesh Gaitonde", image: "" }
+    ],
+    crew: [
+      { name: "Vikramaditya Motwane", role: "Creator / Director", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 24,
+    title: "Paatal Lok",
+    year: "2020–2025",
+    duration: "2 Seasons",
+    rating: "8.3/10", // approximate
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/1/19/Paatal_Lok.jpg",
+    genres: ["Crime", "Thriller", "Neo-noir"],
+    plot: "A disillusioned cop is assigned to investigate a failed assassination attempt, uncovering a deeper conspiracy rooted in the underworld.",
+    cast: [
+      { name: "Jaideep Ahlawat", role: "Hathi Ram Chaudhary", image: "" },
+      { name: "Ishwak Singh", role: "Vishal Bhardwaj", image: "" }
+    ],
+    crew: [
+      { name: "Sudip Sharma", role: "Creator", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 25,
+    title: "Dept. Q",
+    year: "2025–Present",
+    duration: "1 Season (so far)",
+    rating: "8.2/10", // from IMDb :contentReference[oaicite:1]{index=1}
+    type: "Series",
+    poster: "https://media.netflix.com/en/only-on-netflix/81487660", // Netflix media center image page, replace with real poster URL
+    genres: ["Crime", "Thriller", "Mystery"],
+    plot: "A troubled detective leads a basement cold-case unit, solving long-lost mysteries while building a team of misfits.",
+    cast: [
+      { name: "Matthew Goode", role: "DCI Carl Morck", image: "" },
+      { name: "Kelly Macdonald", role: "Rachel Irving", image: "" }
+    ],
+    crew: [
+      { name: "Scott Frank", role: "Creator / Writer / Director", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 26,
+    title: "Vikings",
+    year: "2013–2020",
+    duration: "6 Seasons",
+    rating: "8.5/10", // approximate
+    type: "Series",
+    poster: "https://m.media-amazon.com/images/M/MV5BZTEzZjkyY2MtMjAwZS00MDE3LThiZTMtMTFkMmNlZDE5MjY2XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg", // sample from IMDb
+    genres: ["History", "Action", "Adventure", "Drama"],
+    plot: "Follows the sagas of Viking chieftains, exploring Norse mythology, war, and family rivalries.",
+    cast: [
+      { name: "Travis Fimmel", role: "Ragnar Lothbrok", image: "" },
+      { name: "Katheryn Winnick", role: "Lagertha", image: "" }
+    ],
+    crew: [
+      { name: "Michael Hirst", role: "Creator", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 27,
+    title: "Dune: Prophecy",
+    year: "TBD",
+    duration: "TBD",
+    rating: "N/A",
+    type: "Series",
+    poster: "https://via.placeholder.com/300x450?text=Dune+Prophecy", // placeholder
+    genres: ["Sci-Fi", "Adventure", "Drama"],
+    plot: "A futuristic prophecy about the desert planet and its powerful factions drives a war for control of the spice.",
+    cast: [
+      { name: "TBA", role: "TBA", image: "" }
+    ],
+    crew: [],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 28,
+    title: "Squid Game",
+    year: "2021–2025",
+    duration: "3 Seasons", // if 3rd confirmed
+    rating: "8.0/10", // from IMDb :contentReference[oaicite:2]{index=2}
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/0/0b/Squid_Game_poster.jpg",
+    genres: ["Thriller", "Drama", "Survival"],
+    plot: "Hundreds of cash-strapped contestants compete in deadly versions of childhood games for a tempting but lethal prize.",
+    cast: [
+      { name: "Lee Jung-jae", role: "Seong Gi-hun", image: "" },
+      { name: "Park Hae-soo", role: "Cho Sang-woo", image: "" }
+    ],
+    crew: [
+      { name: "Hwang Dong-hyuk", role: "Creator", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 29,
+    title: "All of Us Are Dead",
+    year: "2022–Present",
+    duration: "2 Seasons", // approximate
+    rating: "7.4/10", // approximate
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/4/40/All_of_Us_Are_Dead_poster.jpg",
+    genres: ["Horror", "Thriller", "Zombie"],
+    plot: "High school students fight for survival during a zombie outbreak while trapped in their school.",
+    cast: [
+      { name: "Yoon Chan-young", role: "Lee Cheong-san", image: "" },
+      { name: "Park Ji-hu", role: "Nam On-jo", image: "" }
+    ],
+    crew: [],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 30,
+    title: "Gen V",
+    year: "2023–Present",
+    duration: "1 Season (so far)",
+    rating: "7.5/10", // approximate
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/d/de/Gen_V_poster.jpg",
+    genres: ["Superhero", "Drama", "Action"],
+    plot: "Young superheroes at a college learn to harness their powers, deal with legacy, and face dark conspiracies.",
+    cast: [
+      { name: "Jaz Sinclair", role: "Marie Moreau", image: "" },
+      { name: "Chance Perdomo", role: "Andre Anderson", image: "" }
+    ],
+    crew: [],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 31,
+    title: "Animal Park",
+    year: "TBD",
+    duration: "TBD",
+    rating: "N/A",
+    type: "Series",
+    poster: "https://via.placeholder.com/300x450?text=Animal+Park", // placeholder
+    genres: ["Documentary", "Nature", "Family"],
+    plot: "A look into the lives of animals in a wildlife park and the keepers who care for them.",
+    cast: [],
+    crew: [],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 32,
+    title: "Ozark",
+    year: "2017–2022",
+    duration: "4 Seasons",
+    rating: "8.4/10", // approx IMDB
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/8/84/Ozark_title_card.jpg",
+    genres: ["Crime", "Drama", "Thriller"],
+    plot: "A financial planner drags his family from Chicago to the Missouri Ozarks, where he must launder money to appease a drug boss.",
+    cast: [
+      { name: "Jason Bateman", role: "Marty Byrde", image: "" },
+      { name: "Laura Linney", role: "Wendy Byrde", image: "" }
+    ],
+    crew: [],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 33,
+    title: "Penguin",
+    year: "TBD",
+    duration: "TBD",
+    rating: "N/A",
+    type: "Series",
+    poster: "https://via.placeholder.com/300x450?text=Penguin", // placeholder
+    genres: ["Crime", "Drama"],
+    plot: "A gritty tale of one of Gotham’s most notorious villains before he became the Penguin.",
+    cast: [],
+    crew: [],
+    reviews: [],
+    discussions: []
+  },
+  { 
+    id: 34,
+    title: "Loki",
+    year: "2021–2023",
+    duration: "2 Seasons",
+    rating: "8.2/10", // from IMDb :contentReference[oaicite:3]{index=3}
+    type: "Series",
+    poster: "https://upload.wikimedia.org/wikipedia/en/a/a8/Loki_%28TV_series%29_poster.jpg",
+    genres: ["Superhero", "Sci-Fi", "Adventure"],
+    plot: "The God of Mischief, Loki, travels through time and realities after escaping with the Tesseract, facing variants of himself and chaos.",
+    cast: [
+      { name: "Tom Hiddleston", role: "Loki", image: "" },
+      { name: "Owen Wilson", role: "Mobius M. Mobius", image: "" }
+    ],
+    crew: [
+      { name: "Michael Waldron", role: "Creator", image: "" }
+    ],
+    reviews: [],
+    discussions: []
+  }
+
 ];
 
 // ---------------------------
