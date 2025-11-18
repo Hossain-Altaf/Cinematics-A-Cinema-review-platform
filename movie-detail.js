@@ -414,6 +414,200 @@ const movies = [
     ],
     reviews: [],
     discussions: []
+  },
+    
+  {
+    "id": 20,
+    "title": "Gladiator",
+    "year": "2000",
+    "duration": "2h 35min",
+    "rating": "8.5/10",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_.jpg",
+    "genres": ["Action", "Adventure", "Drama"],
+    "plot": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",  
+    "cast": [
+      { "name": "Russell Crowe", "role": "Maximus Decimus Meridius", "image": "" },
+      { "name": "Joaquin Phoenix", "role": "Commodus", "image": "" }
+    ],
+    "crew": [
+      { "name": "Ridley Scott", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 21,
+    "title": "Jurassic World",
+    "year": "2015",
+    "duration": "2h 4min",
+    "rating": "6.9/10",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzBhNzlkM2UtZTQyOC00NjUyLTkzMmMtNDQ1YTM5N2NmMGE5XkEyXkFqcGc@._V1_.jpg",
+    "genres": ["Adventure", "Action", "Sci-Fi"],
+    "plot": "A new theme park built on the original site of Jurassic Park creates a genetically modified hybrid dinosaur, the Indominus Rex, which escapes containment and causes chaos.",  
+    "cast": [
+      { "name": "Chris Pratt", "role": "Owen Grady", "image": "" },
+      { "name": "Bryce Dallas Howard", "role": "Claire Dearing", "image": "" }
+    ],
+    "crew": [
+      { "name": "Colin Trevorrow", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 22,
+    "title": "Avatar",
+    "year": "2009",
+    "duration": "2h 42min",
+    "rating": "7.8/10",
+    "poster": "https://m.media-amazon.com/images/I/41kTVLeW1CL._AC_.jpg",
+    "genres": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
+    "plot": "A paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following his orders and protecting the world he feels is his home.",
+    "cast": [
+      { "name": "Sam Worthington", "role": "Jake Sully", "image": "" },
+      { "name": "Zoe Saldana", "role": "Neytiri", "image": "" }
+    ],
+    "crew": [
+      { "name": "James Cameron", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 23,
+    "title": "Deadpool",
+    "year": "2016",
+    "duration": "1h 48min",
+    "rating": "8.0/10",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/Deadpool_%282016_poster%29.png/250px-Deadpool_%282016_poster%29.png",
+    "genres": ["Action", "Adventure", "Comedy"],
+    "plot": "A wisecracking mercenary gets experimented on and becomes immortal but ugly, and sets out to track down the man who ruined his looks.",  
+    "cast": [
+      { "name": "Ryan Reynolds", "role": "Wade Wilson / Deadpool", "image": "" },
+      { "name": "Morena Baccarin", "role": "Vanessa Carlysle", "image": "" }
+    ],
+    "crew": [
+      { "name": "Tim Miller", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 24,
+    "title": "Fight Club",
+    "year": "1999",
+    "duration": "2h 19min",
+    "rating": "8.8/10",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "genres": ["Drama"],
+    "plot": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much more.",  
+    "cast": [
+      { "name": "Brad Pitt", "role": "Tyler Durden", "image": "" },
+      { "name": "Edward Norton", "role": "The Narrator", "image": "" }
+    ],
+    "crew": [
+      { "name": "David Fincher", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 25,
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": "2018",
+    "duration": "1h 57min",
+    "rating": "8.4/10",
+    "poster": "https://ae01.alicdn.com/kf/U8131aae12dae43888c7d6a79c140fa88v.jpg",
+    "genres": ["Animation", "Action", "Adventure"],
+    "plot": "Teen Miles Morales becomes the Spider-Man of his reality and must join with other spider-people from different dimensions to stop a threat for all realities.",  
+    "cast": [
+      { "name": "Shameik Moore", "role": "Miles Morales", "image": "" },
+      { "name": "Jake Johnson", "role": "Peter B. Parker", "image": "" }
+    ],
+    "crew": [
+      { "name": "Bob Persichetti", "role": "Director", "image": "" },
+      { "name": "Peter Ramsey", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 26,
+    "title": "The Matrix Reloaded",
+    "year": "2003",
+    "duration": "2h 18min",
+    "rating": "7.2/10",
+    "poster": "https://m.media-amazon.com/images/I/51EG732BV3L._AC_.jpg",
+    "genres": ["Action", "Sci-Fi"],
+    "plot": "Neo and the rebel leaders estimate that they have 72 hours until 250,000 probes discover Zion and destroy it; meanwhile, Neo must decide how he can save Trinity from a new danger.",  
+    "cast": [
+      { "name": "Keanu Reeves", "role": "Neo", "image": "" },
+      { "name": "Laurence Fishburne", "role": "Morpheus", "image": "" }
+    ],
+    "crew": [
+      { "name": "Lana Wachowski", "role": "Director", "image": "" },
+      { "name": "Lilly Wachowski", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 27,
+    "title": "The Lion King",
+    "year": "1994",
+    "duration": "1h 28min",
+    "rating": "8.5/10",
+    "poster": "https://imgc.allpostersimages.com/img/posters/trends-international-disney-the-lion-king-mufasa-and-simba_u-L-FAAQL30.jpg",
+    "genres": ["Animation", "Adventure", "Drama"],
+    "plot": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",  
+    "cast": [
+      { "name": "Matthew Broderick", "role": "Adult Simba", "image": "" },
+      { "name": "Jeremy Irons", "role": "Scar", "image": "" }
+    ],
+    "crew": [
+      { "name": "Roger Allers", "role": "Director", "image": "" },
+      { "name": "Rob Minkoff", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 28,
+    "title": "Back to the Future",
+    "year": "1985",
+    "duration": "1h 56min",
+    "rating": "8.5/10",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Back_to_the_Future.jpg/250px-Back_to_the_Future.jpg",
+    "genres": ["Adventure", "Comedy", "Sci-Fi"],
+    "plot": "Marty McFly, a teenager, is accidentally sent 30 years into the past in a time‑traveling DeLorean invented by his eccentric scientist friend Doc Brown.",  
+    "cast": [
+      { "name": "Michael J. Fox", "role": "Marty McFly", "image": "" },
+      { "name": "Christopher Lloyd", "role": "Dr. Emmett Brown", "image": "" }
+    ],
+    "crew": [
+      { "name": "Robert Zemeckis", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
+  },
+  {
+    "id": 29,
+    "title": "Guardians of the Galaxy",
+    "year": "2014",
+    "duration": "2h 1min",
+    "rating": "8.0/10",
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2ZmNjQ2MzAtNDlhNi00MmQyLWJhZDMtNmJiMjFlOWY4MzcxXkEyXkFqcGc@._V1_.jpg",
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "plot": "A group of intergalactic criminals must pull together to stop a powerful villain from destroying the universe.",  
+    "cast": [
+      { "name": "Chris Pratt", "role": "Peter Quill / Star‑Lord", "image": "" },
+      { "name": "Zoe Saldana", "role": "Gamora", "image": "" }
+    ],
+    "crew": [
+      { "name": "James Gunn", "role": "Director", "image": "" }
+    ],
+    "reviews": [],
+    "discussions": []
   }
 ];
 
