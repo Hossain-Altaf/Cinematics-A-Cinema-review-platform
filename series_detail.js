@@ -31,22 +31,6 @@ tabButtons.forEach(button => {
 // ---------------------------
 const movies = [
     {
-        // id: 1,
-        // title: "Breaking Bad",
-        // year: "2008-2013",
-        // duration: "5 Seasons",
-        // rating: "9.5/10",
-        // type: "Series",
-        // poster: "https://share.google/images/mmZ0fZVh9bwF41pmX",
-        // genres: ["Crime", "Drama", "Thriller"],
-        // plot: "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family's future.",
-        // cast: [
-        //     { name: "Bryan Cranston", role: "Walter White", image: "https://m.media-amazon.com/images/M/MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ1NTg1Njg@._V1_.jpg" },
-        //     { name: "Aaron Paul", role: "Jesse Pinkman", image: "https://m.media-amazon.com/images/M/MV5BMTY1OTY5NjI5NV5BMl5BanBnXkFtZTcwODA5NTk2OQ@@._V1_.jpg" }
-        // ],
-        // crew: [{ name: "Vince Gilligan", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNzY1NzY0MjAyMl5BMl5BanBnXkFtZTgwNjYyNzQ3NjE@._V1_.jpg" }],
-        // reviews: [],
-        // discussions: []
 
         id: 1,
         title: "Breaking Bad",
@@ -55,14 +39,14 @@ const movies = [
         rating: "9.5/10",
         type: "Series",
         trailerUrl: "https://www.youtube.com/watch?v=HhesaQXLuRY",
-        poster: "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/jzBJ8N4GrtOJJSv5WNOf3BckuD7.jpg",
         genres: ["Crime", "Drama", "Thriller"],
         plot: "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine to secure his family's future.",
         cast: [
-            { name: "Bryan Cranston", role: "Walter White", image: "https://m.media-amazon.com/images/M/MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ1NTg1Njg@._V1_.jpg" },
-            { name: "Aaron Paul", role: "Jesse Pinkman", image: "https://m.media-amazon.com/images/M/MV5BMTY1OTY5NjI5NV5BMl5BanBnXkFtZTcwODA5NTk2OQ@@._V1_.jpg" }
+            { name: "Bryan Cranston", role: "Walter White", image: "https://image.tmdb.org/t/p/original/kNyTXGkiSP8W4Gs60hF7UoxZnWN.jpg" },
+            { name: "Aaron Paul", role: "Jesse Pinkman", image: "https://image.tmdb.org/t/p/original/3lAme5nldOZT60LEH6ivsXVMHYp.jpg" }
         ],
-        crew: [{ name: "Vince Gilligan", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNzY1NzY0MjAyMl5BMl5BanBnXkFtZTgwNjYyNzQ3NjE@._V1_.jpg" }],
+        crew: [{ name: "Vince Gilligan", role: "Creator", image: "https://image.tmdb.org/t/p/original/uFh3OrBvkwKSU3N5y0XnXOhqBJz.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -73,16 +57,16 @@ const movies = [
         duration: "8 Seasons",
         rating: "9.2/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2IzYzBiOTQtNGZmMi00NDI5LTgxMzMtN2EzZjA1NjhlOGMxXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/v540zpevUheui5GWdJeQW6PfMk2.jpg",
         genres: ["Action", "Adventure", "Drama", "Fantasy"],
         plot: "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns.",
         cast: [
-            { name: "Emilia Clarke", role: "Daenerys Targaryen", image: "https://m.media-amazon.com/images/M/MV5BNjg3OTg4MDczMl5BMl5BanBnXkFtZTgwODc0NzUwNjE@._V1_.jpg" },
-            { name: "Kit Harington", role: "Jon Snow", image: "https://m.media-amazon.com/images/M/MV5BMTA4NzAyNzQwMDReQTJeQWpwZ15BbWU4MDEwNDMxNTYx._V1_.jpg" }
+            { name: "Emilia Clarke", role: "Daenerys Targaryen", image: "https://www.themoviedb.org/t/p/original/2rnAc7fAvbjgggOWvH9nqfMpCYc.jpg" },
+            { name: "Kit Harington", role: "Jon Snow", image: "https://image.tmdb.org/t/p/original/wWTG27LBVTuHhIZ96aJcrkHuy8Z.jpg" }
         ],
         crew: [
-            { name: "David Benioff", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BMjE5MTQ2Njk4MF5BMl5BanBnXkFtZTcwOTY1ODE3Mg@@._V1_.jpg" },
-            { name: "D.B. Weiss", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNzkyNDA3NTQyOV5BMl5BanBnXkFtZTcwNTE2MDE3Mg@@._V1_.jpg" }
+            { name: "David Benioff", role: "Creator", image: "https://image.tmdb.org/t/p/original/bOlW8pymCeQLfwPIvc2D1MRcUoF.jpg" },
+            { name: "D.B. Weiss", role: "Creator", image: "https://image.tmdb.org/t/p/w500/6Wt006TIQoDSSnl0YaKihfn3w7K.jpg" }
         ],
         reviews: [],
         discussions: []
@@ -95,15 +79,15 @@ const movies = [
         rating: "8.7/10",
         type: "Series",
         trailerUrl: "https://www.youtube.com/watch?v=PssKpzB0Ah0",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2ZmYjg1YmItNWQ4OC00YWM0LWE0ZDktYThjOTZiZjhhN2Q2XkEyXkFqcGdeQXVyNjgxNTQ3Mjk@._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
         genres: ["Drama", "Fantasy", "Horror", "Mystery"],
         plot: "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces.",
         cast: [
-            { name: "Millie Bobby Brown", role: "Eleven", image: "https://m.media-amazon.com/images/M/MV5BZWFhZjJhMmEtMTQ2Yy00OTk0LTlhOTgtOTRhZmI5NGZjMWZjXkEyXkFqcGc@._V1_.jpg" },
-            { name: "Finn Wolfhard", role: "Mike Wheeler", image: "https://m.media-amazon.com/images/M/MV5BYmZlYWEzNWYtNzA1ZC00OWI1LWI0NjUtNGJjMzRjYjAwZjI4XkEyXkFqcGc@._V1_.jpg" }
+            { name: "Millie Bobby Brown", role: "Eleven", image: "https://image.tmdb.org/t/p/original/cQoPC18cHBN1zYTbOy5hbpjZ5ls.jpg" },
+            { name: "Finn Wolfhard", role: "Mike Wheeler", image: "https://image.tmdb.org/t/p/original/fMCfuF7OaekBBsPSvzHSPSZgmOZ.jpg" }
         ],
         crew: [
-            { name: "The Duffer Brothers", role: "Creators", image: "https://m.media-amazon.com/images/M/MV5BYzU5MWMxNTItMjJkYi00NGM4LThlYTYtMjBlYTNiODJhNmE3XkEyXkFqcGc@._V1_.jpg" }
+            { name: "The Duffer Brothers", role: "Creators", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZUiAr9TxBNkx0CllARACiqTn0Z1FQI1ByQ&s" }
         ],
         reviews: [],
         discussions: []
@@ -115,14 +99,14 @@ const movies = [
         duration: "6 Seasons",
         rating: "8.6/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BZmY0MzBlNjctOGYxYS00NmI4LWJiOWQtZjgwMDNhMGRjODI3XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/nrjxuvdDUOTP0GXsBsVYEH0FcnD.jpg",
         genres: ["Biography", "Drama", "History"],
         plot: "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the 20th century.",
         cast: [
-            { name: "Claire Foy", role: "Queen Elizabeth II", image: "https://m.media-amazon.com/images/M/MV5BMTc5OTYzNDI3M15BMl5BanBnXkFtZTgwNDE1MzY0MjE@._V1_.jpg" },
-            { name: "Olivia Colman", role: "Queen Elizabeth II", image: "https://m.media-amazon.com/images/M/MV5BMTgyNjQxMTA0MV5BMl5BanBnXkFtZTgwMzI5NjUxMzI@._V1_.jpg" }
+            { name: "Claire Foy", role: "Queen Elizabeth II", image: "https://image.tmdb.org/t/p/original/3CIyTakCHhiR29jhtvUCGeqWI1J.jpg" },
+            { name: "Olivia Colman", role: "Queen Elizabeth II", image: "https://image.tmdb.org/t/p/original/4ZwZ66zXZyX26Kf2wfeMt1tQZQf.jpg" }
         ],
-        crew: [{ name: "Peter Morgan", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BMTM2NzQxNjkyNl5BMl5BanBnXkFtZTcwMzc1ODgyMw@@._V1_.jpg" }],
+        crew: [{ name: "Peter Morgan", role: "Creator", image: "https://image.tmdb.org/t/p/original/lEh7TWg1iwYMFfbnIREwHh8FEP6.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -133,14 +117,14 @@ const movies = [
         duration: "3 Seasons",
         rating: "8.7/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://static.posters.cz/image/750/103406.jpg",
         genres: ["Action", "Adventure", "Sci-Fi"],
         plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://image.tmdb.org/t/p/original/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg" },
+            { name: "Chris Bartlett", role: "Droid Bunty hunter", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFiThkyuAWvHJDRVq3bvu8Q8uP5w5Slqw5ew&s" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://image.tmdb.org/t/p/w500/tnx7iMVydPQXGOoLsxXl84PXtbA.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -151,14 +135,14 @@ const movies = [
         duration: "5 Seasons",
         rating: "8.1/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BODI0ZTljYTMtODQ1NC00NmI0LTk1YWUtN2FlNDM1MDExMDlhXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
         genres: ["Action", "Crime", "Thriller"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Alvaro Morte ", role: "EI Professor", image: "https://image.tmdb.org/t/p/original/4tqKtUVIMHa5nfmGw4vgHaysrXf.jpg" },
+            { name: "Ursula Corbero", role: "Tokyo", image: "https://image.tmdb.org/t/p/original/wfy2YBmaGkH5kl60y3P03tTAMMc.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Alex Pina", role: "Director", image: "https://image.tmdb.org/t/p/w500/hMKcFPRKo0I4WLBvkvppyBFDGr8.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -166,17 +150,17 @@ const movies = [
         id: 7,
         title: "The Witcher",
         year: "2020-Present",
-        duration: "3 Seasons",
+        duration: "4 Seasons",
         rating: "7.5/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://m.media-amazon.com/images/M/MV5BOTY2Yzk2ZTUtNDIwOS00ZTkzLTkyMmEtMzEyY2U2OTRmNTJkXkEyXkFqcGc@._V1_.jpg",
         genres: ["Action", "Adventure", "Warcraft"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Henry Cavill", role: "Geralt of Rivia", image: "https://image.tmdb.org/t/p/original/hErUwonrQgY5Y7RfxOfv8Fq11MB.jpg" },
+            { name: "Anya Chalotra", role: "Yennefer", image: "https://image.tmdb.org/t/p/w500/uF7OzuFm0TEYP8MkaBiQBLjuxUv.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Alex Garcia Lopez", role: "Director", image: "https://upload.wikimedia.org/wikipedia/commons/7/7c/%28ENTREVISTA%29_Cien_a%C3%B1os_de_soledad%2C_la_serie%2C_por_%C3%81lex_Garc%C3%ADa._4_%28cropped%29.png" }],
         reviews: [],
         discussions: []
     },
@@ -187,14 +171,14 @@ const movies = [
         duration: "3 Seasons",
         rating: "8.9/10",
         type: "Series",
-        poster: "https://www.themoviedb.org/t/p/w1280/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
+        poster: "https://image.tmdb.org/t/p/original/vfcYKbb5yUI1g3k0qLtc385U4EW.jpg",
         genres: ["Thriller", "Adventure", "Sci-Fi","Drama","Mystery"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "A family saga with a supernatural twist, set in a German town where the disappearance of two young children exposes the relationships among four families.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Louis Hofmann", role: "Jonas Kahnwald (Teen) / The Stranger (Adult)", image: "https://image.tmdb.org/t/p/original/uu7WRPdcq3zKbrN7rdpSRw2K8xw.jpg" },
+            { name: "Lisa Vicari", role: "Martha Nielsen (Teen) / The Female Stranger (Adult)", image: "https://image.tmdb.org/t/p/w500/vgcvazU9vTHBrWacGc5lGKUNECz.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Baran Bo Odar", role: "Director", image: "https://image.tmdb.org/t/p/w500/3CfxoYPDPgFZ6jJMBOXCO5zhhEQ.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -205,14 +189,14 @@ const movies = [
         duration: "1 Season",
         rating: "8.3/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/AnsSKR9LuK0T9bAOcPVA3PUvyWj.jpg",
         genres: ["Action", "Adventure", "Thriller","Sci-Fi"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "In a future, post-apocalyptic Los Angeles brought about by nuclear decimation, citizens must live in underground bunkers to protect themselves from radiation, mutants and bandits.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Ella Purnell", role: "Lucy Maclean", image: "https://image.tmdb.org/t/p/original/eZB4GA4GtiJGCmyFoNtMihxr1gg.jpg" },
+            { name: "Aaron Moten", role: "Maximus", image: "https://image.tmdb.org/t/p/w500/h2CJjnDEy2nCbCy6dWzXLmZ4p47.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Daniel Gray Longino", role: "Director", image: "https://image.tmdb.org/t/p/w500/r1nYCNbmwTElvvHbSFNpLT1JbuN.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -223,14 +207,14 @@ const movies = [
         duration: "5 Seasons",
         rating: "8.9/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://media.themoviedb.org/t/p/w500/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
         genres: ["Action", "Adventure", "Sci-Fi","Drama","Fantasy","Anime"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "After his hometown is destroyed and is traumatized, young Eren Jaeger vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Yūki Kaji", role: "Eren Yeager", image: "https://image.tmdb.org/t/p/w500/8wKdPV11IwowfwoqGqMMNt9hmp6.jpg" },
+            { name: "Yui Ishikawa", role: "Mikasa Ackerman", image: "https://image.tmdb.org/t/p/original/zptGIN1iklKJL1xrfHKOpxR2qJ9.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Tetsurō Araki", role: "Director", image: "https://image.tmdb.org/t/p/w500/oEdiTbFLMJDSGUSDe8a48VbueGJ.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -241,14 +225,14 @@ const movies = [
         duration: "5 Seasons",
         rating: "9.0/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://cdn.europosters.eu/image/750/47519.jpg",
         genres: ["Action", "Adventure", "Crime","Drama","Thriller"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "The trials and tribulations of criminal lawyer Jimmy McGill in the years leading up to his fateful run-in with Walter White and Jesse Pinkman.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Bob Odenkirk", role: "Jimmy McGill / Saul Goodman / Gene Takavic", image: "https://image.tmdb.org/t/p/w500/rF0Lb6SBhGSTvjRffmlKRSeI3jE.jpg" },
+            { name: "Rhea Seehorn", role: "Kim Wexler", image: "https://image.tmdb.org/t/p/w500/hXHjyQ1aLrsXt4kYzV5OE7NtYf6.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "Michael Morris", role: "Director", image: "https://media.themoviedb.org/t/p/w235_and_h235_face/2tvHMQ1OcOUxeAMDQPI4cWGwnRo.jpg" }],
         reviews: [],
         discussions: []
     },
@@ -259,199 +243,214 @@ const movies = [
         duration: "7 Seasons",
         rating: "8.7/10",
         type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        poster: "https://image.tmdb.org/t/p/original/yxylCqF28NttybWJvQtHztTdDKr.jpg",
         genres: ["Drama", "Crime", "Mystery","Thriller"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+        plot: "He's smart. He's lovable. He's Dexter Morgan, America's favorite serial killer, who spends his days solving crimes and his nights committing them.",
         cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
+            { name: "Michael C. Hall", role: "Dexter Morgan", image: "https://image.tmdb.org/t/p/original/6xSfiAxMQNHExOmWOxab9id08gv.jpg" },
+            { name: "Jennifer Carpenter", role: "Debra Morgan", image: "https://image.tmdb.org/t/p/original/q2Newaws22FnTcRGvK9TrRnvn01.jpg" }
         ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
+        crew: [{ name: "John Dall", role: "Director", image: "https://image.tmdb.org/t/p/w500/8WDCi9LJ9Lc7z6BSwGiQqfkSx61.jpg" }],
         reviews: [],
         discussions: []
     },
     {
-        id: 14,
-        title: "Death Note",
-        year: "2006-2007",
-        duration: "1 Season(37 Episodes)",
-        rating: "8.8/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Action", "Adventure", "mistery","Crime","Anime"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    {
-        id: 15,
-        title: "Panchayet",
-        year: "2020-Present",
-        duration: "3 Seasons",
-        rating: "9.0/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Action", "Adventure", "Sci-Fi"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    {
-        id: 16,
-        title: "Narcos",
-        year: "2015-2017",
-        duration: "3 Seasons",
-        rating: "8.8/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Action", "Crime", "Drama","Biography","Thriller"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    {
-        id: 17,
-        title: "Kota factory",
-        year: "2019-Present",
-        duration: "2 Seasons",
-        rating: "9/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Drama"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    {
-        id: 18,
-        title: "Balck Mirror",
-        year: "2011-Present",
-        duration: "6 Seasons",
-        rating: "8.7/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Adventure", "Sci-Fi","Drama","Mystery"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    {
-        id: 19,
-        title: "Invincible",
-        year: "2021-Present",
-        duration: "3 Seasons",
-        rating: "8.6/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Action", "Adventure", "Sci-Fi","Drama","Superhero","Anime"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    {
-        id: 20,
-        title: "The Boys",
-        year: "2019-Present",
-        duration: "4 Seasons",
-        rating: "8.4/10",
-        type: "Series",
-        poster: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzMwZC00ZTI1LWFkYWEtNjE3Mjc4Mjc2OTc4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        genres: ["Action", "Superhero", "Sci-Fi","Adult","Drama"],
-        plot: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
-        cast: [
-            { name: "Pedro Pascal", role: "The Mandalorian", image: "https://m.media-amazon.com/images/M/MV5BODE5NjNjNDItMzNlYy00NzI5LWEwNTUtNDYzNmRhYTQ1YjI3XkEyXkFqcGc@._V1_.jpg" },
-            { name: "Grogu", role: "Grogu (Baby Yoda)", image: "https://static.wikia.nocookie.net/starwars/images/9/9d/Baby_Yoda.jpg" }
-        ],
-        crew: [{ name: "Jon Favreau", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BNjkwNTg1MzI0Nl5BMl5BanBnXkFtZTcwMzQ2OTA2Mg@@._V1_.jpg" }],
-        reviews: [],
-        discussions: []
-    },
-    { 
-    id: 21,
-    title: "The Last Kingdom",
-    year: "2015–2022",
-    duration: "5 Seasons",
-    rating: "8.5/10",  // approx from IMDB :contentReference[oaicite:0]{index=0}
+    id: 14,
+    title: "Death Note",
+    year: "2006-2007",
+    duration: "1 Season (37 Episodes)",
+    rating: "8.8/10",
     type: "Series",
-    poster: "https://www.themoviedb.org/t/p/w1280/8eJf0hxgIhE6QSxbtuNCekTddy1.jpg", // example poster
-    genres: ["History", "Action", "Drama", "War"],
-    plot: "After his parents are killed by Viking invaders, young Uhtred is raised by Danes and struggles to reclaim his birthright.",
+    poster: "https://cdn.europosters.eu/image/350/posters/death-note-from-the-shadows-i58005.jpg",
+    genres: ["Mystery", "Thriller", "Supernatural", "Crime", "Anime"],
+    plot: "A genius high school student discovers a supernatural notebook that allows him to kill anyone by writing their name. As he attempts to create a crime-free world, a mysterious detective known as L challenges him in a deadly battle of wits.",
     cast: [
-      { name: "Alexander Dreymon", role: "Uhtred of Bebbanburg", image: "" },
-      { name: "Emily Cox", role: "Brida", image: "" }
+        { name: "Mamoru Miyano", role: "Light Yagami (Voice)", image: "https://image.tmdb.org/t/p/w500/nuok8ueG7k9hPZ09Tpr8e7Qn0ah.jpg" },
+        { name: "Kappei Yamaguchi", role: "L (Voice)", image: "https://image.tmdb.org/t/p/w500/mJyxKRZxLv9D7LH5KcNSkjSKYOB.jpg" }
     ],
     crew: [
-      { name: "Stephen Butchard", role: "Creator", image: "" }
+        { name: "Tetsurō Araki", role: "Director", image: "https://image.tmdb.org/t/p/w500/oEdiTbFLMJDSGUSDe8a48VbueGJ.jpg" }
     ],
     reviews: [],
     discussions: []
-  },
-  { 
-    id: 22,
-    title: "Watchmen",
-    year: "2019",
-    duration: "1 Season",
-    rating: "8.1/10", // approximate
+},
+    {
+    id: 15,
+    title: "Panchayat",
+    year: "2020-Present",
+    duration: "3 Seasons",
+    rating: "9.0/10",
     type: "Series",
-    poster: "https://www.themoviedb.org/t/p/w1280/aVURelN3pM56lFM7Dgfs5TixcIf.jpg",
-    genres: ["Drama", "Dystopia", "Superhero"],
-    plot: "In an alternate history, superheroes are outlawed and a masked vigilante investigates a conspiracy tied to the past.",
+    poster: "https://media.themoviedb.org/t/p/w500/gRKDEpUPd2pp2msmwdgEW34V0SL.jpg",
+    genres: ["Comedy", "Drama"],
+    plot: "An engineering graduate reluctantly takes a job as a secretary in a remote village panchayat office. His city-to-village struggle creates humorous and heartwarming moments.",
     cast: [
-      { name: "Regina King", role: "Angela Abar / Sister Night", image: "" },
-      { name: "Jeremy Irons", role: "Adrian Veidt / Ozymandias", image: "" }
+        { name: "Jitendra Kumar", role: "Abhishek Tripathi", image: "https://image.tmdb.org/t/p/w500/562Mucw9YaDHUlFBqK5aot3H2lJ.jpg" },
+        { name: "Sanvikaa", role: "Rinki Dubey", image: "https://image.tmdb.org/t/p/w500/6w4tX0aU1TZBU7j4rhEr3zeLXuV.jpg" }
     ],
     crew: [
-      { name: "Damon Lindelof", role: "Creator", image: "" }
+        { name: "Deepak Kumar Mishra", role: "Director", image: "https://image.tmdb.org/t/p/original/w3F4JYFoxBBw0LMFsasnj3xx00b.jpg" }
     ],
     reviews: [],
     discussions: []
-  },
+},
+
+    {
+    id: 16,
+    title: "Narcos",
+    year: "2015-2017",
+    duration: "3 Seasons",
+    rating: "8.8/10",
+    type: "Series",
+    poster: "https://media.themoviedb.org/t/p/w500/39zuWDWmY7iag5UwcRwSMoylRAU.jpg",
+    genres: ["Crime", "Drama", "Biography", "Thriller"],
+    plot: "Narcos chronicles the rise and fall of Colombian drug lord Pablo Escobar and the Medellín Cartel, following DEA agents trying to bring him to justice.",
+    cast: [
+        { name: "Wagner Moura", role: "Pablo Escobar", image: "https://image.tmdb.org/t/p/w500/yJjV1ZCQbCSSgRy05FncCKjyaY4.jpg" },
+        { name: "Pedro Pascal", role: "Javier Peña", image: "https://image.tmdb.org/t/p/original/wROJBhRvazeFl1SIWfzwMcKrYYn.jpg" }
+    ],
+    crew: [
+        { name: "Chris Brancato", role: "Creator", image: "https://image.tmdb.org/t/p/w500/haVVgMyOnU4BSZrA262pUU2xHaA.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+},
+{
+    id: 17,
+    title: "Kota Factory",
+    year: "2019-Present",
+    duration: "2 Seasons",
+    rating: "9/10",
+    type: "Series",
+    poster: "https://media.themoviedb.org/t/p/w500/7Pi6b2gFgwKtxniTqFQNxHPsJQ.jpg",
+    genres: ["Drama"],
+    plot: "The story follows students in Kota preparing for engineering entrance exams, highlighting the struggles, friendships and pressure of academic competition.",
+    cast: [
+        { name: "Jitendra Kumar", role: "Jeetu Bhaiya", image: "https://image.tmdb.org/t/p/w500/562Mucw9YaDHUlFBqK5aot3H2lJ.jpg" },
+        { name: "Mayur More", role: "Vaibhav Pandey", image: "https://media.themoviedb.org/t/p/w500/rJDNKSQZ8dlp26D8QW3ExKc8abw.jpg" }
+    ],
+    crew: [
+        { name: "Raghav Subbu", role: "Director", image: "https://m.media-amazon.com/images/M/MV5BNDNiYmFlZDMtMTcxMi00OTIzLWI5NDctYWY0YWZiN2I5MDBlXkEyXkFqcGc@._V1_.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+},
+    {
+    id: 18,
+    title: "Black Mirror",
+    year: "2011-Present",
+    duration: "6 Seasons",
+    rating: "8.7/10",
+    type: "Series",
+    poster: "https://image.tmdb.org/t/p/original/xDsuWOHn5cXsgSMOIP6sSEKQVzr.jpg",
+    genres: ["Sci-Fi", "Drama", "Thriller", "Mystery"],
+    plot: "An anthology series exploring the dark and unsettling consequences of modern society, technology, and human behavior.",
+    cast: [
+        { name: "Bryce Dallas Howard", role: "Lacie Pound (Nosedive)", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjIbQoLOiKO8C_mU8uhY7VI-T8_w2RQD1NQ&s" },
+        { name: "Daniel Kaluuya", role: "Bing (15 Million Merits)", image: "https://image.tmdb.org/t/p/w500/jj2kZqJobjom36wlhlYhc38nTwN.jpg" }
+    ],
+    crew: [
+        { name: "Charlie Brooker", role: "Creator", image: "https://image.tmdb.org/t/p/original/dFHOuqWO6GOhtm8hdJfNGD7pNx9.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+    },
+    {
+    id: 19,
+    title: "Invincible",
+    year: "2021-Present",
+    duration: "3 Seasons",
+    rating: "8.6/10",
+    type: "Series",
+    poster: "https://media.themoviedb.org/t/p/w500/jBn4LWlgdsf6xIUYhYBwpctBVsj.jpg",
+    genres: ["Action", "Superhero", "Sci-Fi", "Drama", "Animation"],
+    plot: "A teenager discovers he has inherited superpowers from his father, the world's most powerful superhero. As he learns to use them, he uncovers shocking truths about his family.",
+    cast: [
+        { name: "Steven Yeun", role: "Mark Grayson / Invincible (Voice)", image: "https://image.tmdb.org/t/p/w500/fOMFO2Xx4duzpNgS9Q5ytO44yGb.jpg" },
+        { name: "J.K. Simmons", role: "Omni-Man (Voice)", image: "https://image.tmdb.org/t/p/w500/ScmKoJ9eiSUOthAt1PDNLi8Fkw.jpg" }
+    ],
+    crew: [
+        { name: "Robert Kirkman", role: "Creator", image: "https://media.baselineresearch.com/images/2170127/2170127_small.jpg" }
+    ],
+    reviews: [],
+    discussions: []
+},
+    {
+    id: 20,
+    title: "The Boys",
+    year: "2019-Present",
+    duration: "4 Seasons",
+    rating: "8.4/10",
+    type: "Series",
+    poster: "https://media.themoviedb.org/t/p/w220_and_h330_face/zBi4Otjddaa92ecwcNDEIhQFxcl.jpg",
+    genres: ["Action", "Superhero", "Drama", "Sci-Fi"],
+    plot: "In a world where superheroes abuse their powers, a group of vigilantes known as The Boys fight to expose the truth and bring them down.",
+    cast: [
+        { name: "Karl Urban", role: "Billy Butcher", image: "https://image.tmdb.org/t/p/w500/7Y96dAfg0HcFrcLjlD5eD9N0uj4.jpg" },
+        { name: "Antony Starr", role: "Homelander", image: "https://media.themoviedb.org/t/p/w500/b0T56GMrHM24hDDjJ4DNPJcEUp6.jpg" }
+    ],
+    crew: [
+        { name: "Eric Kripke", role: "Creator", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE34DlU4TPa7ZNA0AaEG8Br4Lqe4KX5VFdtw&s" }
+    ],
+    reviews: [],
+    discussions: []
+},
+    {
+        id: 21,
+        title: "The Last Kingdom",
+        year: "2015–2022",
+        duration: "5 Seasons",
+        rating: "8.5/10",
+        type: "Series",
+        poster: "https://image.tmdb.org/t/p/original/8eJf0hxgIhE6QSxbtuNCekTddy1.jpg",
+        genres: ["History", "Action", "Drama", "War"],
+        plot: "After his parents are killed by Viking invaders, young Uhtred is raised by Danes and struggles to reclaim his birthright.",
+        cast: [
+            { name: "Alexander Dreymon", role: "Uhtred of Bebbanburg", image: "https://image.tmdb.org/t/p/original/4widAZ3bxaE6kIMiOWqpQLQWbsT.jpg" },
+            { name: "Emily Cox", role: "Brida", image: "https://image.tmdb.org/t/p/w500/vuCvqZKsfoAJSBwThbfGGbPROgv.jpg" }
+        ],
+        crew: [
+            { name: "Stephen Butchard", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BOGZhMWNhYWItNWE3Yi00MTg3LWFiMjktNTJkMmZjOGRkNTU4XkEyXkFqcGc@._V1_.jpg" }
+        ],
+        reviews: [],
+        discussions: []
+    },
+    {
+        id: 22,
+        title: "Watchmen",
+        year: "2019",
+        duration: "1 Season",
+        rating: "8.1/10",
+        type: "Series",
+        poster :"https://image.tmdb.org/t/p/original/qsNIhQiZgUTaDtGDXlX61GcUYCm.jpg",
+        genres: ["Drama", "Dystopia", "Superhero"],
+        plot: "In an alternate history, superheroes are outlawed and a masked vigilante investigates a conspiracy tied to the past.",
+        cast: [
+            { name: "Regina King", role: "Angela Abar / Sister Night", image: "https://image.tmdb.org/t/p/w500/fEIz0ljk9CBrp3AitM5nwjfoGVu.jpg" },
+            { name: "Jeremy Irons", role: "Adrian Veidt / Ozymandias", image: "https://image.tmdb.org/t/p/w500/w8Ct1q02Ht3sWdOSqfp3B85TzT.jpg" }
+        ],
+        crew: [
+            { name: "Damon Lindelof", role: "Creator", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Damon_Lindelof_by_Gage_Skidmore_3_%28cropped%29.jpg/960px-Damon_Lindelof_by_Gage_Skidmore_3_%28cropped%29.jpg" }
+        ],
+        reviews: [],
+        discussions: []
+    }, 
   { 
     id: 23,
     title: "Sacred Games",
     year: "2018–2019",
     duration: "2 Seasons",
-    rating: "8.5/10", // rough
+    rating: "8.5/10", 
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/e/ef/Sacred_Games_2018.jpg",
+    poster: "https://media.themoviedb.org/t/p/w500/mVQ6JFJCAMRLKvsMZdiEeYXC6cp.jpg",
     genres: ["Crime", "Thriller", "Mystery"],
     plot: "A Mumbai cop receives a tip about a crime lord which sets off a chain of events revealing corruption, power, and secrets.",
     cast: [
-      { name: "Saif Ali Khan", role: "Sartaj Singh", image: "" },
-      { name: "Nawazuddin Siddiqui", role: "Ganesh Gaitonde", image: "" }
+      { name: "Saif Ali Khan", role: "Sartaj Singh", image: "https://image.tmdb.org/t/p/original/kzOy1DoCeLoKJ07nbYnQDObU3yY.jpg" },
+      { name: "Nawazuddin Siddiqui", role: "Ganesh Gaitonde", image: "https://image.tmdb.org/t/p/original/w1eXF7T60QlEC2gNfr99J3n8CgX.jpg" }
     ],
     crew: [
-      { name: "Vikramaditya Motwane", role: "Creator / Director", image: "" }
+      { name: "Vikramaditya Motwane", role: "Creator / Director", image: "https://image.tmdb.org/t/p/w500/kG5sfFXKOsUMtWUiAOaQhI9xlHX.jpg" }
     ],
     reviews: [],
     discussions: []
@@ -461,17 +460,17 @@ const movies = [
     title: "Paatal Lok",
     year: "2020–2025",
     duration: "2 Seasons",
-    rating: "8.3/10", // approximate
+    rating: "8.3/10", 
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/1/19/Paatal_Lok.jpg",
+    poster: "https://image.tmdb.org/t/p/original/bVKoX1AiN1jjUcvC7BkXypJPF2X.jpg",
     genres: ["Crime", "Thriller", "Neo-noir"],
     plot: "A disillusioned cop is assigned to investigate a failed assassination attempt, uncovering a deeper conspiracy rooted in the underworld.",
     cast: [
-      { name: "Jaideep Ahlawat", role: "Hathi Ram Chaudhary", image: "" },
-      { name: "Ishwak Singh", role: "Vishal Bhardwaj", image: "" }
+      { name: "Jaideep Ahlawat", role: "Hathi Ram Chaudhary", image: "https://image.tmdb.org/t/p/w500/uILn4y8EWbMdeu71laMsh8zHY0M.jpg" },
+      { name: "Ishwak Singh", role: "Vishal Bhardwaj", image: "https://image.tmdb.org/t/p/w500/iN1QUGzN7c4qBps3xpuWYVzpMag.jpg" }
     ],
     crew: [
-      { name: "Sudip Sharma", role: "Creator", image: "" }
+      { name: "Sudip Sharma", role: "Creator", image: "https://m.media-amazon.com/images/M/MV5BOTg3MmFlMWEtODZhMy00YTkxLTkzMmMtYTk3OTIzMGQ2YjM2XkEyXkFqcGc@._V1_.jpg" }
     ],
     reviews: [],
     discussions: []
@@ -483,15 +482,15 @@ const movies = [
     duration: "1 Season (so far)",
     rating: "8.2/10", // from IMDb :contentReference[oaicite:1]{index=1}
     type: "Series",
-    poster: "https://media.netflix.com/en/only-on-netflix/81487660", // Netflix media center image page, replace with real poster URL
+    poster: "https://media.themoviedb.org/t/p/w116_and_h174_face/h60alybJNgGGfPUbGGUXMXOoFvB.jpg", // Netflix media center image page, replace with real poster URL
     genres: ["Crime", "Thriller", "Mystery"],
     plot: "A troubled detective leads a basement cold-case unit, solving long-lost mysteries while building a team of misfits.",
     cast: [
-      { name: "Matthew Goode", role: "DCI Carl Morck", image: "" },
-      { name: "Kelly Macdonald", role: "Rachel Irving", image: "" }
+      { name: "Matthew Goode", role: "DCI Carl Morck", image: "https://m.media-amazon.com/images/M/MV5BODE1NDJkYjYtOTg5NC00Y2RiLWI5YzktMjU0ZDY1YzNiZjdhXkEyXkFqcGc@._V1_.jpg" },
+      { name: "Kelly Macdonald", role: "Rachel Irving", image: "https://image.tmdb.org/t/p/w500/k0yVocTnTMWlNdaeOO7YRViCdhO.jpg" }
     ],
     crew: [
-      { name: "Scott Frank", role: "Creator / Writer / Director", image: "" }
+      { name: "Scott Frank", role: "Creator / Writer / Director", image: "https://image.tmdb.org/t/p/w500/xU7fTHyCuWg8cQYyYmZi7Ism5U2.jpg" }
     ],
     reviews: [],
     discussions: []
@@ -503,33 +502,16 @@ const movies = [
     duration: "6 Seasons",
     rating: "8.5/10", // approximate
     type: "Series",
-    poster: "https://m.media-amazon.com/images/M/MV5BZTEzZjkyY2MtMjAwZS00MDE3LThiZTMtMTFkMmNlZDE5MjY2XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg", // sample from IMDb
+    poster: "https://image.tmdb.org/t/p/original/uU7F9eUQ2YvIR0CBKzSWgNWeFN1.jpg", // sample from IMDb
     genres: ["History", "Action", "Adventure", "Drama"],
     plot: "Follows the sagas of Viking chieftains, exploring Norse mythology, war, and family rivalries.",
     cast: [
-      { name: "Travis Fimmel", role: "Ragnar Lothbrok", image: "" },
-      { name: "Katheryn Winnick", role: "Lagertha", image: "" }
+      { name: "Travis Fimmel", role: "Ragnar Lothbrok", image: "https://image.tmdb.org/t/p/original/3feVQYAZXNHduKdtw3oMMAnUbQg.jpg" },
+      { name: "Katheryn Winnick", role: "Lagertha", image: "https://image.tmdb.org/t/p/w500/vQSqH3ybDWZHZIqX4NZKhOCXAhQ.jpg" }
     ],
     crew: [
-      { name: "Michael Hirst", role: "Creator", image: "" }
+      { name: "Michael Hirst", role: "Creator", image: "https://image.tmdb.org/t/p/w500/70lhWPCdSPv7aGpaoAPk9h6sFOR.jpg" }
     ],
-    reviews: [],
-    discussions: []
-  },
-  { 
-    id: 27,
-    title: "Dune: Prophecy",
-    year: "TBD",
-    duration: "TBD",
-    rating: "N/A",
-    type: "Series",
-    poster: "https://via.placeholder.com/300x450?text=Dune+Prophecy", // placeholder
-    genres: ["Sci-Fi", "Adventure", "Drama"],
-    plot: "A futuristic prophecy about the desert planet and its powerful factions drives a war for control of the spice.",
-    cast: [
-      { name: "TBA", role: "TBA", image: "" }
-    ],
-    crew: [],
     reviews: [],
     discussions: []
   },
@@ -540,15 +522,15 @@ const movies = [
     duration: "3 Seasons", // if 3rd confirmed
     rating: "8.0/10", // from IMDb :contentReference[oaicite:2]{index=2}
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/0/0b/Squid_Game_poster.jpg",
+    poster: "https://media.themoviedb.org/t/p/w500/1QdXdRYfktUSONkl1oD5gc6Be0s.jpg",
     genres: ["Thriller", "Drama", "Survival"],
     plot: "Hundreds of cash-strapped contestants compete in deadly versions of childhood games for a tempting but lethal prize.",
     cast: [
-      { name: "Lee Jung-jae", role: "Seong Gi-hun", image: "" },
-      { name: "Park Hae-soo", role: "Cho Sang-woo", image: "" }
+      { name: "Lee Jung-jae", role: "Seong Gi-hun", image: "https://image.tmdb.org/t/p/original/3h5Cfm0X8ohWn7psZkqdNWqXAHH.jpg" },
+      { name: "Park Hae-soo", role: "Cho Sang-woo", image: "https://media.themoviedb.org/t/p/w235_and_h235_face/hFt7Cj8sx1VYIwm18lYmq5kS7Pw.jpg" }
     ],
     crew: [
-      { name: "Hwang Dong-hyuk", role: "Creator", image: "" }
+      { name: "Hwang Dong-hyuk", role: "Creator", image: "https://image.tmdb.org/t/p/original/4lO4WtP0DdNhriVu5BSBd1RWbtS.jpg" }
     ],
     reviews: [],
     discussions: []
@@ -560,12 +542,12 @@ const movies = [
     duration: "2 Seasons", // approximate
     rating: "7.4/10", // approximate
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/4/40/All_of_Us_Are_Dead_poster.jpg",
+    poster: "https://image.tmdb.org/t/p/original/o9cRxGdB0Q9zizgllUiMIbPDB6W.jpg",
     genres: ["Horror", "Thriller", "Zombie"],
     plot: "High school students fight for survival during a zombie outbreak while trapped in their school.",
     cast: [
-      { name: "Yoon Chan-young", role: "Lee Cheong-san", image: "" },
-      { name: "Park Ji-hu", role: "Nam On-jo", image: "" }
+      { name: "Yoon Chan-young", role: "Lee Cheong-san", image: "https://image.tmdb.org/t/p/w500/7Al19wuV9XnjIiiPlsor3MK84Kx.jpg" },
+      { name: "Park Ji-hu", role: "Nam On-jo", image: "https://image.tmdb.org/t/p/w500/bZy15WXLhOflOgtQpICbgeeqzm6.jpg" }
     ],
     crew: [],
     reviews: [],
@@ -578,28 +560,13 @@ const movies = [
     duration: "1 Season (so far)",
     rating: "7.5/10", // approximate
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/d/de/Gen_V_poster.jpg",
+    poster: "https://image.tmdb.org/t/p/original/ongpFhUYuCwwRfOQgUKv5FXcGpO.jpg",
     genres: ["Superhero", "Drama", "Action"],
     plot: "Young superheroes at a college learn to harness their powers, deal with legacy, and face dark conspiracies.",
     cast: [
-      { name: "Jaz Sinclair", role: "Marie Moreau", image: "" },
-      { name: "Chance Perdomo", role: "Andre Anderson", image: "" }
+      { name: "Jaz Sinclair", role: "Marie Moreau", image: "https://image.tmdb.org/t/p/w500/rX1HQCi4cd3O14Q1Pn4AHoksPeD.jpg" },
+      { name: "Chance Perdomo", role: "Andre Anderson", image: "https://image.tmdb.org/t/p/w500/xRRDtdHhTewrKMj5cpcmEkPNmuP.jpg" }
     ],
-    crew: [],
-    reviews: [],
-    discussions: []
-  },
-  { 
-    id: 31,
-    title: "Animal Park",
-    year: "TBD",
-    duration: "TBD",
-    rating: "N/A",
-    type: "Series",
-    poster: "https://via.placeholder.com/300x450?text=Animal+Park", // placeholder
-    genres: ["Documentary", "Nature", "Family"],
-    plot: "A look into the lives of animals in a wildlife park and the keepers who care for them.",
-    cast: [],
     crew: [],
     reviews: [],
     discussions: []
@@ -611,28 +578,13 @@ const movies = [
     duration: "4 Seasons",
     rating: "8.4/10", // approx IMDB
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/8/84/Ozark_title_card.jpg",
+    poster: "https://image.tmdb.org/t/p/original/db8V3MnfG6OZIUzFPTdfdZEMUt1.jpg",
     genres: ["Crime", "Drama", "Thriller"],
     plot: "A financial planner drags his family from Chicago to the Missouri Ozarks, where he must launder money to appease a drug boss.",
     cast: [
-      { name: "Jason Bateman", role: "Marty Byrde", image: "" },
-      { name: "Laura Linney", role: "Wendy Byrde", image: "" }
+      { name: "Jason Bateman", role: "Marty Byrde", image: "https://image.tmdb.org/t/p/w500/8e6mt0vGjPo6eW52gqRuXy5YnfN.jpg" },
+      { name: "Laura Linney", role: "Wendy Byrde", image: "https://image.tmdb.org/t/p/w500/ztQXGmNLzhDV22rAvcXzCG4d0cy.jpg" }
     ],
-    crew: [],
-    reviews: [],
-    discussions: []
-  },
-  { 
-    id: 33,
-    title: "Penguin",
-    year: "TBD",
-    duration: "TBD",
-    rating: "N/A",
-    type: "Series",
-    poster: "https://via.placeholder.com/300x450?text=Penguin", // placeholder
-    genres: ["Crime", "Drama"],
-    plot: "A gritty tale of one of Gotham’s most notorious villains before he became the Penguin.",
-    cast: [],
     crew: [],
     reviews: [],
     discussions: []
@@ -644,15 +596,15 @@ const movies = [
     duration: "2 Seasons",
     rating: "8.2/10", // from IMDb :contentReference[oaicite:3]{index=3}
     type: "Series",
-    poster: "https://upload.wikimedia.org/wikipedia/en/a/a8/Loki_%28TV_series%29_poster.jpg",
+    poster: "https://image.tmdb.org/t/p/original/6FWzffD2YgygUayuFf32QGBoAUZ.jpg",
     genres: ["Superhero", "Sci-Fi", "Adventure"],
     plot: "The God of Mischief, Loki, travels through time and realities after escaping with the Tesseract, facing variants of himself and chaos.",
     cast: [
-      { name: "Tom Hiddleston", role: "Loki", image: "" },
-      { name: "Owen Wilson", role: "Mobius M. Mobius", image: "" }
+      { name: "Tom Hiddleston", role: "Loki", image: "https://image.tmdb.org/t/p/w500/mclHxMm8aPlCPKptP67257F5GPo.jpg" },
+      { name: "Owen Wilson", role: "Mobius M. Mobius", image: "https://image.tmdb.org/t/p/w500/op8sGD20k3EQZLR92XtaHoIbW0o.jpg" }
     ],
     crew: [
-      { name: "Michael Waldron", role: "Creator", image: "" }
+      { name: "Michael Waldron", role: "Creator", image: "https://image.tmdb.org/t/p/w500/5hf8B7h92GhSSch0FVNSfWMyEG2.jpg" }
     ],
     reviews: [],
     discussions: []
