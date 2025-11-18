@@ -62,7 +62,28 @@ const movies = [
         plot: "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns.",
         cast: [
             { name: "Emilia Clarke", role: "Daenerys Targaryen", image: "https://www.themoviedb.org/t/p/original/2rnAc7fAvbjgggOWvH9nqfMpCYc.jpg" },
-            { name: "Kit Harington", role: "Jon Snow", image: "https://image.tmdb.org/t/p/original/wWTG27LBVTuHhIZ96aJcrkHuy8Z.jpg" }
+            { name: "Kit Harington", role: "Jon Snow", image: "https://image.tmdb.org/t/p/original/wWTG27LBVTuHhIZ96aJcrkHuy8Z.jpg" },
+
+             { name: "Peter Dinklage", role: "Tyrion Lannister", image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTWXJtvz-euAdfGzvlWADWJgKYjW-djNM4arPoqJEmQSgGUgzOSXvWgB7gfy1bxUoDkuHk8TNpGgs8zmm6_dLjeRHknHiQQ7Ce834BdgZj-yXuHoY-N3GKiy-e6v9VDHHk9ak6yZbskDEWZ&s=19" },
+            { name: "Lena Headey", role: "Cersei Lannister", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEmxaJc08QDuXGDsMT1BumhNQjnTtV95vpibFoxYUBP5CvVE1fq650cNQ22UEEyh-4t7gRO4422SjMv4MWXq9kWXgNQ3lxqcUo2mgRltvV&s=10" },
+            { name: "Sophie Turner", role: "Sansa Stark", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGo1enBaIRuAPYBVrMcuzR3bmRJ1K7veOKiR8UO8yOKV5pFoB1V8Eyadv0l7ncIfKdF__RsIilzMt6MABbwuk9QXwfpmFHmSchsdfEFs1ACQ&s=10" },
+            { name: "Maisie Williams", role: "Arya Stark", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7hpH_wZZNW4kM6w3L_fuXj_9I6Ko4pnwJo5zXzI4LbbEfI5CwdtcEgzVcvJRSama4KR8gMSaGgcHNR5rosFyux47jpIrHDzpOigEAtf6D2g&s=10" },
+            { name: "Nikolaj Coster-Waldau", role: "Jaime Lannister", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0oKoHAcWna80RlgG68REfFpfIavGG4BQE51GMLDy_c9Tks07EYAPR3JPKt1dO_qUX66uZXx4atZdTEKzZ6TtdRmY1Na9uYkLJlAes-F14&s=10" },
+            { name: "Sean Bean", role: "Eddard Stark", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CJoDKAk0I9bkIAtbHDK6JDjaEYeVu-o68lqDUp0ypk2lYAikoDy8g3vYxh3ZOrqX3-4e2XBl6FBneD5P-yXGqIN-wvJciMYuzAb2YSdu0w&s=10" },
+            { name: "Iain Glen", role: "Jorah Mormont", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVqW4flraBFmoDXD1iYzZUZixYJdEopHpdc9jXe98D8LV-7CBHRdxK2VMKrF6Ute6_KD2xvg_KvdRoc1VB0WKKR4BMFAFKgluk3XIWUXPINA&s=10" },
+            { name: "Conleth Hill", role: "Varys", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR78U_lo3UJjCDG77u5YWQXqreDxz4poVb3AHSL9e4DkkPuU91MnzZh6I_U3O_X75qaQVQRIRaIUH6Q87b0jTVXPOcdMmKTyNUpqymVtzV1sQ&s=10" },
+            { name: "John Bradley", role: "Samwell Tarly", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe0jNdsRVNdt_aUKqmGcBr7cINYxD8bsTmVtPkYtqvU76cEY3DiiIrF1th4QKu_5ywsUREp8pe9i7MUJB70tVuAEU-_6q_R9z9r0oipRQq&s=10" },
+            {name:"Alfie Allen", role:"Theon Greyjoy", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYu7XXA0ItMLnPUi_6eeKJl5GWyhSrxghKb7RP_HvRWjQ3IR-07Xvq&s=0"},
+            { name: "Carice van Houten", role: "Melisandre", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv_ET6m9ZGG2Jz7QNgWXW1hYUL-EtcEoD3U69ukpxOQGMoyErbON-wxeqh3nzfkuONEKm2tZPACtX_PsEhOpC9Se3NqXXt7rhq-irlkFaxRA&s=10" },
+            { name: "Gwendoline Christie", role: "Brienne of Tarth", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq0p_wdfTtISDYrrqd-KBVuC_p7S_H83OQeNS6T8WtD1VFv3XTLOljwLd6uR9OVPx48-ankFs7U0MzntZOcIv5vI9av_JUNGO9n7PmTccT&s=10" },
+            { name: "Liam Cunningham", role: "Davos Seaworth", image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQKS9-MlGv8XhDzRXu11BgCQLjwwsZWqaCsBXTSKHZlfsuqcpquEhJbKTmIOeB0u--lzp4K9K0o5QyvsuWeCcOj__3xOR1U0pbMu5BuQY0A1LwxBnTr8t8tDSBX6wKeUzZOugx55VJcFhBn&s=19" },
+            { name: "Natalie Dormer", role: "Margaery Tyrell", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL8xJV9jKRwBcReAdf5mHkDIVEGvC-KZWdbIoFvCbypif3Pt_MOYmCeFg8g_GZok7CfrhtpjP-m_HdgIKcblTUV39imzY4vjRs6Ex8SGeP&s=10" },
+            { name: "Rory McCann", role: "Sandor Clegane", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO60mujnZnq-6Xfta4m3pEbqdJh0VBmjMHmNnOUkQ1Ojb4ZzzZB6ZtN_ak9L8qL0lGwhJDFUO0ZNUBH3fJ7JJdrYpuOzI7FgTTkTHlda--0w&s=10" },
+            { name:"Padro Pascal", role:"Oberyn Martell", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPNJHiFf-NixSxTY8UnBXX_05OKu3jfYDE12Pz8hpARF0R57ROXD_0MR4uaKwElDIwlPwCF59Hsw00LnvZP0_TJMXxik5hIUII3SpoNGJ9&s=10"},
+            {name:"Rose Leslie", role:"Ygritte", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTidG4DNX4VYlsp-106VIJotv7ftAdjgA7TiV15jD5J9sfo04Hx6Vg_DgrUqnlziIW3e1At0_tvN5_uhCUsRF-5PD3CXM5k1X7kL4sJNstG&s=10"},
+            {name:"Charles dance",role:"Tywin Lannister",image:"https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSrjmsnzAlg5MbpIXPCBTJbR8IzQGeQtTNj2I8FrOvM_gO0-Z23pO2HYM8orUnclF814kVXnr7mAPjPoxL3HF2fC6MAJfTjg2db0JU_UrsNwmmnNYKk8cbqgk9D5g-IqOV5yYvykJQr7sPB&s=19"},
+            {name:"jason momoa", role:"Khal Drogo", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqpDJquMYfrNXllXCg1afilMvCqp8hhzCrPnyt-8sHtawu6LZpFBnj25g4Ly7u8UHIi6MjIbqmCj-6XkWtgoIPEseT4l7aY64JTzx68h9cw&s=10"}
+           
         ],
         crew: [
             { name: "David Benioff", role: "Creator", image: "https://image.tmdb.org/t/p/original/bOlW8pymCeQLfwPIvc2D1MRcUoF.jpg" },
