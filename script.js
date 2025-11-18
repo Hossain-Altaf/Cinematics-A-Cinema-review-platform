@@ -1,3 +1,29 @@
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+
+function setActiveOnScroll() {
+    let scrollPos = window.scrollY + window.innerHeight / 2; 
+
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            const id = section.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveOnScroll);
+window.addEventListener('load', setActiveOnScroll);
+
+
 
 // =====================================
 // WATCHLIST — Tab Switching & Storage
@@ -36,6 +62,12 @@ function saveList(key, arr) {
 function renderList(key, ul) {
     const items = getList(key);
     ul.innerHTML = '';
+
+    if (items.length === 0) {
+    ul.innerHTML = '<li style="color:#ccc;">No items yet</li>';
+    return;
+}
+
 
     const VISIBLE_COUNT = 5;
     const showAll = ul.dataset.showAll === 'true';
