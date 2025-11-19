@@ -57,7 +57,7 @@ const movies = [
         year: "2008",
         duration: "2h 32min",
         rating: "9.0/10",
-        poster: "https://static.wikia.nocookie.net/batman/images/3/38/The_Dark_Knight_poster6.jpg/revision/latest?cb=20160504033320",
+        poster: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/darkknighttrilogy.png",  //https://static.wikia.nocookie.net/batman/images/3/38/The_Dark_Knight_poster6.jpg/revision/latest?cb=20160504033320
         trailerUrl: "https://www.youtube.com/watch?v=EXeTwQWrcwY",
         genres: ["Action", "Crime", "Drama"],
         plot: "Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into anarchy.",
