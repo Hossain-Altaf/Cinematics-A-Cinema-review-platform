@@ -24,6 +24,50 @@ tabButtons.forEach(button => {
     });
 });
 
+
+
+async function loadMovies() {
+    try {
+        const response = await fetch("http://localhost:3001/api/movies");
+        const movies = await response.json();
+
+        const movieContainer = document.getElementById("testMovieArea");
+        movieContainer.innerHTML = ""; 
+
+        movies.forEach(movie => {
+            movieContainer.innerHTML += `
+                <div class="movie-card">
+                    <img src="${movie.poster_url}" alt="${movie.title}">
+                    <h3>${movie.title}</h3>
+                    <p>Year: ${movie.year}</p>
+                </div>
+            `;
+        });
+
+    } catch (error) {
+        console.error("Error loading movies:", error);
+    }
+}
+
+loadMovies();
+
+//  from URL movie ID read
+const params1 = new URLSearchParams(window.location.search);
+const movieId1 = params1.get('id');
+
+fetch(`http://localhost:3001/api/movies/${movieId1}`)
+    .then(res => res.json())
+    .then(movie => {
+        document.getElementById('movieTitle').innerText = movie.title;
+        document.getElementById('moviePoster').src = movie.poster_url;
+        document.getElementById('movieYear').innerText = movie.year;
+        document.getElementById('moviePlot').innerText = movie.plot;
+    })
+    .catch(err => console.log(err));
+
+
+
+
 // ---------------------------
 // MOVIE DATA (mock database)
 // ---------------------------
