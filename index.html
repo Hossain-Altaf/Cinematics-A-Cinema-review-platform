@@ -22,6 +22,7 @@
     <nav>
         <div class="nav-container">
             <ul class="nav-links">
+                <li><a href="#search-section" id="search-nav-icon">🔍</a></li>
                 <li><a href="#movies">Movies</a></li>
                 <li><a href="#webseries">WebSeries</a></li>
                 <li><a href="#actors">Actors</a></li>
@@ -31,6 +32,7 @@
                 <li><a href="#towatch">ToWatch</a></li>
                 <li><a href="#hotnews">CineNews</a></li>
                 <li><a href="#watchlist">Watchedlist</a></li>
+                <!-- <li><a href="#search-section">🔍S</a></li> -->
 
 
             </ul>
@@ -42,6 +44,24 @@
     
     </div> -->
     <main>
+
+    <!-- Add this right after the <main> tag in your HTML -->
+<section id="search-section">
+    <div class="search-container">
+        <h2>🔍 Search in Cinematics</h2>
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search for movies, series, actors, or directors..." 
+                autocomplete="off"
+            />
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+    </div>
+</section>
+
         <section id="movies">
             <h2>Movies</h2>
             <ul class="content-list">
