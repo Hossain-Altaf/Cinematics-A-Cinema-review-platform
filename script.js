@@ -23,6 +23,21 @@ function setActiveOnScroll() {
 window.addEventListener('scroll', setActiveOnScroll);
 window.addEventListener('load', setActiveOnScroll);
 
+// fetch movies for test area
+
+fetch('http://localhost:3001/api/movies')
+    .then(res => res.json())
+    .then(data => {
+        const testDiv = document.getElementById('testMovieArea');
+        testDiv.innerHTML = data.map(movie => `
+            <p>
+                <a href="movie_detail.html?id=${movie.id}">${movie.title}</a>
+            </p>
+        `).join('');
+    })
+    .catch(err => console.log(err));
+
+
 
 
 // =====================================

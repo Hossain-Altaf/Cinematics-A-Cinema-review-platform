@@ -398,6 +398,23 @@ app.get('/api/me', authenticateToken, (req, res) => {
     });
 });
 
+
+
+// Get all movies
+app.get('/api/movies', (req, res) => {
+    // Optional: pagination
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    const offset = (page - 1) * limit;
+
+    const query = 'SELECT * FROM movies LIMIT ? OFFSET ?';
+    db.query(query, [limit, offset], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Error fetching movies' });
+        res.json(results);
+    });
+});
+
+
 // Movie routes
 app.get('/api/movies/:id', (req, res) => {
     const movieId = req.params.id;
