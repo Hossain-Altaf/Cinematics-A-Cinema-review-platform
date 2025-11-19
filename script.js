@@ -293,7 +293,7 @@ if (towatchSeriesList) renderList('towatch-series', towatchSeriesList);
 
 
 // =====================================
-// HOT NEWS SECTION
+// Cine NEWS SECTION
 // =====================================
 
 const newsData = [
@@ -352,6 +352,36 @@ const newsData = [
         date: "November 18, 2025",
         description: "The maestro Cristopher Nolan is set to release his new movie ",
         trailerUrl: "https://www.theguardian.com/film/2025/nov/14/christopher-nolan-the-odyssey-2-million-ft-imax-matt-damon"
+    },
+    {
+        id: 9,
+        title: "Varanasi glimps just out..",
+        date: "December 01, 2025",
+        description: " SS Rajamouli's grand movie with MB Varanasi movie's glimps is finally out...",
+        trailerUrl: "https://www.youtube.com/watch?v=GFCvD76qwPA"
+    },
+    {
+        id: 10,
+        title:"Sakib Khan's next movie Prince's fan made teaser breaks the internet",
+        date: "November 25, 2025",
+        description: "Bangladeshi superstar Sakib Khan's next movie Prince's fan made teaser has taken the internet by storm...",
+        trailerUrl: "https://www.youtube.com/watch?v=WAVj3ottGWs"
+    },
+    {
+        id: 11,
+        title:"Namit Malhotra's Ramayana: The Introduction video is out and it looks promising",
+        date: "November 30, 2025",
+
+        description: "Bollywood's visual effects guru Namit Malhotra is making his directorial debut with Ramayana...",
+        trailerUrl: "https://www.youtube.com/watch?v=gzUu-FJ7s-Y&list=RDgzUu-FJ7s-Y&start_radio=1"
+    },
+    {
+        id: 12,
+        titel:"Daredevil: Born Again season 2 plot details reveal ",
+        date: "December 05, 2025",
+        description: "Marvel's Daredevil: Born Again season 2 is all set to release soon and the plot details are finally out...",
+        trailerUrl: "https://www.gamesradar.com/entertainment/superhero-shows/daredevil-born-again-season-2-plot-details-reveal-matt-murdocks-vigilante-army-as-wilson-fisks-kingpin-outlaws-superheroes/"
+
     }
 ];
 
@@ -415,9 +445,6 @@ function renderNews() {
 
 document.addEventListener('DOMContentLoaded', renderNews);
 
-
-
-// Add this to your script.js file
 
 // =====================================
 // SEARCH FUNCTIONALITY
