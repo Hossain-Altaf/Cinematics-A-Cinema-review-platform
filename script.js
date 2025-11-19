@@ -635,18 +635,23 @@ if (searchNavIcon) {
     searchNavIcon.addEventListener('click', (e) => {
         e.preventDefault();
         const searchSection = document.getElementById('search-section');
+        
+        // If search section exists on current page (home page)
         if (searchSection) {
             // Get the position of the search section
             const searchPosition = searchSection.offsetTop;
             // Scroll with offset to account for fixed navbar
             window.scrollTo({
-                top: searchPosition - 100, // Adjust this number if needed
+                top: searchPosition - 100,
                 behavior: 'smooth'
             });
             // Focus on search input after scrolling
             setTimeout(() => {
                 searchInput.focus();
             }, 500);
+        } else {
+            // If not on home page, redirect to home page with search section
+            window.location.href = 'index.html#search-section';
         }
     });
 }
@@ -676,6 +681,27 @@ if (searchBtn && searchInput) {
         }
     });
 }
+
+// Handle scroll position when page loads with #search-section hash
+window.addEventListener('load', () => {
+    if (window.location.hash === '#search-section') {
+        setTimeout(() => {
+            const searchSection = document.getElementById('search-section');
+            if (searchSection) {
+                const searchPosition = searchSection.offsetTop;
+                window.scrollTo({
+                    top: searchPosition - 100,
+                    behavior: 'smooth'
+                });
+                // Focus on search input
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                    searchInput.focus();
+                }
+            }
+        }, 100); // Small delay to ensure page is fully loaded
+    }
+});
 
 
 
